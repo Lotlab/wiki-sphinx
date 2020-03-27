@@ -1,6 +1,6 @@
-=========================
+=====================
 LotKB固件编译移植指南
-=========================
+=====================
 
 
 编译教程
@@ -13,7 +13,9 @@ http://lotkb.glab.online/
 
 感谢格老师提供的在线编译服务器。
 
-   注意此服务器上的代码和lotlab的代码有一些微小的差别。
+.. warning::
+
+   此服务器上的代码暂时不是Lotlab主分支的代码
 
 环境搭建
 ~~~~~~~~
@@ -84,9 +86,14 @@ Bootloader的编译
    make # 编译microecc库
    cd ../../../../../
 
+   # 方法1：
    cd application/bootloader/project/armgcc/
    make SOFTDEVICE=S132 NRF_CHIP=nrf52832 NRF52_DISABLE_FPU=yes -j # nrf52832的编译命令
    make SOFTDEVICE=S112 NRF_CHIP=nrf52810 -j # nrf52810的编译命令
+
+   # 方法2：
+   cd keyboard/template
+   make bootloader -j
 
 如果一切正常，则Bootloader就编译完毕了。你可以在\ ``_build``\ 目录下找到编译好的Bootloader的hex文件。
 
@@ -99,8 +106,8 @@ Bootloader的编译
    make package -j # 生成用于DFU升级的升级包
    make ch554 -j # 生成USB固件
 
-如果一切正常，
-就能够编译出一个固件升级包了。你可以在\ ``_build``\ 目录下找到对应的\ ``nrf52_kbd_XXXXXXXX.zip``\ 升级包文件和\ ``ch554.hex``\ USB固件文件。参照刷固件相关教程将其刷入键盘即可。
+如果一切正常，就能够编译出一个固件升级包了。
+你可以在\ ``_build``\ 目录下找到对应的\ ``nrf52_kbd_XXXXXXXX.zip``\ 升级包文件和\ ``ch554.hex``\ USB固件文件。参照刷固件相关教程将其刷入键盘即可。
 
 硬件移植教程
 ------------
@@ -109,6 +116,8 @@ Bootloader的编译
 ~~~~~~~~
 
 首先，你需要准备一份按键阵列表格，用于确定各个按键的位置。然后需要规划好各个IO口的用途。
+
+.. note::
 
    需要注意的是，P21是Reset口，若需要使用硬件Reset按钮，则可以使用此口；
 
@@ -164,7 +173,9 @@ Bootloader的编译
 
 下面这一部分，行数和前面定义的按键阵列的行数相等，每一行的元素的数目，也和前面定义的列数相等。
 
-   上面这一部分中，反斜杠表示换行。实际上上面的还是一维数组，只不过为了好看而将其转换为了键盘实际的样式。
+.. note::
+
+   上面这一部分中，反斜杠表示换行。上面的这一部分本质上是一维数组，只不过为了好看而将其转换为了键盘实际的样式。
 
 编辑默认配列
 ~~~~~~~~~~~~
@@ -228,36 +239,36 @@ Bootloader的编译
 
 按键阵列表：
 
-===== ======== ======== ===== ========= ========== ====== ===== =====
-\     LINE1    LINE2    LINE3 LINE4     LINE5      LINE6  LINE7 LINE8
-===== ======== ======== ===== ========= ========== ====== ===== =====
-H1L   Esc      F1       F2    F3        F4         F5     F6    F7
-H2L   1        2        3     4         5          6      7     8
-H3L   Tab      Q        W     E         R          T      Y     U
-H4L   CapsLock A        S     D         F          G      H     J
-H5L   \`       Z        X     C         V          B      N     M
-H1R   Right    Pause    PtrSc NumLock   ScrollLock F10    F9    F8
-H2R   Down     Home           Backspace =          -      0     9
-H3R   Up       PageUp         ]         [          P      O     I
-H4R   Left     PageDown Enter \\        "          ;      L     K
-H5R   Space    End      Menu  Ins       Del        ?      >     <
-SPEC1 Lalt                                         Rshift       
-SPEC2 Lshift                                       Ralt         
-SPEC3 Ctrl                                                      
-SPEC4 Fn                                                        
-SPEC5 LWin                                                      
-SPEC6 RWin                                                      
-===== ======== ======== ===== ========= ========== ====== ===== =====
+=====  ========  ========  =========  =======  ==========  =====  =====  =====
+  \     LINE1     LINE2      LINE3     LINE4     LINE5     LINE6  LINE7  LINE8
+=====  ========  ========  =========  =======  ==========  =====  =====  =====
+H1L    Esc       F1        F2         F3       F4          F5     F6     F7
+H2L    1         2         3          4        5           6      7      8
+H3L    Tab       Q         W          E        R           T      Y      U
+H4L    CapsLock  A         S          D        F           G      H      J
+H5L    \`        Z         X          C        V           B      N      M
+H1R    Right     Pause     PtrSc      NumLock  ScrollLock  F10    F9     F8
+H2R    Down      Home      Backspace  =        \-          0      9
+H3R    Up        PageUp    ]          [        P           O      I
+H4R    Left      PageDown  Enter      \\       "           ;      L      K
+H5R    Space     End       Menu       Ins      Del         ?      >      <
+SPEC1  Lalt      Rshift
+SPEC2  Lshift    Ralt
+SPEC3  Ctrl
+SPEC4  Fn
+SPEC5  LWin
+SPEC6  RWin
+=====  ========  ========  =========  =======  ==========  =====  =====  =====
 
-==== ===== ===== ===== ===== ===== ===== ===== ===== =====
-序号 1     2     3     4     5     6     7     8     9
-==== ===== ===== ===== ===== ===== ===== ===== ===== =====
-名称 LINE1 Line2 Line3 Line4 Line5 Line6 Line7 Line8 Spec4
-IO   P10   P9    P8    P7    P6    P5    P4    P3    P11
-序号 10    11    12    13    14    15    16    17    18
-名称 Spec3 Spec2 Spec1 H1L   H2L   H3L   H4L   Spec5 Spec6
-IO   P12   P13   P14   P15   P16   P17   P18   P19   P20
-序号 19    20    21    22    23    24    25    26    27
-名称 H5L   H5R   H4R   H3R   H2R   LED1  LED2  LED3  H1R
-IO   P30   P29   P28   P27   P26   P25   P24   P23   P22
-==== ===== ===== ===== ===== ===== ===== ===== ===== =====
+====  =====  =====  =====  =====  =====  =====  =====  =====  =====
+序号    1      2      3      4      5      6      7      8      9
+====  =====  =====  =====  =====  =====  =====  =====  =====  =====
+名称  LINE1  Line2  Line3  Line4  Line5  Line6  Line7  Line8  Spec4
+IO    P10    P9     P8     P7     P6     P5     P4     P3     P11
+序号  10     11     12     13     14     15     16     17     18
+名称  Spec3  Spec2  Spec1  H1L    H2L    H3L    H4L    Spec5  Spec6
+IO    P12    P13    P14    P15    P16    P17    P18    P19    P20
+序号  19     20     21     22     23     24     25     26     27
+名称  H5L    H5R    H4R    H3R    H2R    LED1   LED2   LED3   H1R
+IO    P30    P29    P28    P27    P26    P25    P24    P23    P22
+====  =====  =====  =====  =====  =====  =====  =====  =====  =====

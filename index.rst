@@ -8,7 +8,16 @@
 
 .. toctree::
    :maxdepth: 2
+   :caption: 蓝牙相关
+   :glob:
 
-   ble/ble
-   other/other
+   ble/*
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 其他项目
+   :glob:
+   
+   other/*
+
 
