@@ -57,3 +57,25 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+latex_engine = 'xelatex'
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    # 'papersize': 'letterpaper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    # 'pointsize': '10pt',
+
+    'fncychap' : '',
+
+    # Additional stuff for the LaTeX preamble.
+    #
+    'preamble': r'''\usepackage{ctex}
+    ''',
+
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
+}

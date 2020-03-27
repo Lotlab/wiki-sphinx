@@ -8,15 +8,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 文章列表:
-   
+
    ble/ble
+   other/other
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
