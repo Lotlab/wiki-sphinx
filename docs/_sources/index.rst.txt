@@ -20,4 +20,8 @@
    
    other/*
 
-
+变更记录
+----------
+- 2020-03-28 使用斯芬克斯替代 Minori Wiki
+- 2017-01-18 使用 Minori Wiki 完全静态化，迁移至 Github Pages
+- 2015-11-07 替换庞大的 MediaWiki 为 DokuWiki 
