@@ -53,7 +53,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'sphinx-mui-theme'
 # html_theme = 'sphinx_materialdesign_theme'
-html_theme_path = ['./theme']
+html_theme_path = ['../theme']
 html_theme_options = {
     'valine': 'true',
     'valine_appid': 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
