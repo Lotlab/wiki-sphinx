@@ -312,14 +312,11 @@ img {
 
 a.headerlink {
   display: inline-block;
-  /* Offset to avoid appbar cover the anchor text. */
-  padding-top: 70px;
-  margin-top: -70px;
+  margin-left: 0.5em;
 }
 
 a.headerlink:link, a.headerlink:hover, a.headerlink:visited, a.headerlink:active {
   text-decoration: none;
-  visibility: hidden;
 }
 
 a.headerlink:hover {
