@@ -51,7 +51,16 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx-mui-theme'
+# html_theme = 'sphinx_materialdesign_theme'
+html_theme_path = ['./theme']
+html_theme_options = {
+    'valine': 'true',
+    'valine_appid': 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    'valine_appkey': 'SvTm4v2OsnlRTG49AhcNEL4h',
+    'valine_placeholder': '写下你的评论吧',
+    'valine_visitor': 'true',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
