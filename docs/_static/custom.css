@@ -1,0 +1,514 @@
+/**
+ * Body CSS
+ */
+
+html, body {
+  height: 100%;
+  background-color: #eee;
+}
+
+html, body, input, textarea, buttons {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/**
+  * Layout CSS
+  */
+
+#header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  transition: left 0.2s;
+}
+
+.search-box .mui-textfield {
+  padding-top: 0;
+}
+
+.search-box .mui-textfield>input {
+  color: #FFF;
+  border-bottom-color: rgba(255, 255, 255, 0.87);
+}
+
+.search-box .mui-textfield>input::placeholder,
+.search-box .mui-textfield>textarea::placeholder {
+  color: rgba(255, 255, 255, 0.87);
+  opacity: 1
+}
+
+#sidedrawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  left: -200px;
+  overflow: auto;
+  z-index: 2;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+#root-container {
+  height: 100%;
+}
+
+#content-wrapper {
+  min-height: 100%;
+  overflow-x: hidden;
+  margin-left: 0px;
+  transition: margin-left 0.2s;
+  /* sticky bottom */
+  margin-bottom: -40px;
+}
+
+#push {
+  height: 40px;
+}
+
+#footer {
+  height: 40px;
+  line-height: 40px;
+  margin-left: 0px;
+  transition: margin-left 0.2s;
+}
+
+@media (min-width: 768px) {
+  #header {
+    left: 200px;
+  }
+  #sidedrawer {
+    transform: translate(200px);
+  }
+  #content-wrapper {
+    margin-left: 200px;
+  }
+  #footer {
+    margin-left: 200px;
+  }
+  body.hide-sidedrawer #header {
+    left: 0;
+  }
+  body.hide-sidedrawer #sidedrawer {
+    transform: translate(0px);
+  }
+  body.hide-sidedrawer #content-wrapper {
+    margin-left: 0;
+  }
+  body.hide-sidedrawer #footer {
+    margin-left: 0;
+  }
+}
+
+/**
+  * Toggle Side drawer
+  */
+
+#sidedrawer.active {
+  transform: translate(200px);
+}
+
+/**
+  * Header CSS
+  */
+
+.sidedrawer-toggle {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 31px;
+  margin-right: 18px;
+  border-radius: 50%;
+  width: 31px;
+  text-align: center;
+  display: inline-block;
+  height: 31px;
+}
+
+.sidedrawer-toggle:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, .27);
+  text-decoration: none;
+}
+
+.appbar-brand {
+  color: #fff;
+  font-size: 20px;
+}
+
+.octicon-chevron-right {
+  font-size: 20px;
+  margin-left: 0.5em;
+}
+
+/**
+  * Footer CSS
+  */
+
+#footer {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+[class*=" icon-"], [class^=icon-] {
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.icon-keyboard-arrow-right:before {
+  content: "\e604"
+}
+
+/**
+  * Side drawer CSS
+  */
+
+#sidedrawer-brand {
+  padding-left: 20px;
+}
+
+#sidedrawer-brand .mui--text-title {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sidedrawer ul {
+  list-style: none;
+}
+
+.sidedrawer p {
+  margin: 0;
+}
+
+.sidedrawer, .sidedrawer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidedrawer li.toctree-l1 a {
+  padding-left: 16px;
+}
+
+.sidedrawer li.toctree-l2 a {
+  padding-left: 32px;
+}
+
+.sidedrawer li.toctree-l3 a {
+  padding-left: 48px;
+}
+
+.sidedrawer li.toctree-l4 a {
+  padding-left: 64px;
+}
+
+.sidedrawer li, .sidedrawer .caption {
+  margin: 0;
+  display: block;
+}
+
+.sidedrawer li a {
+  display: block;
+  cursor: pointer;
+}
+
+.sidedrawer li a.current {
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.sidedrawer li a:hover {
+  background-color: #E0E0E0;
+}
+
+.sidedrawer li a {
+  padding: 8px 0;
+}
+
+.sidedrawer .caption {
+  font-weight: 700;
+  padding: 8px 16px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #F0F0F0;
+}
+
+.sidedrawer ul {
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.sidedrawer .element-hidden {
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+/**
+  * TOC
+  */
+
+#toc {
+  float: right;
+  margin: 1em;
+  min-width: 50px;
+  max-width: 400px;
+}
+
+#toc ul {
+  padding: 0;
+  margin: 0 0 0 2em;
+  list-style-type: decimal;
+}
+
+#toc .toc-heading {
+  font-size: 16px;
+  margin: 0.5em;
+  text-align: center;
+}
+
+#toc .toc-heading h4 {
+  font-weight: 700;
+  display: inline;
+}
+
+#toc-hide::before {
+  content: "[";
+}
+
+#toc-hide::after {
+  content: "]";
+}
+
+/**
+  * Main 
+  */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+img {
+  max-width: 90%;
+  max-height: 40em;
+}
+
+.row>h1 {
+  border-bottom: 1px solid #eee;
+}
+
+a.headerlink {
+  display: inline-block;
+  /* Offset to avoid appbar cover the anchor text. */
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+a.headerlink:link, a.headerlink:hover, a.headerlink:visited, a.headerlink:active {
+  text-decoration: none;
+  visibility: hidden;
+}
+
+a.headerlink:hover {
+  visibility: visible;
+}
+
+.index-content {
+  margin: 0 20px;
+}
+
+code, kbd, pre, samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+}
+
+pre {
+  padding: 1em;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 95%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 3px
+}
+
+small {
+  font-size: 85%;
+}
+
+blockquote {
+  margin: 0.8em 0;
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+blockquote blockquote {
+  padding-right: 0;
+}
+
+span.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em
+}
+
+.label-primary {
+  background-color: #2196f3
+}
+
+.space-bottom {
+  height: 2.5rem;
+}
+
+.category {
+  font-size: 50%
+}
+
+.category span+span {
+  margin-left: 1em;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.last-update {
+  color: #999999;
+  font-size: 85%;
+  margin-top: 20px;
+}
+
+.rst-content p.caption {
+  font-size: 1.5em;
+}
+
+.rst-content {
+  margin-bottom: 1em;
+}
+
+.admonition {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+  border-left: 5px gray solid;
+}
+
+/*
+.admonition:after, .admonition:before {
+  content: " ";
+  display: table
+}
+
+.admonition:after {
+  clear: both
+}
+*/
+
+.admonition-title {
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.admonition.warning, .admonition.attention {
+  border-left-color: #FFCA28;
+  background-color: #FFF8E1;
+}
+
+.admonition.warning .admonition-title, .admonition.attention .admonition-title {
+  color: #FFB300;
+}
+
+.admonition.seealso, .admonition.hint, .admonition.note {
+  border-left-color: #009688;
+  background-color: #E0F2F1;
+}
+
+.admonition.seealso .admonition-title, .admonition.hint .admonition-title, .admonition.note .admonition-title {
+  color: #00897B;
+}
+
+.admonition.tip {
+  border-left-color: #4CAF50;
+  background-color: #E8F5E9;
+}
+
+.admonition.tip .admonition-title {
+  color: #43A047;
+}
+
+.admonition.error, .admonition.caution, .admonition.danger {
+  border-left-color: #F44336;
+  background-color: #FFEBEE;
+}
+
+.admonition.error .admonition-title, .admonition.caution .admonition-title, .admonition.danger .admonition-title {
+  color: #E53935;
+}
+
+span.brackets::before, .footnote-reference.brackets::before {
+  content: '[';
+}
+
+span.brackets::after, .footnote-reference.brackets::after {
+  content: ']';
+}
+
+.footnote-reference {
+  font-size: 0.8em;
+  top: -0.5em;
+  position: relative;
+}
+
+dl.footnote {
+  border-top: 1px #ccc solid;
+  padding-top: 1em;
+  margin-top: 1.5em;
+}
+
+.highlighted {
+  background: #F1C40F;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 6px;
+}
+
+ul.search {
+  list-style: none;
+  padding-left: 0;
+}
+.search li {
+  padding: 1em 0;
+}
+.search li a {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+.search li + li {
+  border-top: 1px #c0c0c0 solid;
+}

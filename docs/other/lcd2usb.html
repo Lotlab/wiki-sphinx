@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LCD2USB使用说明 &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="GH60相关" href="gh60-related.html" /> 
+</head>
+
+<body>
+  <header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">LCD2USB使用说明</span>
+
+            
+<div role="search" class="mui--pull-right search-box">
+  <form class="mui-form--inline" action="../search.html" method="get">
+    <div class="mui-textfield mui--align-middle">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1">
+  <div id="sidedrawer-brand" class="mui--appbar-line-height">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble/ble4100.html">BLE4100套件使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/build-guide.html">LotKB固件编译移植指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/lot60-ble.html">Lot60-BLE 使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LCD2USB使用说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">硬件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">LCD2USB模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">安装驱动</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aida64">使用 AIDA64 作为显示控制器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lcd-smartie">使用 LCD Smartie 作为显示控制器</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">时钟模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">时间显示页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">菜单页面</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">更新固件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">故障排除</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+          
+          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          
+            
+              
+              <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+                <div class="toc-heading">
+                  <h4>目录</h4>
+                  <a id="toc-hide" href="#">隐藏</a>
+                </div>
+                <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">LCD2USB使用说明</a><ul>
+<li><a class="reference internal" href="#id1">硬件</a></li>
+<li><a class="reference internal" href="#id2">LCD2USB模式</a><ul>
+<li><a class="reference internal" href="#id3">安装驱动</a></li>
+<li><a class="reference internal" href="#aida64">使用 AIDA64 作为显示控制器</a></li>
+<li><a class="reference internal" href="#lcd-smartie">使用 LCD Smartie 作为显示控制器</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">时钟模式</a><ul>
+<li><a class="reference internal" href="#id5">时间显示页面</a></li>
+<li><a class="reference internal" href="#id6">菜单页面</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">更新固件</a></li>
+<li><a class="reference internal" href="#id8">故障排除</a></li>
+</ul>
+</li>
+</ul>
+</div>
+              </div>
+              
+            
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <div itemprop="articleBody">
+              
+  <div class="section" id="lcd2usb">
+<h1>LCD2USB使用说明<a class="headerlink" href="#lcd2usb" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>硬件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>显示屏左右两个USB口可用于供电及传输数据的，两个USB口功能完全相同，可以随意使用。</p></li>
+<li><p>背面的右上角有一个电位器，可用于调节液晶屏的对比度。</p></li>
+<li><p>背面的右下角有三个按钮，用于时钟模式下的调节。</p></li>
+<li><p>显示屏和底板之间有一个按钮，按住这个按钮并连接电脑可更新固件。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>LCD2USB模式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>LCD2USB可以连接电脑作为状态显示器使用。</p>
+<div class="section" id="id3">
+<h3>安装驱动<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>连上电脑后，电脑会提示发现了一个新设备“LCD2USB
+Interface”。下载<a class="reference external" href="http://zadig.akeo.ie/downloads/zadig.exe">zadig</a>并打开，点击“Options”，勾上“List
+All Devices”选项，然后在下面的下拉框中选择设备“LCD2USB
+Interface”。将Driver右边的框由“WinUSB”改为“libusb-win32”，点击“Replace
+Driver”，驱动即安装完成。</p>
+<p><img alt="image0" src="../_images/lcd2usb_zadig.png" /></p>
+</div>
+<div class="section" id="aida64">
+<h3>使用 AIDA64 作为显示控制器<a class="headerlink" href="#aida64" title="永久链接至标题">¶</a></h3>
+<p>AIDA64是一款系统信息查看工具，它支持将系统信息输出至LCD2USB设备。如果你不想使用AIDA64，可以看下面的章节。</p>
+<p>打开AIDA64，选择“文件-设置”，在左边展开“硬件监视工具”，选择“LCD”。在右边的面板中点击“LCD2USB”，勾上“启用
+LCD2USB LCD
+支持”，将LCD类型改为16x2。接着，你可以在左边的“LCD选项”中更改你要显示的内容。</p>
+</div>
+<div class="section" id="lcd-smartie">
+<h3>使用 LCD Smartie 作为显示控制器<a class="headerlink" href="#lcd-smartie" title="永久链接至标题">¶</a></h3>
+<p>LCD
+Smartie是一个专门用于LCD显示的工具。你可以下载<a class="reference external" href="https://sourceforge.net/projects/lcdsmartie/files/lcdsmartie/5.4.2.92%2B%2B/LCD_Smartie_v5.4.2.92%2B%2B.zip/download">官方版本</a>亦或者是去下载汉化版本。下载完成后解压，检查“displays”文件夹里面是否含有“lcd2usb.dll”。如果没有，请下载<a class="reference external" href="https://github.com/harbaum/LCD2USB/raw/master/contrib/LCD2USB.dll">LCD2USB.dll</a>并放入displays文件夹。</p>
+<p>运行LCDSmartie，点击左下角的Setup，在“Display
+Settings”里面点击“Plugins”，将“Display
+Plugin”改为“LCD2USB.dll”（或“lcd2usbv0.dll”）；然后选择“Screen”，将“LCD
+Size”改为“16x2”。点击OK后关闭软件再重新打开，即可看到屏幕上正常显示了。</p>
+<p><img alt="image1" src="../_images/lcd2usb_01.png" /></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>时钟模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>若不使用LCD2USB的软件控制，则默认时钟模式。</p>
+<div class="section" id="id5">
+<h3>时间显示页面<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>按下任意按键可以在屏幕背光熄灭时点亮屏幕背光。</p></li>
+<li><p>短按P键则可以强制刷新温度测量值。</p></li>
+<li><p>长按P键进入可以进入设置菜单。</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>菜单页面<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>进入菜单后可以使用+-键选择子菜单，短按P键进入子菜单，长按P键退出菜单。</p>
+<p>进入子菜单后使用+-键调整当前光标指示的数值，短按P键确认并移动光标，长按P键不保存并退出子菜单。</p>
+<ul class="simple">
+<li><p>Date：调整日期</p></li>
+<li><p>Time：调整时间</p></li>
+<li><p>Temp. Offset：调整温度偏移，用于校正温度计。长按P键可以重置校正值。</p></li>
+<li><p>Light Level：调整背光亮度。</p></li>
+<li><p>Light Auto
+Off：调整背光自动关闭的时段。背光在这个时间段内会在5秒后自动关闭。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>更新固件<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>下载固件文件与<a class="reference external" href="http://wch.cn/download/WCHISPTool_Setup_exe.html">固件更新工具</a>，打开固件更新工具，选择“8位CH55X系列”，芯片型号选择“CH552”，用户程序文件选择刚刚下载好的固件文件。将LCD2USB从电脑断开，按住液晶屏后方的按钮并将LCD2USB连上电脑，然后松开按钮。这时，USB设备列表会出现一个设备，点击“下载”即可。</p>
+<p>更新完成后若LCD2USB没有恢复正常工作，可以将LCD2USB从电脑上断开并重新连接。</p>
+</div>
+<div class="section" id="id8">
+<h2>故障排除<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>字体暗淡或者字体背景太深，对比度不正确：</p>
+<blockquote>
+<div><p>使用螺丝刀调整LCD2USB背部右上角的电位器，使对比度正确。</p>
+</div></blockquote>
+</li>
+<li><p>断开电源后时间无法正常保存：</p>
+<blockquote>
+<div><p>将屏幕模块与控制模块（底板）小心的分开，更换底板上的后备电池。</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+             </div>
+             
+            </div>
+          </div>
+          
+            
+              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+                <div class="row mui-panel">
+                  <div id="vcomments"></div>
+                </div>
+              </div>
+            
+          
+      </div>
+      <div id="push"></div>
+  </div>
+  <footer id="footer">
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>

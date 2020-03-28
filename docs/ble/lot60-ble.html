@@ -1,0 +1,632 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lot60-BLE 使用指南 &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="蓝牙键盘固件更新教程" href="upgrade.html" />
+    <link rel="prev" title="LKB-Core使用说明" href="lkb-core.html" /> 
+</head>
+
+<body>
+  <header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">Lot60-BLE 使用指南</span>
+
+            
+<div role="search" class="mui--pull-right search-box">
+  <form class="mui-form--inline" action="../search.html" method="get">
+    <div class="mui-textfield mui--align-middle">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1">
+  <div id="sidedrawer-brand" class="mui--appbar-line-height">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-guide.html">LotKB固件编译移植指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lot60-BLE 使用指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">概述</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#led">LED 一览</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">使用手册</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">快速入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">默认配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">操作说明</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">开机</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">蓝牙连接设备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usb">USB 连接设备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">USB/蓝牙状态切换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">省电模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">电量显示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rgb">RGB 颜色说明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sleep">休眠键盘</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unbond-device">删除绑定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nkro">全键无冲（NKRO）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bootmagic">其他功能键（BootMagic）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">更改配列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">固件更新</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">常见问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#q-a">Q&amp;A</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">键盘的功耗与电池容量的选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">信号改善的方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">是否支持多媒体键</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">如何判断我的设备是否支持蓝牙4.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#force-sleep">如何强制休眠键盘</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-ver">如何查看键盘的硬件版本</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dfu">如何进入DFU模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">如何退出DFU模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usb-isp">如何进入USB ISP模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#led-instruction">如何改为3 LED指示灯</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">故障排除</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">通用故障排除指南</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">我的键盘无法开机了</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">按键部分（全部）混乱了</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id32">更新配列后无法正常保存配列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">更新配列后所有按键失效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows 下出现“驱动程序错误”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">有时候出现卡键的问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id35">固件发布</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#v1-0-3-1">v1.0.3.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-0-3">v1.0.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+          
+          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          
+            
+              
+              <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+                <div class="toc-heading">
+                  <h4>目录</h4>
+                  <a id="toc-hide" href="#">隐藏</a>
+                </div>
+                <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">Lot60-BLE 使用指南</a><ul>
+<li><a class="reference internal" href="#id1">概述</a><ul>
+<li><a class="reference internal" href="#led">LED 一览</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">使用手册</a><ul>
+<li><a class="reference internal" href="#id5">快速入门</a></li>
+<li><a class="reference internal" href="#id6">默认配列</a></li>
+<li><a class="reference internal" href="#id7">操作说明</a><ul>
+<li><a class="reference internal" href="#id8">开机</a></li>
+<li><a class="reference internal" href="#id9">蓝牙连接设备</a></li>
+<li><a class="reference internal" href="#usb">USB 连接设备</a></li>
+<li><a class="reference internal" href="#id10">USB/蓝牙状态切换</a></li>
+<li><a class="reference internal" href="#id11">省电模式</a></li>
+<li><a class="reference internal" href="#id12">电量显示</a></li>
+<li><a class="reference internal" href="#rgb">RGB 颜色说明</a></li>
+<li><a class="reference internal" href="#sleep">休眠键盘</a></li>
+<li><a class="reference internal" href="#unbond-device">删除绑定</a></li>
+<li><a class="reference internal" href="#nkro">全键无冲（NKRO）</a></li>
+<li><a class="reference internal" href="#bootmagic">其他功能键（BootMagic）</a></li>
+<li><a class="reference internal" href="#id15">更改配列</a></li>
+<li><a class="reference internal" href="#id16">固件更新</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">常见问题</a><ul>
+<li><a class="reference internal" href="#q-a">Q&amp;A</a><ul>
+<li><a class="reference internal" href="#id18">键盘的功耗与电池容量的选择</a></li>
+<li><a class="reference internal" href="#id20">信号改善的方法</a></li>
+<li><a class="reference internal" href="#id21">是否支持多媒体键</a></li>
+<li><a class="reference internal" href="#id22">如何判断我的设备是否支持蓝牙4.0</a></li>
+<li><a class="reference internal" href="#force-sleep">如何强制休眠键盘</a></li>
+<li><a class="reference internal" href="#hardware-ver">如何查看键盘的硬件版本</a></li>
+<li><a class="reference internal" href="#dfu">如何进入DFU模式</a></li>
+<li><a class="reference internal" href="#id25">如何退出DFU模式</a></li>
+<li><a class="reference internal" href="#usb-isp">如何进入USB ISP模式</a></li>
+<li><a class="reference internal" href="#led-instruction">如何改为3 LED指示灯</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id28">故障排除</a><ul>
+<li><a class="reference internal" href="#id29">通用故障排除指南</a></li>
+<li><a class="reference internal" href="#id30">我的键盘无法开机了</a></li>
+<li><a class="reference internal" href="#id31">按键部分（全部）混乱了</a></li>
+<li><a class="reference internal" href="#id32">更新配列后无法正常保存配列</a></li>
+<li><a class="reference internal" href="#id33">更新配列后所有按键失效</a></li>
+<li><a class="reference internal" href="#windows">Windows 下出现“驱动程序错误”</a></li>
+<li><a class="reference internal" href="#id34">有时候出现卡键的问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id35">固件发布</a><ul>
+<li><a class="reference internal" href="#v1-0-3-1">v1.0.3.1</a></li>
+<li><a class="reference internal" href="#v1-0-3">v1.0.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+              </div>
+              
+            
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <div itemprop="articleBody">
+              
+  <div class="section" id="lot60-ble">
+<h1>Lot60-BLE 使用指南<a class="headerlink" href="#lot60-ble" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>Lot60-BLE
+是一款低功耗蓝牙双模键盘。其固件底层使用了TMK作为键盘功能核心，几乎完全实现了TMK功能 <a class="footnote-reference brackets" href="#id36" id="id2">1</a>。其采用了与GH60完全一致的按键阵列，使其配列文件与GH60几乎完全兼容 <a class="footnote-reference brackets" href="#id37" id="id3">2</a>。</p>
+<div class="section" id="led">
+<h3>LED 一览<a class="headerlink" href="#led" title="永久链接至标题">¶</a></h3>
+<p>Lot60-BLE 包含了1个CapsLock LED，和一个RGB LED
+状态指示灯（或3个单色LED状态指示灯）。</p>
+<p>RGB 状态指示灯位于Esc按键处，使用贴片的LED灯，故需要使用RGB轴。</p>
+<p>如果不想使用RGB轴，可以放弃这个LED灯，转而使用位于按键1, 2,
+3处的LED指示灯（参见：<a class="reference internal" href="#led-instruction"><span class="std std-ref">如何改为3 LED指示灯</span></a>）。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>使用手册<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>快速入门<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>（如果购买的是散件）按照线路板上的标识，将两个芯片焊接到线路板上，并焊接USB口。</p></li>
+<li><p>将电池插入电池插口。注意电池的线序，红色线对应“+”标记，黑色线对应“-”标记。</p></li>
+<li><p>使用USB线连接到你的电脑。如果电脑能够成功的识别到名字类似“Lot60.X”的设备，说明USB芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</p></li>
+<li><p>如果你想使用3个状态指示灯而不是一个RGB状态指示灯，那么请参考：<a class="reference internal" href="#led-instruction"><span class="std std-ref">如何改为3 LED指示灯</span></a> 。</p></li>
+<li><p>组装你的键盘。注意要先装定位板，再装轴哦~</p></li>
+<li><p>好了，你的Lot60-BLE键盘已经组装完成了。插上USB尝试一下吧！</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>默认配列<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="figure align-default" id="id40">
+<img alt="默认配列图" src="../_images/keymap.png" />
+<p class="caption"><span class="caption-text">默认配列图</span><a class="headerlink" href="#id40" title="永久链接至图片">¶</a></p>
+</div>
+<p>图中Fn1是休眠，Fn2是切换设备。按住Fn0键会临时启用第2层，即<code class="docutils literal notranslate"><span class="pre">Fn0+Tab</span></code>切换USB和蓝牙设备，<code class="docutils literal notranslate"><span class="pre">Fn0+CapsLock</span></code>休眠键盘。</p>
+</div>
+<div class="section" id="id7">
+<h3>操作说明<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h4>开机<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<p>同时按下<code class="docutils literal notranslate"><span class="pre">Space(空格)+U</span></code>，直到LED指示灯亮起即可开机。</p>
+<p>插入USB的同时键盘会自动开机。</p>
+</div>
+<div class="section" id="id9">
+<h4>蓝牙连接设备<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code class="docutils literal notranslate"><span class="pre">Lot60.X_XXXXXX</span></code>的设备，使用你的主机设备连接此蓝牙设备，若提示输入配对码，请在键盘上输入配对码即可。</p>
+</div>
+<div class="section" id="usb">
+<h4>USB 连接设备<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h4>
+<p>直接将USB线缆插入到键盘的USB接口，键盘即自动切换至USB模式。这时候就可以使用USB模式输入了。</p>
+</div>
+<div class="section" id="id10">
+<h4>USB/蓝牙状态切换<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<p>在默认配列下，按下<code class="docutils literal notranslate"><span class="pre">Fn0+Tab</span></code>，即可在USB和蓝牙两种模式下切换。</p>
+</div>
+<div class="section" id="id11">
+<h4>省电模式<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<p>在没有接入USB电源的情况下，键盘处于省电模式。</p>
+<p>在省电模式下，所有的指示灯仅在变化后亮起5秒，然后熄灭。键盘在无操作15秒后转入慢速扫描模式，无操作600秒后自动睡眠。</p>
+<p>慢速扫描模式下，按键检测将可能略有延迟。在慢速扫描模式下按任意按键即可恢复到快速扫描模式。</p>
+<p>自动睡眠后，按下键盘的任意按键即可再次唤醒。</p>
+</div>
+<div class="section" id="id12">
+<h4>电量显示<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<p>在新版本的iOS、安卓和Windows上，应该能够正确的显示蓝牙设备的电量百分比。</p>
+<p>由于测量方式可能有误差，电量百分比可能无法达到100%或者低至0%，这是正常现象。电量百分比仅供参考。</p>
+<p>对于安卓手机，如果没有正确的显示电量，可以尝试下载BatON软件来获取蓝牙设备电量。</p>
+</div>
+<div class="section" id="rgb">
+<h4>RGB 颜色说明<a class="headerlink" href="#rgb" title="永久链接至标题">¶</a></h4>
+<p>注意显示的颜色可能和实际颜色有略微色差</p>
+<ul class="simple">
+<li><p>■白色：无连接</p></li>
+<li><p>■青色：蓝牙已连接</p></li>
+<li><p>■天蓝色：USB已连接</p></li>
+<li><p>■橙色：充电中</p></li>
+<li><p>■绿色：充电完毕</p></li>
+<li><p>■黄色：输入配对密码</p></li>
+<li><p>■紫红色：配对密码输入完毕</p></li>
+<li><p>■紫色：休眠</p></li>
+</ul>
+</div>
+<div class="section" id="sleep">
+<span id="id13"></span><h4>休眠键盘<a class="headerlink" href="#sleep" title="永久链接至标题">¶</a></h4>
+<p>在默认配列下，按下<code class="docutils literal notranslate"><span class="pre">Fn0+CapsLock</span></code>，即可让键盘进入休眠状态。</p>
+<p>如果键盘按键错乱导致无法休眠，请尝试 <a class="reference internal" href="#force-sleep"><span class="std std-ref">强制休眠键盘</span></a></p>
+<p>手动休眠后，需要手工按下<code class="docutils literal notranslate"><span class="pre">Space+U</span></code>才能再次唤醒。</p>
+</div>
+<div class="section" id="unbond-device">
+<span id="id14"></span><h4>删除绑定<a class="headerlink" href="#unbond-device" title="永久链接至标题">¶</a></h4>
+<p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试以下删除所有绑定。</p>
+<ol class="arabic simple">
+<li><p>手动 <a class="reference internal" href="#sleep"><span class="std std-ref">休眠键盘</span></a></p></li>
+<li><p>在开机时按下<code class="docutils literal notranslate"><span class="pre">Space+E</span></code>即可删除绑定。（即在休眠后，按下Space+U+E开机）</p></li>
+</ol>
+</div>
+<div class="section" id="nkro">
+<h4>全键无冲（NKRO）<a class="headerlink" href="#nkro" title="永久链接至标题">¶</a></h4>
+<p>此键盘支持NKRO（全键无冲）模式，但默认不启用全键无冲。全键无冲仅在USB模式下才可使用。</p>
+<p>在键盘开机时按下<code class="docutils literal notranslate"><span class="pre">Space+N</span></code>（即在休眠后，按下Space+U+N开机），即可切换全键无冲的状态。</p>
+</div>
+<div class="section" id="bootmagic">
+<h4>其他功能键（BootMagic）<a class="headerlink" href="#bootmagic" title="永久链接至标题">¶</a></h4>
+<p>以下是所有的开机时功能键的列表，你可以在开机时同时按下Space+下面的键来实现对应的功能。(即，在休眠后同时按下Space+U+下面的键开机，或按住Space+下面的键再插入USB开机。)</p>
+<p>需要注意的是，下面的按键全部都指的是当前配列的第0层按键。如果你更改了配列，那么这些按键的位置可能会发生变化。</p>
+<ul class="simple">
+<li><p>E: 擦除蓝牙绑定</p></li>
+<li><p>Esc：跳过Bootmagic</p></li>
+<li><p>Backspace：重置eeconfig</p></li>
+<li><p>B: 进入Bootloader</p></li>
+<li><p>D：切换Debug模式</p>
+<ul>
+<li><p>X：切换阵列Debug模式</p></li>
+<li><p>K：切换键盘Debug模式</p></li>
+<li><p>M：切换鼠标Debug模式</p></li>
+</ul>
+</li>
+<li><p>LCtrl：交换capslock和左ctrl</p></li>
+<li><p>CapsLock: 将capslock用作ctrl</p></li>
+<li><p>LAlt：交换LAlt和LGUI</p></li>
+<li><p>RAlt: 交换RAlt和RGUI</p></li>
+<li><p>LGUI：禁用GUI按钮</p></li>
+<li><p>`(1左边那个, Grave): 交换Esc和Grave</p></li>
+<li><p>\: 交换:raw-latex:<cite>和Backspace</cite></p></li>
+<li><p>N：切换NKRO状态</p></li>
+<li><p>0~7：设置默认层为对应数字的层</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>更改配列<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+<p>在这里，我假设你已经熟悉如何使用 <a class="reference external" href="https://www.keyboard-layout-editor.com/">Keyboard layout
+editor(KLE)</a> 和 <a class="reference external" href="https://tools.lotlab.org/tkg/">TMK Keymap
+Generator(TKG)</a>
+来创建适用于键盘的配列了。如果你从未使用过这两者，建议参考百度上面的GH60配列的相关教程作为参考。</p>
+<p>因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的TKG无法满足要求。请使用上面给出的链接中的TKG，里面包含了这块自定义键盘的额外两颗功能按键。</p>
+<p>在TKG中配置好配列并点击下载配列，将配列的eep文件下载后，将键盘使用USB连接到电脑。打开
+<a class="reference external" href="https://github.com/Lotlab/nrf52-keyboard/releases">配列下载工具(KeymapDownloader.exe)</a>
+，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。</p>
+</div>
+<div class="section" id="id16">
+<h4>固件更新<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h4>
+<p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">通用固件更新教程</span></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>常见问题<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<div class="section" id="q-a">
+<h3>Q&amp;A<a class="headerlink" href="#q-a" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id18">
+<h4>键盘的功耗与电池容量的选择<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
+<p>此键盘的典型工作功耗为0.4ma <a class="footnote-reference brackets" href="#id38" id="id19">3</a>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
+<blockquote>
+<div><p>t(天) = C(容量, mah) * 2 / n (每日使用时长,h)</p>
+<p>例如，使用500mah的电池，每日使用10小时的话，键盘约能使用100天。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id20">
+<h4>信号改善的方法<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
+<p>蓝牙的信号可能受到多方面因素的影响。你可以尝试以下方法来改善蓝牙信号：</p>
+<ul class="simple">
+<li><p>使用非金属外壳、非金属定位板与非金属桌面</p></li>
+<li><p>将键盘和主机尽可能的靠近</p></li>
+<li><p>适当降低2.4GHZ的WiFi的发射功率</p></li>
+<li><p>减少空间内其他WiFi和蓝牙设备的存在</p></li>
+<li><p>不要触摸蓝牙模块的天线位置</p></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h4>是否支持多媒体键<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
+<p>支持。</p>
+<p>系统键（关机、休眠、重启）因使用较少未能测试，若无法使用请联系我。</p>
+</div>
+<div class="section" id="id22">
+<h4>如何判断我的设备是否支持蓝牙4.0<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h4>
+<p>若您在使用手机。如果您的手机使用的是Android5.0及以上系统，或 iOS 7
+及以上系统，或 Windows Mobile 10系统，则应当支持蓝牙4.0。</p>
+<p>若您在您的计算机上使用Windows。请查看您的设备管理器，寻找“蓝牙
+LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用体验。</p>
+<p>MacOS应该支持，但没有实体设备测试。有报告称MacOS蓝牙电量无法正常显示。</p>
+</div>
+<div class="section" id="force-sleep">
+<span id="id23"></span><h4>如何强制休眠键盘<a class="headerlink" href="#force-sleep" title="永久链接至标题">¶</a></h4>
+<p>如果休眠按键不起作用了，那么你可能会需要知道如何强制休眠键盘。</p>
+<ul class="simple">
+<li><p>方法1：将键盘放置15分钟，其会自动转入休眠状态。</p></li>
+<li><p>方法2：按下键盘背面的RESET按钮，键盘即进入休眠状态。</p></li>
+<li><p>方法3：拔下键盘的USB线和电池，再重新插上。</p></li>
+</ul>
+</div>
+<div class="section" id="hardware-ver">
+<span id="id24"></span><h4>如何查看键盘的硬件版本<a class="headerlink" href="#hardware-ver" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>方法1：查看设备名称，名称为Lot60.X，X即为你的硬件版本。</p></li>
+<li><p>方法2：键盘PCB背面空格下方，写着“Lot60-BLE
+REV.X”，X即为你的硬件版本。</p></li>
+</ul>
+</div>
+<div class="section" id="dfu">
+<h4>如何进入DFU模式<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>方法1：</p>
+<ol class="arabic simple">
+<li><p>将<a class="reference external" href="#休眠键盘">键盘休眠</a>；</p></li>
+<li><p>在唤醒的同时按下<code class="docutils literal notranslate"><span class="pre">Space+B</span></code>；</p></li>
+<li><p>蓝牙会搜索到一个名为<code class="docutils literal notranslate"><span class="pre">DFUTarg</span></code>的设备，表明已经进入DFU模式了。</p></li>
+</ol>
+</li>
+<li><p>方法2：</p>
+<ol class="arabic simple">
+<li><p>将键盘翻到背面，找到GPIO0接口。</p></li>
+<li><p>使用镊子将GPIO0接口与GND接口连接。</p></li>
+<li><p>将键盘的电池断开并重新连接，或按下RESET按钮使键盘强制重启。</p></li>
+<li><p>蓝牙会搜索到一个名为<code class="docutils literal notranslate"><span class="pre">DFUTarg</span></code>的设备，表明已经进入DFU模式了。进入DFU模式后即可断开GPIO0和GND的连接。</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h4>如何退出DFU模式<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h4>
+<p>在DFU模式下无操作1分半钟后即可自动退出DFU模式。</p>
+</div>
+<div class="section" id="usb-isp">
+<h4>如何进入USB ISP模式<a class="headerlink" href="#usb-isp" title="永久链接至标题">¶</a></h4>
+<ol class="arabic simple">
+<li><p>将键盘与电脑连接的USB线断开。</p></li>
+<li><p>按住键盘背面的K1按钮 <a class="footnote-reference brackets" href="#id39" id="id26">4</a>，再使用USB线连上电脑。</p></li>
+<li><p>听到发现新设备的声音后，即可松开按钮。</p></li>
+</ol>
+</div>
+<div class="section" id="led-instruction">
+<span id="id27"></span><h4>如何改为3 LED指示灯<a class="headerlink" href="#led-instruction" title="永久链接至标题">¶</a></h4>
+<p>将Esc位置的RGB灯焊下，然后在1-3按键位置上焊上轴灯。接着刷新底部提供的3LED灯版本的蓝牙升级包，即可将键盘的指示灯改为3LED指示灯。</p>
+<p>在此模式下，灯光说明如下：
+- 1号位置：蓝牙指示灯，当蓝牙成功连接后亮起。
+- 2号位置：充电指示灯，当前在充电中亮起，充满后熄灭。
+- 3号位置：USB指示灯，当前处于USB模式则亮起</p>
+</div>
+</div>
+<div class="section" id="id28">
+<h3>故障排除<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id29">
+<h4>通用故障排除指南<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h4>
+<p>如果你的键盘遇到了无法正常工作的问题，请按下列步骤进行：</p>
+<ol class="arabic simple">
+<li><p>将键盘关机并重新开机。如果遇到了蓝牙方面的问题，可以尝试 <a class="reference internal" href="#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a></p></li>
+<li><p>将键盘使用USB连接到电脑，观察电脑的新增硬件状态和键盘的工作状态指示灯。若电脑提示发现新硬件，并且指示灯提示工作于USB状态的话，则说明主控硬件没有出现问题。</p></li>
+<li><p>如果遇到了按键不正常的情况，请将键盘关机。重新开机时，按下<code class="docutils literal notranslate"><span class="pre">Space+BackSpace</span></code>重置EEPROM的设定。</p></li>
+</ol>
+</div>
+<div class="section" id="id30">
+<h4>我的键盘无法开机了<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h4>
+<p>尝试使用USB接入电脑，看看是否能够正常工作？如果可以的话，可能是电池没电了，需要充电。</p>
+</div>
+<div class="section" id="id31">
+<h4>按键部分（全部）混乱了<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h4>
+<p>可能是你选择了不正确的默认层。可以尝试以下步骤恢复默认层的设置：</p>
+<ol class="arabic simple">
+<li><p>先 <a class="reference internal" href="#sleep"><span class="std std-ref">休眠键盘</span></a></p></li>
+<li><p>在开机时按 <code class="docutils literal notranslate"><span class="pre">Space+BackSpace</span></code> 重置默认层的设定。</p></li>
+</ol>
+</div>
+<div class="section" id="id32">
+<h4>更新配列后无法正常保存配列<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h4>
+<p>重启后再次更新即可。</p>
+</div>
+<div class="section" id="id33">
+<h4>更新配列后所有按键失效<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h4>
+<p>使用配列下载工具将自定义配列清空，使用内置的配列试试。</p>
+</div>
+<div class="section" id="windows">
+<h4>Windows 下出现“驱动程序错误”<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h4>
+<ol class="arabic simple">
+<li><p>在Windows的设备管理器中删除这个设备，或取消这个设备的绑定</p></li>
+<li><p>重启你的电脑</p></li>
+<li><p><a class="reference internal" href="#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a></p></li>
+<li><p>在电脑上尝试重新连接</p></li>
+</ol>
+</div>
+<div class="section" id="id34">
+<h4>有时候出现卡键的问题<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h4>
+<p>这是蓝牙信号不好的原因。请查看上面的蓝牙信号的改善方法来改善蓝牙信号。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h2>固件发布<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
+<p>请参考 <a class="reference internal" href="upgrade.html"><span class="doc">通用固件更新教程</span></a> 更新你的键盘固件。</p>
+<div class="section" id="v1-0-3-1">
+<h3>v1.0.3.1<a class="headerlink" href="#v1-0-3-1" title="永久链接至标题">¶</a></h3>
+<p>此版本更新于2019年12月2日，是 Rev.F 出厂版本的固件。</p>
+<p>此版本改善了误触按键导致键盘开机的问题。</p>
+<p>请对应硬件版本更新软件。可以参考
+<a class="reference internal" href="#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a>
+部分来确定此键盘的硬件版本。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_12_02-db6e8ae.zip">Rev.E
+蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f-nrf52-2019_12_02-db6e8ae.zip">Rev.F
+蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f-ch554-2019_12_02-db6e8ae.hex">Rev.F
+出厂USB固件</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip">Rev.E
+3LED灯版本蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip">Rev.F
+3LED灯版本蓝牙升级包</a></p></li>
+</ul>
+</div>
+<div class="section" id="v1-0-3">
+<span id="section-1"></span><h3>v1.0.3<a class="headerlink" href="#v1-0-3" title="永久链接至标题">¶</a></h3>
+<p>此版本是 Rev.E 出厂版本的固件。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip">Rev.E
+蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">Rev.E
+出厂USB固件</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">Rev.E
+3LED灯版本蓝牙升级包</a></p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id36"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>没有实现的TMK功能包括：Command Key、鼠标键(固件空间不够)和LED灯效(这个键盘没灯)</p>
+</dd>
+<dt class="label" id="id37"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>几乎完全兼容：两者格式是一致的，但存在部分Fn功能的差异。若直接使用tmk的eep文件，则会造成休眠和设备切换两颗功能键不可用。</p>
+</dd>
+<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id19">3</a></span></dt>
+<dd><p>典型功耗为0.4ma:
+使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。</p>
+</dd>
+<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id26">4</a></span></dt>
+<dd><p>K1按钮位于键盘背面的下方偏右位置，即在下方左ALT键的背面附近。若没有焊接此按钮，也可以使用镊子或其他导电的东西短接K1的上下两个脚，用来模拟按钮按下。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+             </div>
+             
+            </div>
+          </div>
+          
+            
+              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+                <div class="row mui-panel">
+                  <div id="vcomments"></div>
+                </div>
+              </div>
+            
+          
+      </div>
+      <div id="push"></div>
+  </div>
+  <footer id="footer">
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BLE4100套件使用说明 &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="LotKB固件编译移植指南" href="build-guide.html" />
+    <link rel="prev" title="欢迎来到 Lotlab Wiki !" href="../index.html" /> 
+</head>
+
+<body>
+  <header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">BLE4100套件使用说明</span>
+
+            
+<div role="search" class="mui--pull-right search-box">
+  <form class="mui-form--inline" action="../search.html" method="get">
+    <div class="mui-textfield mui--align-middle">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1">
+  <div id="sidedrawer-brand" class="mui--appbar-line-height">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙相关</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BLE4100套件使用说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用手册</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">快速入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">按键说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">电量显示</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">升级固件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">安装手册</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">焊接教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">安装教程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">固件发布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">高级应用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">源代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keymap">KeyMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">丝印</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">线路图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">修改/编译程序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-guide.html">LotKB固件编译移植指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE 使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+          
+          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          
+            
+              
+              <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+                <div class="toc-heading">
+                  <h4>目录</h4>
+                  <a id="toc-hide" href="#">隐藏</a>
+                </div>
+                <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">BLE4100套件使用说明</a><ul>
+<li><a class="reference internal" href="#id1">使用手册</a><ul>
+<li><a class="reference internal" href="#id2">快速入门</a></li>
+<li><a class="reference internal" href="#id3">按键说明</a></li>
+<li><a class="reference internal" href="#id4">电量显示</a></li>
+<li><a class="reference internal" href="#id6">升级固件</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">安装手册</a><ul>
+<li><a class="reference internal" href="#id9">焊接教程</a></li>
+<li><a class="reference internal" href="#id10">安装教程</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">固件发布</a></li>
+<li><a class="reference internal" href="#id12">高级应用</a><ul>
+<li><a class="reference internal" href="#id13">源代码</a></li>
+<li><a class="reference internal" href="#keymap">KeyMap</a></li>
+<li><a class="reference internal" href="#id14">丝印</a></li>
+<li><a class="reference internal" href="#id15">线路图</a></li>
+<li><a class="reference internal" href="#id16">修改/编译程序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+              </div>
+              
+            
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <div itemprop="articleBody">
+              
+  <div class="section" id="ble4100">
+<h1>BLE4100套件使用说明<a class="headerlink" href="#ble4100" title="永久链接至标题">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此页面所描述的硬件现已停产，建议使用LKB-Core代替此套件。
+以下信息仅用作存档查阅，请勿将下列信息与新版本产品混淆。</p>
+</div>
+<div class="section" id="id1">
+<h2>使用手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>快速入门<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>取出线路板并安装到键盘上</p></li>
+<li><p>将键盘上的3个LED灯拆下并旋转180度后安上</p></li>
+<li><p>安装上电池和充电接口</p></li>
+<li><p>NumLock灯亮起，使用手机连接名称为“BLE4100”或者是“Nordic_Keyboard”的蓝牙设备</p></li>
+<li><p>尽情享用吧！</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>按键说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>默认情况下，按键与原键盘相同。</p>
+<ul class="simple">
+<li><p>使用Fn + Pause Break 键可以使键盘休眠</p></li>
+<li><p>休眠状态下按下Esc键可以唤醒键盘</p></li>
+<li><p>唤醒键盘时按住Fn键可以进入DFU模式</p></li>
+<li><p>唤醒键盘时按住2键可以清除蓝牙配对信息</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>电量显示<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
+<p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id18" id="id5">1</a> 这个应用来查看电量。电量信息仅供参考。</p>
+</div>
+<div class="section" id="id6">
+<h3>升级固件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>你可能需要升级固件来获得新功能或者修复已有的BUG，升级包可以在页面最下方的固件发布处找到。</p>
+<blockquote>
+<div><p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong></p>
+<p>请在升级前确认升级包是由可信的人员提供的。</p>
+<p>升级包可能包含程序(Application)、蓝牙栈(Soft Device)和引导程序(Boot
+Loader)，刷入错误的蓝牙栈和引导程序将会使DFU功能完全不可用。在这种情况下，您必须使用SWD接口烧录正确的蓝牙栈、引导程序和程序，才能使键盘恢复正常工作。</p>
+<p>如果您刷入了错误的程序(Application)无法进入DFU模式，您可以将电池卸下，按住Fn键再接上电池强制进入DFU模式。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>使用手机下载并打开 nRF Connect <a class="footnote-reference brackets" href="#id19" id="id7">2</a> 程序</p></li>
+<li><p>按下Fn+PauseBreak休眠键盘，然后按下Fn+Esc唤醒键盘进入DFU模式</p></li>
+<li><p>点击nRF
+Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做DfuTarg的蓝牙设备</p></li>
+<li><p>点击CONNCET按钮，等待连接成功</p></li>
+<li><p>点击右上角的DFU按钮，选择第一个Distribution
+packet(ZIP)，然后选择升级包</p></li>
+<li><p>静静的等待升级完毕即可</p></li>
+</ol>
+<p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>安装手册<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h3>焊接教程<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>类型</p></th>
+<th class="head"><p>丝印</p></th>
+<th class="head"><p>值</p></th>
+<th class="head"><p>索引</p></th>
+<th class="head"><p>备注</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>模块</p></td>
+<td><p>nRF51822-02</p></td>
+<td><p>U1</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>芯片</p></td>
+<td><p>57BA</p></td>
+<td><p>TP4057</p></td>
+<td><p>U2</p></td>
+<td><p>焊盘上的白色小圆点在57BA字样左边</p></td>
+</tr>
+<tr class="row-even"><td><p>芯片</p></td>
+<td><p>4A2D</p></td>
+<td><p>RT9193-33GB</p></td>
+<td><p>U3</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>LED</p></td>
+<td><p>蓝色</p></td>
+<td><p>D1</p></td>
+<td><p>充满指示灯</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LED</p></td>
+<td><p>红色</p></td>
+<td><p>D2</p></td>
+<td><p>充电指示灯</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>电阻</p></td>
+<td><p>102</p></td>
+<td><p>1k</p></td>
+<td><p>R1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>电阻</p></td>
+<td><p>152</p></td>
+<td><p>1.5k</p></td>
+<td><p>R2</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>电阻</p></td>
+<td><p>104</p></td>
+<td><p>100k</p></td>
+<td><p>R5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>电阻</p></td>
+<td><p>225</p></td>
+<td><p>2.2M</p></td>
+<td><p>R4</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>电阻</p></td>
+<td><p>106</p></td>
+<td><p>10M</p></td>
+<td><p>R3</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>电容</p></td>
+<td><p>22nF</p></td>
+<td><p>C5</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>电容</p></td>
+<td><p>1uF</p></td>
+<td><p>C1-C3</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>电容</p></td>
+<td><p>22uF</p></td>
+<td><p>C4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>排阻</p></td>
+<td><p>152</p></td>
+<td><p>1.5K</p></td>
+<td><p>RP1</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>取出线路板和原件包，对照上面的BOM表进行焊接即可。</p>
+</div>
+<div class="section" id="id10">
+<h3>安装教程<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>卸下键盘后面的螺丝，取下上面板</p></li>
+<li><p>将键盘线路板从下面翻转180度，取出塑料片和铜箔（如果有），拆下主控板的螺丝</p></li>
+<li><p>用电烙铁拆下原来的主控板，并焊上新的主控板。原有的地线（蓝色粗线）可以拆下不接。</p></li>
+<li><p>将键盘上的3个LED灯拆下并旋转180度后安上（即调换正负极）</p></li>
+<li><p>将电池焊接到BATT接口处。这时，NumLock灯会亮起，并能搜索到蓝牙键盘。</p></li>
+<li><p>自己设计充电接口并焊接到POWER接口处。</p></li>
+<li><p>将新的主控板安装到原来的位置，将塑料片放回去（但不要放铜箔），盖上上面板，拧好螺丝。</p></li>
+<li><p>安装完成！</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>固件发布<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>发布日期：2017年5月28日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul>
+<li><p>修正第一排按键有时候出现其他键的问题</p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>发布日期：2017年5月25日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul class="simple">
+<li><p>省电优化，10分钟没有输入将自动关机</p></li>
+</ul>
+<p>这个版本稍微降低了一点发射功率</p>
+</li>
+</ul>
+<ul class="simple">
+<li><p>发布日期：2017年4月13日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul>
+<li><p>修正 Windows 下断开后重新连接键盘不可用的问题</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>发布日期：2017年3月20日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul>
+<li><p>增加配对密码设置</p></li>
+<li><p>修正在 iOS 系统下断开连接后不能自动重连的问题</p></li>
+</ul>
+</li>
+</ul>
+<p>这个版本默认不清除配对信息，按住2+Esc开机即可清除原来的配对信息</p>
+<ul class="simple">
+<li><p>发布日期：2017年2月25日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul>
+<li><p>增加Fn+Alt为Win键</p></li>
+<li><p>修正错误</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>发布日期：2017年2月21日</p></li>
+<li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
+<li><p>变更日志：</p>
+<ul>
+<li><p>第一个版本</p></li>
+<li><p>支持DFU升级</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>高级应用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h3>源代码<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>访问<a class="reference external" href="https://github.com/Lotlab/nrf51822-keyboard">Github上的项目主页</a>以获取源代码。</p>
+<p>源代码以<a class="reference external" href="http://www.gnu.org/licenses/gpl-3.0.html">GPL
+v3</a>许可证授权，请在GPLv3的限制下使用本源代码。</p>
+<blockquote>
+<div><p>根据GPL
+v3协议规定，你在发布修改过的固件的同时，<strong>必须同时以原有的许可条款发布修改后的源代码</strong>，并且<strong>不能添加任何附加条款</strong>。如果你不能以原有的许可条款发布修改后的源代码，那么你将不能发布修改后的固件。</p>
+</div></blockquote>
+</div>
+<div class="section" id="keymap">
+<h3>KeyMap<a class="headerlink" href="#keymap" title="永久链接至标题">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 11%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>LINE1</p></th>
+<th class="head"><p>LINE2</p></th>
+<th class="head"><p>LINE3</p></th>
+<th class="head"><p>LINE4</p></th>
+<th class="head"><p>LINE5</p></th>
+<th class="head"><p>LINE6</p></th>
+<th class="head"><p>LINE7</p></th>
+<th class="head"><p>LINE8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H1L</p></td>
+<td><p>Esc</p></td>
+<td><p>F1</p></td>
+<td><p>F2</p></td>
+<td><p>F3</p></td>
+<td><p>F4</p></td>
+<td><p>F5</p></td>
+<td><p>F6</p></td>
+<td><p>F7</p></td>
+</tr>
+<tr class="row-odd"><td><p>H2L</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>H3L</p></td>
+<td><p>Tab</p></td>
+<td><p>Q</p></td>
+<td><p>W</p></td>
+<td><p>E</p></td>
+<td><p>R</p></td>
+<td><p>T</p></td>
+<td><p>Y</p></td>
+<td><p>U</p></td>
+</tr>
+<tr class="row-odd"><td><p>H4L</p></td>
+<td><p>CapsLock</p></td>
+<td><p>A</p></td>
+<td><p>S</p></td>
+<td><p>D</p></td>
+<td><p>F</p></td>
+<td><p>G</p></td>
+<td><p>H</p></td>
+<td><p>J</p></td>
+</tr>
+<tr class="row-even"><td><p>H5L</p></td>
+<td><p>`</p></td>
+<td><p>Z</p></td>
+<td><p>X</p></td>
+<td><p>C</p></td>
+<td><p>V</p></td>
+<td><p>B</p></td>
+<td><p>N</p></td>
+<td><p>M</p></td>
+</tr>
+<tr class="row-odd"><td><p>H1R</p></td>
+<td><p>Right</p></td>
+<td><p>Pause</p></td>
+<td><p>PtrSc</p></td>
+<td><p>NumLock</p></td>
+<td><p>ScrollLock</p></td>
+<td><p>F10</p></td>
+<td><p>F9</p></td>
+<td><p>F8</p></td>
+</tr>
+<tr class="row-even"><td><p>H2R</p></td>
+<td><p>Down</p></td>
+<td><p>Home</p></td>
+<td><p>Backspace</p></td>
+<td><p>=</p></td>
+<td><p>-</p></td>
+<td><p>0</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>H3R</p></td>
+<td><p>Up</p></td>
+<td><p>PageUp</p></td>
+<td><p>]</p></td>
+<td><p>[</p></td>
+<td><p>P</p></td>
+<td><p>O</p></td>
+<td><p>I</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>H4R</p></td>
+<td><p>Left</p></td>
+<td><p>PageDown</p></td>
+<td><p>Enter</p></td>
+<td><p>\</p></td>
+<td><p>“</p></td>
+<td><p>;</p></td>
+<td><p>L</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>H5R</p></td>
+<td><p>Space</p></td>
+<td><p>End</p></td>
+<td><p>Ins</p></td>
+<td><p>Del</p></td>
+<td><p>?</p></td>
+<td><p>&gt;</p></td>
+<td><p>&lt;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SPEC1</p></td>
+<td><p>Lalt</p></td>
+<td><p>Rshift</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SPEC2</p></td>
+<td><p>Lshift</p></td>
+<td><p>Ralt</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SPEC3</p></td>
+<td><p>Ctrl</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SPEC4</p></td>
+<td><p>Fn</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id14">
+<h3>丝印<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<div class="figure align-default" id="id21">
+<img alt="丝印层" src="../_images/ble4100_silk.png" />
+<p class="caption"><span class="caption-text">丝印层</span><a class="headerlink" href="#id21" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>线路图<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="res/ble4100-nrf.pdf">ble4100-nrf.pdf</a></p>
+</div>
+<div class="section" id="id16">
+<h3>修改/编译程序<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
+<ul class="simple">
+<li><p>main.c 70行修改蓝牙名称</p></li>
+<li><p>keymap.h 修改按键配列（是的，可以自定义！）</p>
+<ul>
+<li><p>FN15是休眠按键</p></li>
+<li><p>唤醒按键要修改wakeup_button_row_index</p></li>
+</ul>
+</li>
+<li><p>使用Keil uVision 5 来编译程序</p></li>
+</ul>
+<p>使用 nrfutil <a class="footnote-reference brackets" href="#id20" id="id17">3</a> 生成升级包（0.5.2版本）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
+</pre></div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p><a class="reference external" href="http://www.coolapk.com/apk/com.limi.baton">蓝牙设备电量 1.2.50</a>
+仅限安卓端。</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dd><p>可以到
+<a class="reference external" href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a>
+或者应用商店下载。支持IOS和安卓端。</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id17">3</a></span></dt>
+<dd><p>在Github下载
+<a class="reference external" href="https://github.com/NordicSemiconductor/pc-nrfutil/releases/tag/v0.5.2">nrfutil</a>,
+需要安装Python2.7</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+             </div>
+             
+            </div>
+          </div>
+          
+            
+              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+                <div class="row mui-panel">
+                  <div id="vcomments"></div>
+                </div>
+              </div>
+            
+          
+      </div>
+      <div id="push"></div>
+  </div>
+  <footer id="footer">
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>

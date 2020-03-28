@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LotKB固件编译移植指南 &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="LKB-Core使用说明" href="lkb-core.html" />
+    <link rel="prev" title="BLE4100套件使用说明" href="ble4100.html" /> 
+</head>
+
+<body>
+  <header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">LotKB固件编译移植指南</span>
+
+            
+<div role="search" class="mui--pull-right search-box">
+  <form class="mui-form--inline" action="../search.html" method="get">
+    <div class="mui-textfield mui--align-middle">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1">
+  <div id="sidedrawer-brand" class="mui--appbar-line-height">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LotKB固件编译移植指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">编译教程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">在线编译工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">环境搭建</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sdk">下载SDK</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">测试编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">主程序编译</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">硬件移植教程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">编辑默认配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">其他配置项目</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#config">常用config配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE 使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+          
+          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          
+            
+              
+              <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+                <div class="toc-heading">
+                  <h4>目录</h4>
+                  <a id="toc-hide" href="#">隐藏</a>
+                </div>
+                <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">LotKB固件编译移植指南</a><ul>
+<li><a class="reference internal" href="#id1">编译教程</a><ul>
+<li><a class="reference internal" href="#id2">在线编译工具</a></li>
+<li><a class="reference internal" href="#id3">环境搭建</a><ul>
+<li><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
+<li><a class="reference internal" href="#sdk">下载SDK</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
+<li><a class="reference internal" href="#id5">测试编译</a></li>
+<li><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
+<li><a class="reference internal" href="#id6">主程序编译</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">硬件移植教程</a><ul>
+<li><a class="reference internal" href="#id8">准备工作</a></li>
+<li><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
+<li><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
+<li><a class="reference internal" href="#id10">编辑默认配列</a></li>
+<li><a class="reference internal" href="#id11">其他配置项目</a><ul>
+<li><a class="reference internal" href="#config">常用config配置</a></li>
+<li><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
+<li><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+              </div>
+              
+            
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <div itemprop="articleBody">
+              
+  <div class="section" id="lotkb">
+<h1>LotKB固件编译移植指南<a class="headerlink" href="#lotkb" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>编译教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>在线编译工具<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="http://lotkb.glab.online/">http://lotkb.glab.online/</a></p>
+<p>感谢格老师提供的在线编译服务器。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此服务器上的代码暂时不是Lotlab主分支的代码</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>环境搭建<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>此固件在Windows（Msys2）和Linux下编译通过。</p>
+<div class="section" id="linux">
+<h4>Linux下环境的搭建<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
+<p>使用终端运行以下命令</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install git make sdcc <span class="c1"># 安装git make和sdcc编译工具。注意Ubuntu 18.04及之前的SDCC版本较旧，无法成功编译</span>
+wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 <span class="c1"># 下载GCC</span>
+tar xf gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 <span class="c1"># 解压gcc</span>
+mv gcc-arm-none-eabi-7-2018-q2-update/ ~/.local/ <span class="c1"># 将GCC移动到用户目录</span>
+rm gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 <span class="c1"># 删除压缩包</span>
+
+sudo apt install python3 python3-pip
+pip3 install nrfutil <span class="c1"># 安装 nrfutil</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sdk">
+<h4>下载SDK<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h4>
+<p>下载Nordic nRF SDK 15.3</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
+unzip -q nRF5_SDK_15.3.0_59ac345.zip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>克隆源码并准备源码<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Lotlab/nrf52-keyboard <span class="c1"># 克隆源码</span>
+<span class="nb">cd</span> nrf52-keyboard
+
+<span class="c1"># Linux 下修改这个</span>
+cp template/Makefile.posix.template template/Makefile.posix
+nano template/Makefile.posix <span class="c1"># 将里面的 GNU_INSTALL_ROOT 变量值改为 ~/.local/gcc-arm-none-eabi-7-2018-q2-update/bin/</span>
+
+<span class="c1"># Windows 下修改这个</span>
+cp template/Makefile.windows.template template/Makefile.windows
+nano template/Makefile.windows <span class="c1"># 将里面的 GNU_INSTALL_ROOT 变量值改为你的GCC安装目录</span>
+
+<span class="c1"># 将解压的nrf sdk复制到源码的SDK目录下，形成类似于SDK/components, SDK/config 的目录结构</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>测试编译<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/template
+make -j
+</pre></div>
+</div>
+<p>如果一切正常，则会编译出一个能用的固件。编译好的固件放置在对应键盘目录下的_build文件夹内。</p>
+</div>
+<div class="section" id="bootloader">
+<h3>Bootloader的编译<a class="headerlink" href="#bootloader" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git submodule init -- <span class="c1"># 初始化子模块，用于构建microecc库</span>
+<span class="nb">cd</span> SDK/external/micro-ecc/nrf52nf_armgcc/armgcc
+make <span class="c1"># 编译microecc库</span>
+<span class="nb">cd</span> ../../../../../
+
+<span class="c1"># 方法1：</span>
+<span class="nb">cd</span> application/bootloader/project/armgcc/
+make <span class="nv">SOFTDEVICE</span><span class="o">=</span>S132 <span class="nv">NRF_CHIP</span><span class="o">=</span>nrf52832 <span class="nv">NRF52_DISABLE_FPU</span><span class="o">=</span>yes -j <span class="c1"># nrf52832的编译命令</span>
+make <span class="nv">SOFTDEVICE</span><span class="o">=</span>S112 <span class="nv">NRF_CHIP</span><span class="o">=</span>nrf52810 -j <span class="c1"># nrf52810的编译命令</span>
+
+<span class="c1"># 方法2：</span>
+<span class="nb">cd</span> keyboard/template
+make bootloader -j
+</pre></div>
+</div>
+<p>如果一切正常，则Bootloader就编译完毕了。你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到编译好的Bootloader的hex文件。</p>
+</div>
+<div class="section" id="id6">
+<h3>主程序编译<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/lkb-core
+make package -j <span class="c1"># 生成用于DFU升级的升级包</span>
+make ch554 -j <span class="c1"># 生成USB固件</span>
+</pre></div>
+</div>
+<p>如果一切正常，就能够编译出一个固件升级包了。
+你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到对应的<code class="docutils literal notranslate"><span class="pre">nrf52_kbd_XXXXXXXX.zip</span></code>升级包文件和<code class="docutils literal notranslate"><span class="pre">ch554.hex</span></code>USB固件文件。参照刷固件相关教程将其刷入键盘即可。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>硬件移植教程<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3>准备工作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>首先，你需要准备一份按键阵列表格，用于确定各个按键的位置。然后需要规划好各个IO口的用途。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>需要注意的是，P21是Reset口，若需要使用硬件Reset按钮，则可以使用此口；</p>
+<p>P10是默认Bootloader进入DFU模式的引脚，上电时下拉即可强制进入DFU。如需要修改，可以修改Bootloader的配置并重新编译。</p>
+</div>
+<p>然后将keyboard内的任意一个文件夹（建议使用template或lkb-core）作为移植模板复制一份，接下来的所有操作都在此文件夹内进行。</p>
+</div>
+<div class="section" id="io">
+<h3>移植按键阵列IO和配置<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h3>
+<p>使用你喜欢的文本编辑器编辑<code class="docutils literal notranslate"><span class="pre">config.h</span></code>，编辑以下关键配置</p>
+<ul class="simple">
+<li><p>MATRIX_ROWS：按键阵列的行数</p></li>
+<li><p>MATRIX_COLS：按键阵列的列数</p></li>
+<li><p>row_pin_array[MATRIX_ROWS]：按键行阵列的对应IO口</p></li>
+<li><p>column_pin_array[MATRIX_COLS]：按键列阵列对应的IO口</p></li>
+<li><p>#define
+ROW_IN：如果按键防反冲二极管是由列流向行的，启用这个FLAG；否则将其禁用</p></li>
+<li><p>#define
+MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；否则将其禁用</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>移植按键阵列对应表<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>使用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_common.h</span></code>，你可以看到有一个名为KEYMAP的宏。</p>
+<p>这个宏可以使用QMK的builder工具生成。如果你想要手写的话可以继续往下面看。</p>
+<p>我们以GH60的宏为例，讲解如何编写这个宏。</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GH60 keymap definition macro</span>
+<span class="cm"> * K2C, K31 and  K3C are extra keys for ISO</span>
+<span class="cm"> */</span>
+<span class="cp">#define KEYMAP( \</span>
+<span class="cp">    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, \</span>
+<span class="cp">    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D, \</span>
+<span class="cp">    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, K2C, K2D, \</span>
+<span class="cp">    K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K3A, K3B, K3C, K3D, \</span>
+<span class="cp">    K40, K41, K42,           K45,                K49, K4A, K4B, K4C, K4D  \</span>
+<span class="cp">) { \</span>
+<span class="cp">    { KC_##K00, KC_##K01, KC_##K02, KC_##K03, KC_##K04, KC_##K05, KC_##K06, KC_##K07, KC_##K08, KC_##K09, KC_##K0A, KC_##K0B, KC_##K0C, KC_##K0D }, \</span>
+<span class="cp">    { KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14, KC_##K15, KC_##K16, KC_##K17, KC_##K18, KC_##K19, KC_##K1A, KC_##K1B, KC_##K1C, KC_##K1D }, \</span>
+<span class="cp">    { KC_##K20, KC_##K21, KC_##K22, KC_##K23, KC_##K24, KC_##K25, KC_##K26, KC_##K27, KC_##K28, KC_##K29, KC_##K2A, KC_##K2B, KC_##K2C, KC_##K2D }, \</span>
+<span class="cp">    { KC_##K30, KC_##K31, KC_##K32, KC_##K33, KC_##K34, KC_##K35, KC_##K36, KC_##K37, KC_##K38, KC_##K39, KC_##K3A, KC_##K3B, KC_##K3C, KC_##K3D }, \</span>
+<span class="cp">    { KC_##K40, KC_##K41, KC_##K42, KC_NO,    KC_NO,    KC_##K45, KC_NO,    KC_NO,    KC_NO,    KC_##K49, KC_##K4A, KC_##K4B, KC_##K4C, KC_##K4D }  \</span>
+<span class="cp">}</span>
+</pre></div>
+</div>
+<p>首先，我们很容易注意到，这个宏分为上下两个部分：上部分是键盘按键形状的，下部分是阵列形状的。这个宏的作用是，将键盘按键的一维数组转换为按键阵列的二维数组，也就是定义每个按键在对应的哪个按键阵列的位置。</p>
+<p>我们先来看K00按键。在这是GH60的第一个按键，也就是ESC；这个按键在下部分的第一个数组的第一个位置，说明其是第一行第一列的按键；再看K49，这是空格右边的Alt按键，它在下部分的第五个数组的第10个位置，说明了其是第5行第10列的按键。下面的写着KC_NO的按键位置表示这个位置没有放置按键。</p>
+<p>下面这一部分，行数和前面定义的按键阵列的行数相等，每一行的元素的数目，也和前面定义的列数相等。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>上面这一部分中，反斜杠表示换行。上面的这一部分本质上是一维数组，只不过为了好看而将其转换为了键盘实际的样式。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>编辑默认配列<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_plain.c</span></code>，你会发现有两个部分：一部分是keymaps，定义了默认的键盘配列；一部分是fn_actions，定义了默认的键盘fn功能。</p>
+<p>这部分的代码也可以使用QMK的工具生成。</p>
+<p>对于keymaps部分，使用了前面提到的KEYMAP的宏，将键盘上的各个按键键值转换为对应按键阵列的键值。我们仅需按照键盘的样式对其编辑即可。</p>
+</div>
+<div class="section" id="id11">
+<h3>其他配置项目<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="config">
+<h4>常用config配置<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">config.h</span></code>内有一些可以配置的项目，这里写出一些比较常用的：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MANUFACTURER &quot;Lotlab&quot; </span><span class="cm">/* 蓝牙显示的硬件制造商名称 */</span><span class="cp"></span>
+<span class="cp">#define PRODUCT &quot;LKB-Core&quot; </span><span class="cm">/* USB和蓝牙显示的硬件名称。USB的需要重新烧录固件 */</span><span class="cp"></span>
+<span class="cp">#define MACADDR_SEPRATOR &#39;_&#39; </span><span class="cm">/* 蓝牙名称后地址的分隔符。若不设置则不显示蓝牙名称后面的地址 */</span><span class="cp"></span>
+<span class="cp">#define BOOTMAGIC_KEY_BOOT KC_U </span><span class="cm">/* 开机Bootmagic按键 */</span><span class="cp"></span>
+<span class="cp">#define BOOTMAGIC_KEY_ERASE_BOND KC_E </span><span class="cm">/* 删除所有绑定Bootmagic按键 */</span><span class="cp"></span>
+<span class="cp">#define LED_NUM 22 </span><span class="cm">/* 小键盘锁定灯 */</span><span class="cp"></span>
+<span class="cp">#define LED_CAPS 23 </span><span class="cm">/* 大小写锁定灯 */</span><span class="cp"></span>
+<span class="c1">// #define LED_SCLK 23 /* 滚动锁定灯, 注释掉代表不使用此灯 */</span>
+<span class="cp">#define LED_POSITIVE </span><span class="cm">/* LED 使用上拉驱动，即二极管的正极接IO口。注释掉代表下拉驱动，即二极管的正极接电源正极 */</span><span class="cp"></span>
+<span class="cp">#define SLEEP_OFF_TIMEOUT 3600 </span><span class="c1">// 键盘闲置多久后转入自动关机 (s)</span>
+<span class="cp">#define DYNAMIC_TX_POWER </span><span class="cm">/* 启用自动发射功率调整 */</span><span class="cp"></span>
+<span class="cp">#define LED_AUTOOFF_TIME 60000 </span><span class="cm">/* LED自动熄灭时长(ms)，设为0则不自动熄灭 */</span><span class="cp"></span>
+<span class="cp">#define PASSKEY_REQUIRED </span><span class="cm">/* 启用蓝牙加密连接，在连接时需要输入配对码 */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usb">
+<h4>蓝牙、USB、充电状态显示<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h4>
+<p>如果想要启用USB、蓝牙、充电指示灯，则需要编辑Makefile，加入一行</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">THREE_LED_STATUS_EVT</span> <span class="o">=</span> yes
+</pre></div>
+</div>
+<p>并在config.h内添加：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define LED_STATUS_BLE 22 </span><span class="c1">// 蓝牙连接指示灯</span>
+<span class="cp">#define LED_STATUS_CHARGING 23 </span><span class="c1">// 充电指示灯</span>
+<span class="cp">#define LED_STATUS_USB 24 </span><span class="c1">// USB连接状态指示灯</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>禁用软件开机功能<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<p>如果需要禁用Space+U的软件开机功能，请参考<code class="docutils literal notranslate"><span class="pre">lkb-core/custom.c</span></code>文件内的<code class="docutils literal notranslate"><span class="pre">hook_bootmagic</span></code>函数，将默认的检测Space+U再开机的代码使用这段代码覆盖掉。</p>
+</div>
+</div>
+<div class="section" id="g84-4100">
+<h3>示例：G84-4100<a class="headerlink" href="#g84-4100" title="永久链接至标题">¶</a></h3>
+<p>详细的代码请参见g84-4100文件夹下的相关文件。</p>
+<p>按键阵列表：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 11%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>LINE1</p></th>
+<th class="head"><p>LINE2</p></th>
+<th class="head"><p>LINE3</p></th>
+<th class="head"><p>LINE4</p></th>
+<th class="head"><p>LINE5</p></th>
+<th class="head"><p>LINE6</p></th>
+<th class="head"><p>LINE7</p></th>
+<th class="head"><p>LINE8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H1L</p></td>
+<td><p>Esc</p></td>
+<td><p>F1</p></td>
+<td><p>F2</p></td>
+<td><p>F3</p></td>
+<td><p>F4</p></td>
+<td><p>F5</p></td>
+<td><p>F6</p></td>
+<td><p>F7</p></td>
+</tr>
+<tr class="row-odd"><td><p>H2L</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>H3L</p></td>
+<td><p>Tab</p></td>
+<td><p>Q</p></td>
+<td><p>W</p></td>
+<td><p>E</p></td>
+<td><p>R</p></td>
+<td><p>T</p></td>
+<td><p>Y</p></td>
+<td><p>U</p></td>
+</tr>
+<tr class="row-odd"><td><p>H4L</p></td>
+<td><p>CapsLock</p></td>
+<td><p>A</p></td>
+<td><p>S</p></td>
+<td><p>D</p></td>
+<td><p>F</p></td>
+<td><p>G</p></td>
+<td><p>H</p></td>
+<td><p>J</p></td>
+</tr>
+<tr class="row-even"><td><p>H5L</p></td>
+<td><p>`</p></td>
+<td><p>Z</p></td>
+<td><p>X</p></td>
+<td><p>C</p></td>
+<td><p>V</p></td>
+<td><p>B</p></td>
+<td><p>N</p></td>
+<td><p>M</p></td>
+</tr>
+<tr class="row-odd"><td><p>H1R</p></td>
+<td><p>Right</p></td>
+<td><p>Pause</p></td>
+<td><p>PtrSc</p></td>
+<td><p>NumLock</p></td>
+<td><p>ScrollLock</p></td>
+<td><p>F10</p></td>
+<td><p>F9</p></td>
+<td><p>F8</p></td>
+</tr>
+<tr class="row-even"><td><p>H2R</p></td>
+<td><p>Down</p></td>
+<td><p>Home</p></td>
+<td><p>Backspace</p></td>
+<td><p>=</p></td>
+<td><p>-</p></td>
+<td><p>0</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>H3R</p></td>
+<td><p>Up</p></td>
+<td><p>PageUp</p></td>
+<td><p>]</p></td>
+<td><p>[</p></td>
+<td><p>P</p></td>
+<td><p>O</p></td>
+<td><p>I</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>H4R</p></td>
+<td><p>Left</p></td>
+<td><p>PageDown</p></td>
+<td><p>Enter</p></td>
+<td><p>\</p></td>
+<td><p>“</p></td>
+<td><p>;</p></td>
+<td><p>L</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>H5R</p></td>
+<td><p>Space</p></td>
+<td><p>End</p></td>
+<td><p>Menu</p></td>
+<td><p>Ins</p></td>
+<td><p>Del</p></td>
+<td><p>?</p></td>
+<td><p>&gt;</p></td>
+<td><p>&lt;</p></td>
+</tr>
+<tr class="row-even"><td><p>SPEC1</p></td>
+<td><p>Lalt</p></td>
+<td><p>Rshift</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SPEC2</p></td>
+<td><p>Lshift</p></td>
+<td><p>Ralt</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SPEC3</p></td>
+<td><p>Ctrl</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SPEC4</p></td>
+<td><p>Fn</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SPEC5</p></td>
+<td><p>LWin</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SPEC6</p></td>
+<td><p>RWin</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>名称</p></td>
+<td><p>LINE1</p></td>
+<td><p>Line2</p></td>
+<td><p>Line3</p></td>
+<td><p>Line4</p></td>
+<td><p>Line5</p></td>
+<td><p>Line6</p></td>
+<td><p>Line7</p></td>
+<td><p>Line8</p></td>
+<td><p>Spec4</p></td>
+</tr>
+<tr class="row-odd"><td><p>IO</p></td>
+<td><p>P10</p></td>
+<td><p>P9</p></td>
+<td><p>P8</p></td>
+<td><p>P7</p></td>
+<td><p>P6</p></td>
+<td><p>P5</p></td>
+<td><p>P4</p></td>
+<td><p>P3</p></td>
+<td><p>P11</p></td>
+</tr>
+<tr class="row-even"><td><p>序号</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>名称</p></td>
+<td><p>Spec3</p></td>
+<td><p>Spec2</p></td>
+<td><p>Spec1</p></td>
+<td><p>H1L</p></td>
+<td><p>H2L</p></td>
+<td><p>H3L</p></td>
+<td><p>H4L</p></td>
+<td><p>Spec5</p></td>
+<td><p>Spec6</p></td>
+</tr>
+<tr class="row-even"><td><p>IO</p></td>
+<td><p>P12</p></td>
+<td><p>P13</p></td>
+<td><p>P14</p></td>
+<td><p>P15</p></td>
+<td><p>P16</p></td>
+<td><p>P17</p></td>
+<td><p>P18</p></td>
+<td><p>P19</p></td>
+<td><p>P20</p></td>
+</tr>
+<tr class="row-odd"><td><p>序号</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>25</p></td>
+<td><p>26</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>名称</p></td>
+<td><p>H5L</p></td>
+<td><p>H5R</p></td>
+<td><p>H4R</p></td>
+<td><p>H3R</p></td>
+<td><p>H2R</p></td>
+<td><p>LED1</p></td>
+<td><p>LED2</p></td>
+<td><p>LED3</p></td>
+<td><p>H1R</p></td>
+</tr>
+<tr class="row-odd"><td><p>IO</p></td>
+<td><p>P30</p></td>
+<td><p>P29</p></td>
+<td><p>P28</p></td>
+<td><p>P27</p></td>
+<td><p>P26</p></td>
+<td><p>P25</p></td>
+<td><p>P24</p></td>
+<td><p>P23</p></td>
+<td><p>P22</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+             </div>
+             
+            </div>
+          </div>
+          
+            
+              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+                <div class="row mui-panel">
+                  <div id="vcomments"></div>
+                </div>
+              </div>
+            
+          
+      </div>
+      <div id="push"></div>
+  </div>
+  <footer id="footer">
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>
