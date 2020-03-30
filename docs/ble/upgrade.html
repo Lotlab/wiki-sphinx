@@ -100,14 +100,24 @@
 <li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">蓝牙键盘固件更新教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">更新蓝牙固件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">通常更新方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">特殊更新方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dfu">使用 DFU 模式更新蓝牙固件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">通常更新方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">特殊更新方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">常见问题</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb">更新USB固件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">更新方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">更新方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">使用板载调试器强制更新蓝牙固件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">环境配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">更新固件</a></li>
 </ul>
 </li>
 </ul>
@@ -145,8 +155,8 @@
 <p>此系列键盘的固件一般分为蓝牙固件和USB固件。蓝牙固件的文件名形如<code class="docutils literal notranslate"><span class="pre">[键盘名称]_nrf52_[编译日期]_[Git版本].zip</span></code>，USB固件的文件名形如<code class="docutils literal notranslate"><span class="pre">[键盘名称]_ch554_[编译日期]_[Git版本].hex</span></code>。</p>
 <p>USB固件和蓝牙固件有着一一对应的关系，必须同时更新。如果当前固件版本没有包含USB固件或蓝牙固件，则可以只更新一个。如果你在进行跨版本升级，请确认两个固件都升级到最后发布的版本。</p>
 </div>
-<div class="section" id="id3">
-<h2>更新蓝牙固件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="dfu">
+<h2>使用 DFU 模式更新蓝牙固件<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong>
@@ -154,10 +164,10 @@
 <p>升级包可能包含蓝牙栈(SoftDevice)或引导程序(Bootloader)，刷入错误的蓝牙栈或引导程序将会使固件更新功能完全不可用。在这种情况下，您必须使用SWD接口烧录正确的蓝牙栈、引导程序和程序，才能使键盘恢复正常工作。</p>
 <p>如果您刷入了错误的程序(Application)而无法进入DFU模式，请参考产品页面的相关说明， <strong>强行进入DFU模式</strong> 然后更新。</p>
 </div>
-<div class="section" id="id4">
-<h3>通常更新方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>通常更新方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id10" id="id5">1</a> 程序</p></li>
+<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id12" id="id4">1</a> 程序</p></li>
 <li><p>点击nRF
 Connect右上角的Scan扫描蓝牙设备，这时候应该能够见到你的蓝牙键盘</p></li>
 <li><p>点击CONNCET按钮，等待连接成功</p></li>
@@ -167,8 +177,8 @@ packet(ZIP)，然后选择刚刚下载的蓝牙固件包</p></li>
 </ol>
 <p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
 </div>
-<div class="section" id="id6">
-<h3>特殊更新方法<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h3>特殊更新方法<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>如果在点击DFU后出现问题，无法继续刷新。可以在请参考产品页面的相关说明，<strong>进入DFU模式</strong>后尝试以下步骤。</p>
 <ol class="arabic simple">
 <li><p>点击nRF
@@ -176,13 +186,13 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 <li><p>按照上面的3-5步再做一遍。</p></li>
 </ol>
 </div>
-<div class="section" id="id7">
-<h3>常见问题<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h3>常见问题<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>Q: 我在点击DFU后，没有出现固件刷新进度的界面. A:
-尝试使用特殊更新方法更新</p></li>
-<li><p>Q: 我不小心进入了DFU模式，要怎么退出呢？A:
-等待90秒后，DFU模式会自动退出</p></li>
+<li><p>Q: 我在点击DFU后，没有出现固件刷新进度的界面.
+A: 尝试使用特殊更新方法更新</p></li>
+<li><p>Q: 我不小心进入了DFU模式，要怎么退出呢？
+A: 等待90秒后，DFU模式会自动退出</p></li>
 </ol>
 </div>
 </div>
@@ -194,22 +204,58 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 请在更新前确认升级包是由可信的人员提供的，并仔细阅读固件发布页面的详细说明，了解可能出现的问题。</p>
 <p>若在更新完毕后发现USB功能不可用，可以参考下面的刷新说明重新刷新。</p>
 </div>
-<div class="section" id="id8">
-<h3>更新方法<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h3>更新方法<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>至WCH官网下载<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a> <a class="footnote-reference brackets" href="#id11" id="id9">2</a></p></li>
+<li><p>至WCH官网下载<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a> <a class="footnote-reference brackets" href="#id13" id="id8">2</a></p></li>
 <li><p>打开固件更新工具，切换至“8位ch55x系列”，将芯片型号改为“CH552”，并在底下的“用户程序文件中”选择你要更新的USB固件</p></li>
 <li><p>参考产品说明，<strong>进入USB
 ISP模式</strong>，此时，设备列表中会出现一个可选择的设备并会自动选中。</p></li>
 <li><p>点击下载按钮。下载完毕后，将键盘的USB断开并重新连接，即可升级完毕。</p></li>
 </ol>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>使用板载调试器强制更新蓝牙固件<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>环境配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h4>
+<ol class="arabic simple">
+<li><p>在应用商店搜索并安装Python3（Python3.7或Python3.8均可）</p></li>
+<li><p>右键点击Windows徽标，选择“Windows PowerShell”</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyocd</span></code>，然后回车，等待安装完毕</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">pyocd</span> <span class="pre">list</span></code> 确认安装成功</p></li>
+</ol>
+</div>
+<div class="section" id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
+<ol class="arabic simple">
+<li><p>打开终端，输入 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3</span></code> ，然后回车（Arch系、RedHat系请自行修改命令）</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pyocd</span></code> ，然后回车，等待安装完毕</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">pyocd</span> <span class="pre">list</span></code> 确认安装成功</p></li>
+</ol>
+</div>
+<div class="section" id="macos">
+<h4>MacOS<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h4>
+<p>没用过，不知道怎么装。请参考Linux的安装方法进行配置。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>更新固件<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>确保你下载的是调试器用的HEX格式的固件。</p></li>
+<li><p>将键盘接入电脑，输入 <code class="docutils literal notranslate"><span class="pre">pyocd</span> <span class="pre">list</span></code> 并回车，这时应该会见到你的键盘</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">pyocd</span> <span class="pre">flash</span> <span class="pre">-t</span> <span class="pre">nrf52</span> <span class="pre">[filename.hex]</span></code> （将 <code class="docutils literal notranslate"><span class="pre">[filename.hex]</span></code> 替换为你下载的固件的文件名）并回车，等待刷入完毕</p></li>
+<li><p>刷新完毕后，拔下电池和USB线，然后重新插上。</p></li>
+</ol>
 <dl class="footnote brackets">
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
 <dd><p>可以到
 <a class="reference external" href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a>
 或者应用商店搜索下载。支持IOS和安卓端。</p>
 </dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id9">2</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
 <dd><p>可以使用<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">官方的固件更新工具</a>。若你在使用Linux，则可以使用三方的<a class="reference external" href="https://github.com/rgwan/librech551">WCHISP</a>来更新。</p>
 </dd>
 </dl>
@@ -231,14 +277,24 @@ ISP模式</strong>，此时，设备列表中会出现一个可选择的设备�
               <div id="toc-content"><ul>
 <li><a class="reference internal" href="#">蓝牙键盘固件更新教程</a><ul>
 <li><a class="reference internal" href="#id2">概述</a></li>
-<li><a class="reference internal" href="#id3">更新蓝牙固件</a><ul>
-<li><a class="reference internal" href="#id4">通常更新方法</a></li>
-<li><a class="reference internal" href="#id6">特殊更新方法</a></li>
-<li><a class="reference internal" href="#id7">常见问题</a></li>
+<li><a class="reference internal" href="#dfu">使用 DFU 模式更新蓝牙固件</a><ul>
+<li><a class="reference internal" href="#id3">通常更新方法</a></li>
+<li><a class="reference internal" href="#id5">特殊更新方法</a></li>
+<li><a class="reference internal" href="#id6">常见问题</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#usb">更新USB固件</a><ul>
-<li><a class="reference internal" href="#id8">更新方法</a></li>
+<li><a class="reference internal" href="#id7">更新方法</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">使用板载调试器强制更新蓝牙固件</a><ul>
+<li><a class="reference internal" href="#id10">环境配置</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">更新固件</a></li>
 </ul>
 </li>
 </ul>
