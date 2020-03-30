@@ -55,7 +55,7 @@
 <span class="appbar-brand">索引</span>
 
             
-<div role="search" class="mui--pull-right search-box">
+<div role="search" class="mui--pull-right mui--hidden-xs search-box">
   <form class="mui-form--inline" action="search.html" method="get">
     <div class="mui-textfield mui--align-middle">
       <input type="text" name="q" placeholder="搜索…">
@@ -114,15 +114,13 @@
   <div id="content-wrapper">
     <!-- Main content goes here -->
     <div class="mui--appbar-height"></div>
-      <div class="mui-container-fluid">
+    <div class="mui-container-fluid">
+      <div class="mui-row">
           
-          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          <div class="rst-content mui-col-sm-12 mui-col-md-7 mui-col-md-offset-1">
           
-            
-              
-            
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-             <div itemprop="articleBody">
+              <div itemprop="articleBody">
               
 
 <h1 id="index">索引</h1>
@@ -132,21 +130,27 @@
 </div>
 
 
-             </div>
-             
+              </div>
+              
             </div>
           </div>
           
             
-              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
-                <div class="row mui-panel">
-                  <div id="vcomments"></div>
-                </div>
-              </div>
-            
-          
+                    
       </div>
-      <div id="push"></div>
+      <div class="mui-row">
+        
+          
+            <div class="mui-container-fluid mui-col-sm-12 mui-col-md-10 mui-col-md-offset-1">
+              <div class="row mui-panel">
+                <div id="vcomments"></div>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+    <div id="push"></div>
   </div>
   <footer id="footer">
   <div class="mui-container-fluid">

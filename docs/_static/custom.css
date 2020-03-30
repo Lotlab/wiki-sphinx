@@ -261,10 +261,7 @@ html, body, input, textarea, buttons {
   */
 
 #toc {
-  float: right;
   margin: 1em;
-  min-width: 50px;
-  max-width: 400px;
 }
 
 #toc ul {

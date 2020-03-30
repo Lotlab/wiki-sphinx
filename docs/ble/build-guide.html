@@ -56,7 +56,7 @@
 <span class="appbar-brand">LotKB固件编译移植指南</span>
 
             
-<div role="search" class="mui--pull-right search-box">
+<div role="search" class="mui--pull-right mui--hidden-xs search-box">
   <form class="mui-form--inline" action="../search.html" method="get">
     <div class="mui-textfield mui--align-middle">
       <input type="text" name="q" placeholder="搜索…">
@@ -144,55 +144,13 @@
   <div id="content-wrapper">
     <!-- Main content goes here -->
     <div class="mui--appbar-height"></div>
-      <div class="mui-container-fluid">
+    <div class="mui-container-fluid">
+      <div class="mui-row">
           
-          <div class="rst-content mui-col-sm-10 mui-col-sm-offset-1">
+          <div class="rst-content mui-col-sm-12 mui-col-md-7 mui-col-md-offset-1">
           
-            
-              
-              <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
-                <div class="toc-heading">
-                  <h4>目录</h4>
-                  <a id="toc-hide" href="#">隐藏</a>
-                </div>
-                <div id="toc-content"><ul>
-<li><a class="reference internal" href="#">LotKB固件编译移植指南</a><ul>
-<li><a class="reference internal" href="#id1">编译教程</a><ul>
-<li><a class="reference internal" href="#id2">在线编译工具</a></li>
-<li><a class="reference internal" href="#id3">环境搭建</a><ul>
-<li><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
-<li><a class="reference internal" href="#sdk">下载SDK</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
-<li><a class="reference internal" href="#id5">测试编译</a></li>
-<li><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
-<li><a class="reference internal" href="#id6">主程序编译</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id7">硬件移植教程</a><ul>
-<li><a class="reference internal" href="#id8">准备工作</a></li>
-<li><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
-<li><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
-<li><a class="reference internal" href="#id10">编辑默认配列</a></li>
-<li><a class="reference internal" href="#id11">其他配置项目</a><ul>
-<li><a class="reference internal" href="#config">常用config配置</a></li>
-<li><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
-<li><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-              </div>
-              
-            
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-             <div itemprop="articleBody">
+              <div itemprop="articleBody">
               
   <div class="section" id="lotkb">
 <h1>LotKB固件编译移植指南<a class="headerlink" href="#lotkb" title="永久链接至标题">¶</a></h1>
@@ -703,21 +661,67 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 </div>
 
 
-             </div>
-             
+              </div>
+              
             </div>
           </div>
           
             
-              <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
-                <div class="row mui-panel">
-                  <div id="vcomments"></div>
-                </div>
+            <div class="mui-panel mui--hidden-sm mui--hidden-xs mui-col-md-3" id="toc">
+              <div class="toc-heading">
+                <h4>目录</h4>
+                <a id="toc-hide" href="#">隐藏</a>
               </div>
+              <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">LotKB固件编译移植指南</a><ul>
+<li><a class="reference internal" href="#id1">编译教程</a><ul>
+<li><a class="reference internal" href="#id2">在线编译工具</a></li>
+<li><a class="reference internal" href="#id3">环境搭建</a><ul>
+<li><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
+<li><a class="reference internal" href="#sdk">下载SDK</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
+<li><a class="reference internal" href="#id5">测试编译</a></li>
+<li><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
+<li><a class="reference internal" href="#id6">主程序编译</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">硬件移植教程</a><ul>
+<li><a class="reference internal" href="#id8">准备工作</a></li>
+<li><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
+<li><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
+<li><a class="reference internal" href="#id10">编辑默认配列</a></li>
+<li><a class="reference internal" href="#id11">其他配置项目</a><ul>
+<li><a class="reference internal" href="#config">常用config配置</a></li>
+<li><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
+<li><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
             
-          
+                    
       </div>
-      <div id="push"></div>
+      <div class="mui-row">
+        
+          
+            <div class="mui-container-fluid mui-col-sm-12 mui-col-md-10 mui-col-md-offset-1">
+              <div class="row mui-panel">
+                <div id="vcomments"></div>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+    <div id="push"></div>
   </div>
   <footer id="footer">
   <div class="mui-container-fluid">
