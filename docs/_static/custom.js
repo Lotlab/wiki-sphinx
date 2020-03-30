@@ -9,10 +9,6 @@ var sidedrawer = document.getElementById("sidedrawer");
 document.getElementsByClassName("js-show-sidedrawer")[0].onclick = showSideDrawer;
 document.getElementsByClassName("js-hide-sidedrawer")[0].onclick = hideSideDrawer;
 
-document.getElementById("toc-hide").onclick = function(){
-    document.getElementById("toc-content").classList.toggle("mui--hide");
-    return false;
-}
 
 let foldEls = document.getElementsByClassName("toctree-l1 current");
 for (let i = 0; i < foldEls.length; i++) {
