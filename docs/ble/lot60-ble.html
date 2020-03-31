@@ -120,7 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#unbond-device">删除蓝牙绑定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nkro">全键无冲（NKRO）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bootmagic">其他功能键（BootMagic）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">配置键盘与更改配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-setting">配置键盘与更改配列</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id19">固件更新</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#force-sleep">强制休眠键盘</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dfu">进入DFU模式</a></li>
@@ -314,10 +314,17 @@
 </div>
 <div class="section" id="id12">
 <h3>省电模式<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
-<p>在没有接入USB电源的情况下，键盘处于省电模式。</p>
-<p>在省电模式下，所有的指示灯仅在变化后亮起5秒，然后熄灭。键盘在无操作15秒后转入慢速扫描模式，无操作600秒后自动休眠。</p>
-<p>慢速扫描模式下，按键检测将可能略有延迟。在慢速扫描模式下按任意按键即可恢复到快速扫描模式。</p>
-<p>自动休眠后，按下键盘的任意按键即可再次唤醒。</p>
+<p>在没有接入USB电源的情况下，键盘处于省电模式。在省电模式下</p>
+<ul class="simple">
+<li><p>所有的指示灯将在变化后亮起5秒，然后熄灭。</p></li>
+<li><p>键盘无输入15秒后转入慢速扫描模式。慢速扫描模式下按键扫描间隔被设定为100ms，按任意按键恢复。</p></li>
+<li><p>键盘无输入600秒后自动休眠。自动休眠后，按下键盘的任意按键即可唤醒键盘。</p></li>
+</ul>
+<p>以上模式的进入时间均可使用键盘配置工具调整，详情请参见 <a class="reference internal" href="#device-setting"><span class="std std-ref">配置键盘与更改配列</span></a> 。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>设置调整操作仅适用于固件版本 1.1.0.0 及以后的固件。</p>
+</div>
 </div>
 <div class="section" id="sleep">
 <span id="id13"></span><h3>休眠键盘<a class="headerlink" href="#sleep" title="永久链接至标题">¶</a></h3>
@@ -344,8 +351,8 @@
 <p>键盘会自动上报当前的电量信息给蓝牙连接的主机，可以直接在主机上查看电量百分比。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>蓝牙电量上报仅支持 iOS 10+、安卓 6+、Windows 10 1903+，以及部分新版Linux发行版。
-MacOS暂时不支持此功能。</p>
+<p>蓝牙电量上报仅支持 iOS 10+、安卓 6+、Windows 10 1903+，以及部分新版Linux发行版。</p>
+<p>MacOS暂时不支持此功能。</p>
 </div>
 <p>由于测量方式可能有误差，电量百分比可能无法达到100%或者低至0%，这是正常现象。电量百分比仅供参考。</p>
 <p>对于安卓手机，如果没有正确的显示电量，可以尝试下载BatON软件来获取蓝牙设备电量。</p>
@@ -381,8 +388,8 @@ MacOS暂时不支持此功能。</p>
 <p>按下NKRO切换键即可切换全键无冲的状态。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>此操作仅适用于固件版本 1.1.0.0 及以后的固件。
-对于1.0.3.1及以前的固件，请在键盘开机时按下<code class="docutils literal notranslate"><span class="pre">Space+N</span></code>（即在休眠后，按下Space+U+N开机）切换全键无冲的状态。</p>
+<p>此操作仅适用于固件版本 1.1.0.0 及以后的固件。</p>
+<p>对于1.0.3.1及以前的固件，请在键盘开机时按下<code class="docutils literal notranslate"><span class="pre">Space+N</span></code>（即在休眠后，按下Space+U+N开机）切换全键无冲的状态。</p>
 </div>
 </div>
 <div class="section" id="bootmagic">
@@ -404,13 +411,13 @@ MacOS暂时不支持此功能。</p>
 <li><p>RAlt: 交换RAlt和RGUI</p></li>
 <li><p>LGUI：禁用GUI按钮</p></li>
 <li><p>`(1左边那个, Grave): 交换Esc和Grave</p></li>
-<li><p>\: 交换:raw-latex:<cite>和Backspace</cite></p></li>
+<li><p>\: 交换 \ 和Backspace</p></li>
 <li><p>N：切换NKRO状态</p></li>
 <li><p>0~7：设置默认层为对应数字的层</p></li>
 </ul>
 </div>
-<div class="section" id="id18">
-<h3>配置键盘与更改配列<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<div class="section" id="device-setting">
+<span id="id18"></span><h3>配置键盘与更改配列<a class="headerlink" href="#device-setting" title="永久链接至标题">¶</a></h3>
 <p>访问 <a class="reference external" href="https://keyboard.lotlab.org/">Lotlab 键盘配置工具</a> ，即可修改键盘的配置和配列，具体操作方法请查阅此网站的帮助页面。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -587,11 +594,11 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 </div>
 <div class="section" id="id34">
 <h3>有时候出现卡键的问题<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
-<p>这是蓝牙信号不好的原因。请参考:ref:<cite>signal-enhance</cite></p>
+<p>这是蓝牙信号不好的原因。请参考 <a class="reference internal" href="#signal-enhance"><span class="std std-ref">如何改善蓝牙连接稳定性</span></a></p>
 </div>
 <div class="section" id="id35">
 <h3>指示灯忽然亮起变为白色，然后迅速变成蓝色<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h3>
-<p>这是蓝牙信号不好的原因。请参考:ref:<cite>signal-enhance</cite></p>
+<p>这是蓝牙信号不好的原因。请参考 <a class="reference internal" href="#signal-enhance"><span class="std std-ref">如何改善蓝牙连接稳定性</span></a></p>
 </div>
 </div>
 <div class="section" id="id36">
@@ -631,17 +638,17 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 <div class="section" id="rev-e">
 <h4>Rev.E<a class="headerlink" href="#rev-e" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip">3LED灯版本蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip">3LED灯版本蓝牙升级包</a></p></li>
 </ul>
 <p>无需更新USB固件。</p>
 </div>
 <div class="section" id="rev-f">
 <h4>Rev.F<a class="headerlink" href="#rev-f" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f-ch554-2019_12_02-db6e8ae.hex">出厂USB固件</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip">3LED灯版本蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-ch554-2019_12_02-db6e8ae.hex">出厂USB固件</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip">3LED灯版本蓝牙升级包</a></p></li>
 </ul>
 </div>
 </div>
@@ -649,11 +656,11 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 <span id="id39"></span><h3>v1.0.3.0<a class="headerlink" href="#v1-0-3-0" title="永久链接至标题">¶</a></h3>
 <p>此版本是 Rev.E 出厂版本的固件。</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip">Rev.E
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e-nrf52-2019_09_30-68552e4.zip">Rev.E
 蓝牙升级包</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">Rev.E
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e-ch554-2019_09_30-68552e4.hex">Rev.E
 出厂USB固件</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">Rev.E
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e_3led-nrf52-2019_09_30-68552e4.zip">Rev.E
 3LED灯版本蓝牙升级包</a></p></li>
 </ul>
 <dl class="footnote brackets">
@@ -707,7 +714,7 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 <li><a class="reference internal" href="#unbond-device">删除蓝牙绑定</a></li>
 <li><a class="reference internal" href="#nkro">全键无冲（NKRO）</a></li>
 <li><a class="reference internal" href="#bootmagic">其他功能键（BootMagic）</a></li>
-<li><a class="reference internal" href="#id18">配置键盘与更改配列</a></li>
+<li><a class="reference internal" href="#device-setting">配置键盘与更改配列</a></li>
 <li><a class="reference internal" href="#id19">固件更新</a></li>
 <li><a class="reference internal" href="#force-sleep">强制休眠键盘</a></li>
 <li><a class="reference internal" href="#dfu">进入DFU模式</a></li>

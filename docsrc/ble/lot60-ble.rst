@@ -108,13 +108,17 @@ Lot60-BLE 包含了1个CapsLock LED 和一个 RGB LED 指示灯，并预留了3�
 省电模式
 --------
 
-在没有接入USB电源的情况下，键盘处于省电模式。
+在没有接入USB电源的情况下，键盘处于省电模式。在省电模式下
 
-在省电模式下，所有的指示灯仅在变化后亮起5秒，然后熄灭。键盘在无操作15秒后转入慢速扫描模式，无操作600秒后自动休眠。
+-  所有的指示灯将在变化后亮起5秒，然后熄灭。
+-  键盘无输入15秒后转入慢速扫描模式。慢速扫描模式下按键扫描间隔被设定为100ms，按任意按键恢复。
+-  键盘无输入600秒后自动休眠。自动休眠后，按下键盘的任意按键即可唤醒键盘。
 
-慢速扫描模式下，按键检测将可能略有延迟。在慢速扫描模式下按任意按键即可恢复到快速扫描模式。
+以上模式的进入时间均可使用键盘配置工具调整，详情请参见 :ref:`device-setting` 。
 
-自动休眠后，按下键盘的任意按键即可再次唤醒。
+.. note::
+
+   设置调整操作仅适用于固件版本 1.1.0.0 及以后的固件。
 
 .. _sleep:
 
@@ -153,6 +157,7 @@ USB/蓝牙状态切换
 .. note::
 
    蓝牙电量上报仅支持 iOS 10+、安卓 6+、Windows 10 1903+，以及部分新版Linux发行版。
+
    MacOS暂时不支持此功能。
 
 由于测量方式可能有误差，电量百分比可能无法达到100%或者低至0%，这是正常现象。电量百分比仅供参考。
@@ -196,6 +201,7 @@ RGB 指示灯颜色说明
 .. note::
 
    此操作仅适用于固件版本 1.1.0.0 及以后的固件。
+
    对于1.0.3.1及以前的固件，请在键盘开机时按下\ ``Space+N``\ （即在休眠后，按下Space+U+N开机）切换全键无冲的状态。
 
 
@@ -220,9 +226,11 @@ RGB 指示灯颜色说明
 -  RAlt: 交换RAlt和RGUI
 -  LGUI：禁用GUI按钮
 -  \`(1左边那个, Grave): 交换Esc和Grave
--  \\: 交换:raw-latex:`\和Backspace`
+-  \\: 交换 \\ 和Backspace
 -  N：切换NKRO状态
 -  0~7：设置默认层为对应数字的层
+
+.. _device-setting:
 
 配置键盘与更改配列
 ------------------
@@ -426,12 +434,12 @@ Windows 下出现“驱动程序错误”
 有时候出现卡键的问题
 -----------------------
 
-这是蓝牙信号不好的原因。请参考:ref:`signal-enhance`
+这是蓝牙信号不好的原因。请参考 :ref:`signal-enhance`
 
 指示灯忽然亮起变为白色，然后迅速变成蓝色
 ----------------------------------------
 
-这是蓝牙信号不好的原因。请参考:ref:`signal-enhance`
+这是蓝牙信号不好的原因。请参考 :ref:`signal-enhance`
 
 固件发布
 ========
@@ -478,17 +486,17 @@ v1.0.3.1
 Rev.E
 ~~~~~~~~~~~~~~~~~~~~
 
--  `蓝牙升级包 <https://tools.lotlab.org/dl/rev_e-nrf52-2019_12_02-db6e8ae.zip>`__
--  `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip>`__
+-  `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e-nrf52-2019_12_02-db6e8ae.zip>`__
+-  `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip>`__
 
 无需更新USB固件。
 
 Rev.F
 ~~~~~~~~~~~~~~~~~~~~
 
--  `蓝牙升级包 <https://tools.lotlab.org/dl/rev_f-nrf52-2019_12_02-db6e8ae.zip>`__
--  `出厂USB固件 <https://tools.lotlab.org/dl/rev_f-ch554-2019_12_02-db6e8ae.hex>`__
--  `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip>`__
+-  `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-nrf52-2019_12_02-db6e8ae.zip>`__
+-  `出厂USB固件 <https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-ch554-2019_12_02-db6e8ae.hex>`__
+-  `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip>`__
 
 .. _1_0_3:
 
@@ -498,11 +506,11 @@ v1.0.3.0
 此版本是 Rev.E 出厂版本的固件。
 
 -  `Rev.E
-   蓝牙升级包 <https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip>`__
+   蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e-nrf52-2019_09_30-68552e4.zip>`__
 -  `Rev.E
-   出厂USB固件 <https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex>`__
+   出厂USB固件 <https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e-ch554-2019_09_30-68552e4.hex>`__
 -  `Rev.E
-   3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip>`__
+   3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e_3led-nrf52-2019_09_30-68552e4.zip>`__
 
 .. [1]
    没有实现的TMK功能包括：Command Key、鼠标键(固件空间不够)和LED灯效(这个键盘没灯)

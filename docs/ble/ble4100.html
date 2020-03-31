@@ -112,8 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id13">源代码</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#keymap">KeyMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id14">丝印</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">线路图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">修改/编译程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">修改/编译程序</a></li>
 </ul>
 </li>
 </ul>
@@ -179,7 +178,7 @@
 <div class="section" id="id4">
 <h3>电量显示<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
-<p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id18" id="id5">1</a> 这个应用来查看电量。电量信息仅供参考。</p>
+<p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id17" id="id5">1</a> 这个应用来查看电量。电量信息仅供参考。</p>
 </div>
 <div class="section" id="id6">
 <h3>升级固件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
@@ -192,7 +191,7 @@ Loader)，刷入错误的蓝牙栈和引导程序将会使DFU功能完全不可�
 <p>如果您刷入了错误的程序(Application)无法进入DFU模式，您可以将电池卸下，按住Fn键再接上电池强制进入DFU模式。</p>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p>使用手机下载并打开 nRF Connect <a class="footnote-reference brackets" href="#id19" id="id7">2</a> 程序</p></li>
+<li><p>使用手机下载并打开 nRF Connect <a class="footnote-reference brackets" href="#id18" id="id7">2</a> 程序</p></li>
 <li><p>按下Fn+PauseBreak休眠键盘，然后按下Fn+Esc唤醒键盘进入DFU模式</p></li>
 <li><p>点击nRF
 Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做DfuTarg的蓝牙设备</p></li>
@@ -573,17 +572,13 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </div>
 <div class="section" id="id14">
 <h3>丝印<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
-<div class="figure align-default" id="id21">
+<div class="figure align-default" id="id20">
 <img alt="丝印层" src="../_images/ble4100_silk.png" />
-<p class="caption"><span class="caption-text">丝印层</span><a class="headerlink" href="#id21" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">丝印层</span><a class="headerlink" href="#id20" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 <div class="section" id="id15">
-<h3>线路图<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="res/ble4100-nrf.pdf">ble4100-nrf.pdf</a></p>
-</div>
-<div class="section" id="id16">
-<h3>修改/编译程序<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<h3>修改/编译程序<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
 <ul class="simple">
 <li><p>main.c 70行修改蓝牙名称</p></li>
@@ -595,21 +590,21 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </li>
 <li><p>使用Keil uVision 5 来编译程序</p></li>
 </ul>
-<p>使用 nrfutil <a class="footnote-reference brackets" href="#id20" id="id17">3</a> 生成升级包（0.5.2版本）</p>
+<p>使用 nrfutil <a class="footnote-reference brackets" href="#id19" id="id16">3</a> 生成升级包（0.5.2版本）</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
 <dd><p><a class="reference external" href="http://www.coolapk.com/apk/com.limi.baton">蓝牙设备电量 1.2.50</a>
 仅限安卓端。</p>
 </dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
 <dd><p>可以到
 <a class="reference external" href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a>
 或者应用商店下载。支持IOS和安卓端。</p>
 </dd>
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id17">3</a></span></dt>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id16">3</a></span></dt>
 <dd><p>在Github下载
 <a class="reference external" href="https://github.com/NordicSemiconductor/pc-nrfutil/releases/tag/v0.5.2">nrfutil</a>,
 需要安装Python2.7</p>
@@ -649,8 +644,7 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 <li><a class="reference internal" href="#id13">源代码</a></li>
 <li><a class="reference internal" href="#keymap">KeyMap</a></li>
 <li><a class="reference internal" href="#id14">丝印</a></li>
-<li><a class="reference internal" href="#id15">线路图</a></li>
-<li><a class="reference internal" href="#id16">修改/编译程序</a></li>
+<li><a class="reference internal" href="#id15">修改/编译程序</a></li>
 </ul>
 </li>
 </ul>

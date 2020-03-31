@@ -113,7 +113,7 @@ MacOS
 
 .. [1]
    可以到
-   `官方下载页面 <http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel>`__
+   `官方下载页面 <https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile>`__
    或者应用商店搜索下载。支持IOS和安卓端。
 
 .. [2]

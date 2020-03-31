@@ -294,6 +294,7 @@ code, kbd, pre, samp {
 
 pre {
   padding: 1em;
+  overflow: auto;
 }
 
 code {
