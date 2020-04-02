@@ -38,6 +38,9 @@ Linux下环境的搭建
    sudo apt install python3 python3-pip
    pip3 install nrfutil # 安装 nrfutil
 
+.. note::
+   若在 msys2 下无法正常使用 pip 安装nrfutil，请直接到项目主页 `下载 nrfutil.exe <https://github.com/NordicSemiconductor/pc-nrfutil/releases>`__ 并放置于 ``[你的msys2安装目录]/usr/bin`` 目录下。
+
 下载SDK
 ^^^^^^^
 
