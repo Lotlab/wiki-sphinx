@@ -153,7 +153,8 @@
 <h2>概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>你可能需要升级固件来获得新功能或者修复已有的BUG，可供更新的固件可以在产品页面最下方的固件发布处找到。</p>
 <p>此系列键盘的固件一般分为蓝牙固件和USB固件。蓝牙固件的文件名形如<code class="docutils literal notranslate"><span class="pre">[键盘名称]_nrf52_[编译日期]_[Git版本].zip</span></code>，USB固件的文件名形如<code class="docutils literal notranslate"><span class="pre">[键盘名称]_ch554_[编译日期]_[Git版本].hex</span></code>。</p>
-<p>USB固件和蓝牙固件有着一一对应的关系，必须同时更新。如果当前固件版本没有包含USB固件或蓝牙固件，则可以只更新一个。如果你在进行跨版本升级，请确认两个固件都升级到最后发布的版本。</p>
+<p>USB固件和蓝牙固件有着一一对应的关系，必须同时更新。若蓝牙固件和USB固件版本不匹配，则可能出现USB按键无法输入的问题。如果当前固件版本没有包含USB固件或蓝牙固件，则可以只更新一个。如果你在进行跨版本升级，请确认两个固件都升级到最后发布的版本。</p>
+<p>USB固件和蓝牙固件更新的先后顺序没有硬性要求，个人建议可以先更新蓝牙固件。</p>
 </div>
 <div class="section" id="dfu">
 <h2>使用 DFU 模式更新蓝牙固件<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h2>
