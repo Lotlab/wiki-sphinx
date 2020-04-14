@@ -514,7 +514,7 @@ v1.1.0.0
 
    在更新此版本固件后，请手动删除所有已经连接的设备并 :ref:`清空键盘绑定信息 <unbond-device>`，然后再重新连接此键盘。
 
-此版本更新于2020年x月x日，是 Rev.G 出厂版本的固件。
+此版本更新于2020年4月14日，是 Rev.G 出厂版本的固件。
 
 更新日志
 ~~~~~~~~~~~~~~~~~~~
@@ -531,7 +531,30 @@ v1.1.0.0
 - 调整电量曲线
 - 支持动态配置休眠时间
 - 增加了蓝牙发射功率
-- 支持多设备切换（WIP）
+
+Rev.E
+~~~~~~~~~~~~~~~~~~~~
+
+- `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_e-nrf52-2020_04_14-v1.1.0.0.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_e-ch554-2020_04_14-v1.1.0.0.bin>`__
+- `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_e_3led-ch554-2020_04_14-v1.1.0.0.bin>`__
+
+
+Rev.F
+~~~~~~~~~~~~~~~~~~~~
+
+- `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_f-nrf52-2020_04_14-v1.1.0.0.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_f-ch554-2020_04_14-v1.1.0.0.bin>`__
+- `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_f_3led-nrf52-2020_04_14-v1.1.0.0.zip>`__
+
+
+Rev.G
+~~~~~~~~~~~~~~~~~~~~
+
+- `出厂蓝牙固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-nrf52-2020_04_14-v1.1.0.0.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-ch554-2020_04_14-v1.1.0.0.bin>`__
+- `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g_3led-nrf52-2020_04_14-v1.1.0.0.zip>`__
+
 
 .. _1_0_3_1:
 
