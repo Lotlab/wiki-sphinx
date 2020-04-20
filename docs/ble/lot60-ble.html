@@ -546,6 +546,7 @@
 <li><p>降低2.4GHZ的WiFi的发射功率</p></li>
 <li><p>减少空间内其他WiFi和蓝牙设备的存在</p></li>
 <li><p>不要触摸蓝牙模块的天线位置</p></li>
+<li><p>将蓝牙接收器的天线从桌子下方移动到桌子上方</p></li>
 <li><p>更换蓝牙接收器</p></li>
 </ul>
 </div>
@@ -648,7 +649,11 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 <div class="section" id="id41">
 <h2>固件发布<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h2>
 <p>请参考 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 更新你的键盘固件。</p>
-<p>请对应硬件版本更新软件。查看 <a class="reference internal" href="#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a> 来确定此键盘的硬件版本。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>必须对应硬件版本更新软件。查看 <a class="reference internal" href="#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a> 来确定此键盘的硬件版本。</p>
+<p>若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。</p>
+</div>
 <div class="section" id="v1-1-0-0">
 <h3>v1.1.0.0<a class="headerlink" href="#v1-1-0-0" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
@@ -657,8 +662,10 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
+<p>需要同时更新USB固件。</p>
 <p>在更新此版本固件后，请手动删除所有已经连接的设备并 <a class="reference internal" href="#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a>，然后再重新连接此键盘。</p>
-<p>需要同时更新USB固件。更新此版本固件后，老版本固件设置的自定义会被清除。请使用新版配置工具重新配置。</p>
+<p>更新此版本固件后，老版本固件设置的自定义会被清除。
+旧版配列下载工具将不可使用，请更新配列下载工具至1.1.0.0版本，或直接使用新版配置工具配置。</p>
 </div>
 <p>此版本更新于2020年4月14日，是 Rev.G 出厂版本的固件。</p>
 <div class="section" id="id42">
