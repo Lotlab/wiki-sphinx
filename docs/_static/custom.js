@@ -14,7 +14,6 @@ let foldEls = document.getElementsByClassName("toctree-l1 current");
 for (let i = 0; i < foldEls.length; i++) {
     let sb = foldEls[i].firstChild.nextElementSibling;
     if (sb != undefined) {
-        sb.classList.add("element-hidden");
         foldEls[i].firstChild.onclick = foldElementHandler;
     }
 }
