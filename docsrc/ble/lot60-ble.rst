@@ -81,7 +81,7 @@ Lot60-BLE 包含了1个CapsLock LED 和一个 RGB LED 指示灯，并预留了3�
 快速入门
 --------
 
-1. （如果购买的是散件）按照线路板上的标识，根据BOM表焊接相应的元件。
+1. （如果购买的是散件）按照线路板上的标识，根据 `BOM表 <https://tools.lotlab.org/dl/res/lot60ble_g_bom.html>`__ 焊接相应的元件，然后参照固件刷新教程刷固件。
 2. 将电池插入电池插口。注意电池的线序，红色线对应“+”标记，黑色线对应“-”标记。
 
 .. warning::
@@ -605,6 +605,7 @@ Rev.G
 - `出厂蓝牙固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-nrf52-2020_04_14-v1.1.0.0.zip>`__
 - `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-ch554-2020_04_14-v1.1.0.0.bin>`__
 - `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g_3led-nrf52-2020_04_14-v1.1.0.0.zip>`__
+- `板载调试器用固件 <https://tools.lotlab.org/dl/firmware/v1.1.0.0/rev.g.all.hex>`__
 
 
 .. _1_0_3_1:
