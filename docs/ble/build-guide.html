@@ -350,7 +350,7 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 </div>
 <div class="section" id="id12">
 <h4>禁用软件开机功能<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
-<p>如果需要禁用Space+U的软件开机功能，请参考<code class="docutils literal notranslate"><span class="pre">lkb-core/custom.c</span></code>文件内的<code class="docutils literal notranslate"><span class="pre">hook_bootmagic</span></code>函数，将默认的检测Space+U再开机的代码使用这段代码覆盖掉。</p>
+<p>将Makefile内的BootMagic关闭，并关闭config.h里面的BOOTCHECK，即可关闭开机检测功能。</p>
 </div>
 </div>
 <div class="section" id="g84-4100">
@@ -583,7 +583,6 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <td><p>Spec4</p></td>
 </tr>
 <tr class="row-odd"><td><p>IO</p></td>
-<td><p>P10</p></td>
 <td><p>P9</p></td>
 <td><p>P8</p></td>
 <td><p>P7</p></td>
@@ -592,6 +591,7 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <td><p>P4</p></td>
 <td><p>P3</p></td>
 <td><p>P11</p></td>
+<td><p>P12</p></td>
 </tr>
 <tr class="row-even"><td><p>序号</p></td>
 <td><p>10</p></td>
@@ -616,7 +616,6 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <td><p>Spec6</p></td>
 </tr>
 <tr class="row-even"><td><p>IO</p></td>
-<td><p>P12</p></td>
 <td><p>P13</p></td>
 <td><p>P14</p></td>
 <td><p>P15</p></td>
@@ -624,7 +623,8 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <td><p>P17</p></td>
 <td><p>P18</p></td>
 <td><p>P19</p></td>
-<td><p>P20</p></td>
+<td><p>NC</p></td>
+<td><p>NC</p></td>
 </tr>
 <tr class="row-odd"><td><p>序号</p></td>
 <td><p>19</p></td>
@@ -642,22 +642,22 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <td><p>H5R</p></td>
 <td><p>H4R</p></td>
 <td><p>H3R</p></td>
-<td><p>H2R</p></td>
 <td><p>LED1</p></td>
 <td><p>LED2</p></td>
 <td><p>LED3</p></td>
+<td><p>H2R</p></td>
 <td><p>H1R</p></td>
 </tr>
 <tr class="row-odd"><td><p>IO</p></td>
+<td><p>P20</p></td>
 <td><p>P30</p></td>
 <td><p>P29</p></td>
 <td><p>P28</p></td>
-<td><p>P27</p></td>
-<td><p>P26</p></td>
 <td><p>P25</p></td>
 <td><p>P24</p></td>
 <td><p>P23</p></td>
 <td><p>P22</p></td>
+<td><p>P21</p></td>
 </tr>
 </tbody>
 </table>

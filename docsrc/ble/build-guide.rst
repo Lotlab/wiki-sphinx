@@ -233,7 +233,7 @@ Bootloader的编译
 禁用软件开机功能
 ^^^^^^^^^^^^^^^^
 
-如果需要禁用Space+U的软件开机功能，请参考\ ``lkb-core/custom.c``\ 文件内的\ ``hook_bootmagic``\ 函数，将默认的检测Space+U再开机的代码使用这段代码覆盖掉。
+将Makefile内的BootMagic关闭，并关闭config.h里面的BOOTCHECK，即可关闭开机检测功能。
 
 示例：G84-4100
 ~~~~~~~~~~~~~~
@@ -267,11 +267,11 @@ SPEC6  RWin
 序号    1      2      3      4      5      6      7      8      9
 ====  =====  =====  =====  =====  =====  =====  =====  =====  =====
 名称  LINE1  Line2  Line3  Line4  Line5  Line6  Line7  Line8  Spec4
-IO    P10    P9     P8     P7     P6     P5     P4     P3     P11
+IO    P9     P8     P7     P6     P5     P4     P3     P11    P12
 序号  10     11     12     13     14     15     16     17     18
 名称  Spec3  Spec2  Spec1  H1L    H2L    H3L    H4L    Spec5  Spec6
-IO    P12    P13    P14    P15    P16    P17    P18    P19    P20
+IO    P13    P14    P15    P16    P17    P18    P19    NC     NC
 序号  19     20     21     22     23     24     25     26     27
-名称  H5L    H5R    H4R    H3R    H2R    LED1   LED2   LED3   H1R
-IO    P30    P29    P28    P27    P26    P25    P24    P23    P22
+名称  H5L    H5R    H4R    H3R    LED1   LED2   LED3   H2R    H1R
+IO    P20    P30    P29    P28    P25    P24    P23    P22    P21
 ====  =====  =====  =====  =====  =====  =====  =====  =====  =====
