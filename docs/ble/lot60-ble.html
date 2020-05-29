@@ -101,7 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">概述</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id4">产品亮点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">产品附件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">接口图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connector">接口图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hardware-ver">硬件版本</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#led">LED 一览</a></li>
 </ul>
@@ -223,8 +223,8 @@
 <li><p>微动按钮：键盘上的Reset按钮和ISP按钮在默认情况下是未焊接状态的。若有需要，可以将此按钮焊接在线路板上。</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>接口图<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="connector">
+<span id="id7"></span><h3>接口图<a class="headerlink" href="#connector" title="永久链接至标题">¶</a></h3>
 <div class="figure align-default">
 <img alt="接口图" src="../_images/lot60_revg_draw.png" />
 </div>
@@ -293,7 +293,7 @@
 <div class="section" id="id10">
 <h3>快速入门<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>（如果购买的是散件）按照线路板上的标识，根据 <a class="reference external" href="https://tools.lotlab.org/dl/res/lot60ble_g_bom.html">BOM表</a> 焊接相应的元件，然后参照固件刷新教程刷固件。</p></li>
+<li><p>（如果购买的是散件）按照线路板上的标识，根据 <a class="reference external" href="https://tools.lotlab.org/dl/res/lot60ble_g_bom.html">BOM表</a> 焊接相应的元件，然后参照 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> ，使用 <a class="reference internal" href="#debugger-ob"><span class="std std-ref">板载调试器</span></a> 刷固件。</p></li>
 <li><p>将电池插入电池插口。注意电池的线序，红色线对应“+”标记，黑色线对应“-”标记。</p></li>
 </ol>
 <div class="admonition warning">
@@ -475,7 +475,7 @@
 <ul class="simple">
 <li><p>方法1：</p>
 <ol class="arabic simple">
-<li><p>将<a class="reference external" href="#休眠键盘">键盘休眠</a>；</p></li>
+<li><p>将 <a class="reference external" href="#休眠键盘">键盘休眠</a> ；</p></li>
 <li><p>在唤醒的同时按下<code class="docutils literal notranslate"><span class="pre">Space+B</span></code>；</p></li>
 <li><p>蓝牙会搜索到一个名为<code class="docutils literal notranslate"><span class="pre">DFUTarg</span></code>的设备，表明已经进入DFU模式了。</p></li>
 </ol>
@@ -508,7 +508,7 @@
 <div class="section" id="debugger-ob">
 <span id="id26"></span><h3>板载调试器<a class="headerlink" href="#debugger-ob" title="永久链接至标题">¶</a></h3>
 <p>板载调试器可以在蓝牙固件完全毁坏的情况下重新烧写蓝牙固件。</p>
-<p>您需要先将板载调试器跳线连接，然后才能使用板载调试器功能。</p>
+<p>您需要先将 <a class="reference internal" href="#connector"><span class="std std-ref">板载调试器跳线</span></a> 连接，然后才能使用板载调试器功能。</p>
 <p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 以了解如何使用板载调试器更新固件。</p>
 </div>
 <div class="section" id="reset">
@@ -787,7 +787,7 @@ LE”相关字样的设备。建议使用最新版Windows以增加蓝牙使用�
 <li><a class="reference internal" href="#id1">概述</a><ul>
 <li><a class="reference internal" href="#id4">产品亮点</a></li>
 <li><a class="reference internal" href="#id6">产品附件</a></li>
-<li><a class="reference internal" href="#id7">接口图</a></li>
+<li><a class="reference internal" href="#connector">接口图</a></li>
 <li><a class="reference internal" href="#hardware-ver">硬件版本</a></li>
 <li><a class="reference internal" href="#led">LED 一览</a></li>
 </ul>
