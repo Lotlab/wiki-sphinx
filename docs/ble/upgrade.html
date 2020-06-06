@@ -118,9 +118,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id11">更新固件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">常见问题</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">散件的固件烧录指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">散件的固件烧录指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#burn-toolbox">烧录工具箱</a></li>
 </ul>
 </li>
 </ul>
@@ -174,7 +176,7 @@
 <div class="section" id="id3">
 <h3>通常更新方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id13" id="id4">1</a> 程序</p></li>
+<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id15" id="id4">1</a> 程序</p></li>
 <li><p>点击nRF
 Connect右上角的Scan扫描蓝牙设备，这时候应该能够见到你的蓝牙键盘</p></li>
 <li><p>点击CONNCET按钮，等待连接成功</p></li>
@@ -213,15 +215,27 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 <div class="section" id="id7">
 <h3>更新方法<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
-<li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a>  <a class="footnote-reference brackets" href="#id14" id="id8">2</a></p></li>
+<li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a>  <a class="footnote-reference brackets" href="#id16" id="id8">2</a></p></li>
 <li><p>打开固件更新工具，切换至“8位ch55x系列”，将芯片型号改为“CH552”，并在底下的“用户程序文件中”选择你要更新的USB固件</p></li>
 <li><p>参考产品说明， <strong>进入USB ISP模式</strong> ，此时，设备列表中会出现一个可选择的设备并会自动选中。</p></li>
 <li><p>点击下载按钮。下载完毕后，将键盘的USB断开并重新连接，即可升级完毕。</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>你也可以使用 <a class="reference internal" href="#burn-toolbox"><span class="std std-ref">烧录工具箱</span></a> 来更新 USB 固件。</p>
+</div>
 </div>
 </div>
 <div class="section" id="id9">
 <h2>使用板载调试器强制更新蓝牙固件<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>仅部分硬件配备了板载调试器，并且在部分产品上可能需要手动启用板载调试器。请参考产品页面以获取更多信息。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>以下教程是手工安装 PyOCD 并强制更新固件的教程，你也可以使用 <a class="reference internal" href="#burn-toolbox"><span class="std std-ref">烧录工具箱</span></a> 来强制更新固件。</p>
+</div>
 <div class="section" id="id10">
 <h3>环境配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <div class="section" id="windows">
@@ -260,21 +274,49 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 <li><p>刷新完毕后，拔下电池和USB线，然后重新插上。</p></li>
 </ol>
 </div>
-</div>
 <div class="section" id="id12">
-<h2>散件的固件烧录指南<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<h3>常见问题<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>提示 “No ACK Received”：板载调试器没有正确连接到蓝牙芯片。请参考产品页面，检查你的板载调试器是否正常配置。</p></li>
+<li><p>提示 “Waiting for a debug probe to be connected”: 无法找到板载调试器。请确认你的键盘有板载调试器功能并刷新了正确的 USB 固件。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>散件的固件烧录指南<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <p>散件没有内置任何固件，所以需要你手动烧录固件。烧录固件需要使用以下顺序：</p>
 <ol class="arabic simple">
 <li><p>先烧录USB固件，确保USB正常工作</p></li>
 <li><p>使用板载调试器烧录蓝牙固件</p></li>
 </ol>
+<p>可以使用下面的烧录工具箱一键烧写。</p>
+</div>
+<div class="section" id="burn-toolbox">
+<span id="id14"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">烧录工具箱</a>
+整合了上面所述的USB固件更新工具（WCHIPSTool）和板载调试器线刷工具（PyOCD）。此工具箱仅能在 Windows 下使用。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>此工具箱仅是上面几个工具的简单整合，在使用此工具箱前请先查看上面的USB固件更新步骤和板载调试器更新步骤。</p>
+</div>
+<p>用法：</p>
+<ol class="arabic simple">
+<li><p>若仅需刷新USB固件，则只选择USB固件，并烧录即可；</p></li>
+<li><p>若仅需刷新蓝牙固件，则只选择蓝牙固件，并烧录即可；</p></li>
+<li><p>若需要同时刷新USB和蓝牙固件，则需要两个都选择，然后点击烧录；</p></li>
+</ol>
+<p>选项：</p>
+<ul class="simple">
+<li><p>自动下载：发现USB设备后自动下载USB固件和蓝牙固件（若有）</p></li>
+<li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
+</ul>
 <dl class="footnote brackets">
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
 <dd><p>可以到
 <a class="reference external" href="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile">官方下载页面</a>
 或者应用商店搜索下载。支持IOS和安卓端。</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
 <dd><p>可以使用<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">官方的固件更新工具</a>。若你在使用Linux，则可以使用三方的<a class="reference external" href="https://github.com/rgwan/librech551">WCHISP</a>来更新。</p>
 </dd>
 </dl>
@@ -313,9 +355,11 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id11">更新固件</a></li>
+<li><a class="reference internal" href="#id12">常见问题</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id12">散件的固件烧录指南</a></li>
+<li><a class="reference internal" href="#id13">散件的固件烧录指南</a></li>
+<li><a class="reference internal" href="#burn-toolbox">烧录工具箱</a></li>
 </ul>
 </li>
 </ul>
