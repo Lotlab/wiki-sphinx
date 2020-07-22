@@ -97,27 +97,26 @@
 <li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LotKB固件编译移植指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">编译教程</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">在线编译工具</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">环境搭建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">环境搭建</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sdk">下载SDK</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">测试编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">克隆源码并准备源码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">测试编译</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">主程序编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">主程序编译</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">硬件移植教程</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">硬件移植教程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">编辑默认配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">其他配置项目</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">移植按键阵列对应表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">编辑默认配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">其他配置项目</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#config">常用config配置</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">禁用软件开机功能</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
@@ -158,16 +157,7 @@
 <div class="section" id="id1">
 <h2>编译教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>在线编译工具<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="http://lotkb.glab.online/">http://lotkb.glab.online/</a></p>
-<p>感谢格老师提供的在线编译服务器。</p>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>此服务器上的代码暂时不是Lotlab主分支的代码</p>
-</div>
-</div>
-<div class="section" id="id3">
-<h3>环境搭建<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>环境搭建<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>此固件在Windows（Msys2）和Linux下编译通过。</p>
 <div class="section" id="linux">
 <h4>Linux下环境的搭建<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
@@ -196,8 +186,8 @@ unzip -q nRF5_SDK_15.3.0_59ac345.zip
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>克隆源码并准备源码<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>克隆源码并准备源码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Lotlab/nrf52-keyboard <span class="c1"># 克隆源码</span>
 <span class="nb">cd</span> nrf52-keyboard
 
@@ -213,8 +203,8 @@ nano template/Makefile.windows <span class="c1"># 将里面的 GNU_INSTALL_ROOT 
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>测试编译<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3>测试编译<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/template
 make -j
 </pre></div>
@@ -240,8 +230,8 @@ make bootloader -j
 </div>
 <p>如果一切正常，则Bootloader就编译完毕了。你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到编译好的Bootloader的hex文件。</p>
 </div>
-<div class="section" id="id6">
-<h3>主程序编译<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h3>主程序编译<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/lkb-core
 make package -j <span class="c1"># 生成用于DFU升级的升级包</span>
 make ch554 -j <span class="c1"># 生成USB固件</span>
@@ -251,10 +241,10 @@ make ch554 -j <span class="c1"># 生成USB固件</span>
 你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到对应的<code class="docutils literal notranslate"><span class="pre">nrf52_kbd_XXXXXXXX.zip</span></code>升级包文件和<code class="docutils literal notranslate"><span class="pre">ch554.hex</span></code>USB固件文件。参照刷固件相关教程将其刷入键盘即可。</p>
 </div>
 </div>
+<div class="section" id="id6">
+<h2>硬件移植教程<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id7">
-<h2>硬件移植教程<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id8">
-<h3>准备工作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3>准备工作<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>首先，你需要准备一份按键阵列表格，用于确定各个按键的位置。然后需要规划好各个IO口的用途。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -277,8 +267,8 @@ ROW_IN：如果按键防反冲二极管是由列流向行的，启用这个FLAG�
 MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；否则将其禁用</p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>移植按键阵列对应表<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h3>移植按键阵列对应表<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>使用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_common.h</span></code>，你可以看到有一个名为KEYMAP的宏。</p>
 <p>这个宏可以使用QMK的builder工具生成。如果你想要手写的话可以继续往下面看。</p>
 <p>我们以GH60的宏为例，讲解如何编写这个宏。</p>
@@ -308,14 +298,14 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <p>上面这一部分中，反斜杠表示换行。上面的这一部分本质上是一维数组，只不过为了好看而将其转换为了键盘实际的样式。</p>
 </div>
 </div>
-<div class="section" id="id10">
-<h3>编辑默认配列<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id9">
+<h3>编辑默认配列<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_plain.c</span></code>，你会发现有两个部分：一部分是keymaps，定义了默认的键盘配列；一部分是fn_actions，定义了默认的键盘fn功能。</p>
 <p>这部分的代码也可以使用QMK的工具生成。</p>
 <p>对于keymaps部分，使用了前面提到的KEYMAP的宏，将键盘上的各个按键键值转换为对应按键阵列的键值。我们仅需按照键盘的样式对其编辑即可。</p>
 </div>
-<div class="section" id="id11">
-<h3>其他配置项目<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id10">
+<h3>其他配置项目<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <div class="section" id="config">
 <h4>常用config配置<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">config.h</span></code>内有一些可以配置的项目，这里写出一些比较常用的：</p>
@@ -348,8 +338,8 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 </pre></div>
 </div>
 </div>
-<div class="section" id="id12">
-<h4>禁用软件开机功能<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id11">
+<h4>禁用软件开机功能<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
 <p>将Makefile内的BootMagic关闭，并关闭config.h里面的BOOTCHECK，即可关闭开机检测功能。</p>
 </div>
 </div>
@@ -679,27 +669,26 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
               <div id="toc-content"><ul>
 <li><a class="reference internal" href="#">LotKB固件编译移植指南</a><ul>
 <li><a class="reference internal" href="#id1">编译教程</a><ul>
-<li><a class="reference internal" href="#id2">在线编译工具</a></li>
-<li><a class="reference internal" href="#id3">环境搭建</a><ul>
+<li><a class="reference internal" href="#id2">环境搭建</a><ul>
 <li><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
 <li><a class="reference internal" href="#sdk">下载SDK</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4">克隆源码并准备源码</a></li>
-<li><a class="reference internal" href="#id5">测试编译</a></li>
+<li><a class="reference internal" href="#id3">克隆源码并准备源码</a></li>
+<li><a class="reference internal" href="#id4">测试编译</a></li>
 <li><a class="reference internal" href="#bootloader">Bootloader的编译</a></li>
-<li><a class="reference internal" href="#id6">主程序编译</a></li>
+<li><a class="reference internal" href="#id5">主程序编译</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">硬件移植教程</a><ul>
-<li><a class="reference internal" href="#id8">准备工作</a></li>
+<li><a class="reference internal" href="#id6">硬件移植教程</a><ul>
+<li><a class="reference internal" href="#id7">准备工作</a></li>
 <li><a class="reference internal" href="#io">移植按键阵列IO和配置</a></li>
-<li><a class="reference internal" href="#id9">移植按键阵列对应表</a></li>
-<li><a class="reference internal" href="#id10">编辑默认配列</a></li>
-<li><a class="reference internal" href="#id11">其他配置项目</a><ul>
+<li><a class="reference internal" href="#id8">移植按键阵列对应表</a></li>
+<li><a class="reference internal" href="#id9">编辑默认配列</a></li>
+<li><a class="reference internal" href="#id10">其他配置项目</a><ul>
 <li><a class="reference internal" href="#config">常用config配置</a></li>
 <li><a class="reference internal" href="#usb">蓝牙、USB、充电状态显示</a></li>
-<li><a class="reference internal" href="#id12">禁用软件开机功能</a></li>
+<li><a class="reference internal" href="#id11">禁用软件开机功能</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#g84-4100">示例：G84-4100</a></li>
