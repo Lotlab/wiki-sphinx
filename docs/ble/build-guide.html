@@ -218,12 +218,6 @@ make -j
 make <span class="c1"># 编译microecc库</span>
 <span class="nb">cd</span> ../../../../../
 
-<span class="c1"># 方法1：</span>
-<span class="nb">cd</span> application/bootloader/project/armgcc/
-make <span class="nv">SOFTDEVICE</span><span class="o">=</span>S132 <span class="nv">NRF_CHIP</span><span class="o">=</span>nrf52832 <span class="nv">NRF52_DISABLE_FPU</span><span class="o">=</span>yes -j <span class="c1"># nrf52832的编译命令</span>
-make <span class="nv">SOFTDEVICE</span><span class="o">=</span>S112 <span class="nv">NRF_CHIP</span><span class="o">=</span>nrf52810 -j <span class="c1"># nrf52810的编译命令</span>
-
-<span class="c1"># 方法2：</span>
 <span class="nb">cd</span> keyboard/template
 make bootloader -j
 </pre></div>

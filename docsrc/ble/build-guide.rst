@@ -78,12 +78,6 @@ Bootloader的编译
    make # 编译microecc库
    cd ../../../../../
 
-   # 方法1：
-   cd application/bootloader/project/armgcc/
-   make SOFTDEVICE=S132 NRF_CHIP=nrf52832 NRF52_DISABLE_FPU=yes -j # nrf52832的编译命令
-   make SOFTDEVICE=S112 NRF_CHIP=nrf52810 -j # nrf52810的编译命令
-
-   # 方法2：
    cd keyboard/template
    make bootloader -j
 
