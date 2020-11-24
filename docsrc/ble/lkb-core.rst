@@ -94,4 +94,4 @@ IO接口图
 其他资源
 --------
 
--  Kicad的\ `封装 <https://tools.lotlab.org/dl/res/lkb-core/LKB_Core.kicad_mod>`__
+-  Kicad的\ `封装 <https://tools.lotlab.org/dl/res/LKB_Core.kicad_mod>`__

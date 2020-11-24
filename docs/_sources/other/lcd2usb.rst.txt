@@ -19,10 +19,9 @@ LCD2USB可以连接电脑作为状态显示器使用。
 ~~~~~~~~
 
 连上电脑后，电脑会提示发现了一个新设备“LCD2USB
-Interface”。下载\ `zadig <http://zadig.akeo.ie/downloads/zadig.exe>`__\ 并打开，点击“Options”，勾上“List
-All Devices”选项，然后在下面的下拉框中选择设备“LCD2USB
-Interface”。将Driver右边的框由“WinUSB”改为“libusb-win32”，点击“Replace
-Driver”，驱动即安装完成。
+Interface”。下载\ `zadig <https://zadig.akeo.ie/>`__\ 并打开，点击“Options”，勾上“List All Devices”选项，
+然后在下面的下拉框中选择设备“LCD2USB Interface”。将Driver右边的框由“WinUSB”改为“libusb-win32”，
+点击“Replace Driver”，驱动即安装完成。
 
 |image0|
 
@@ -32,8 +31,7 @@ Driver”，驱动即安装完成。
 AIDA64是一款系统信息查看工具，它支持将系统信息输出至LCD2USB设备。如果你不想使用AIDA64，可以看下面的章节。
 
 打开AIDA64，选择“文件-设置”，在左边展开“硬件监视工具”，选择“LCD”。在右边的面板中点击“LCD2USB”，勾上“启用
-LCD2USB LCD
-支持”，将LCD类型改为16x2。接着，你可以在左边的“LCD选项”中更改你要显示的内容。
+LCD2USB LCD 支持”，将LCD类型改为16x2。接着，你可以在左边的“LCD选项”中更改你要显示的内容。
 
 使用 LCD Smartie 作为显示控制器
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +75,7 @@ Size”改为“16x2”。点击OK后关闭软件再重新打开，即可看到�
 更新固件
 --------
 
-下载固件文件与\ `固件更新工具 <http://wch.cn/download/WCHISPTool_Setup_exe.html>`__\ ，打开固件更新工具，选择“8位CH55X系列”，芯片型号选择“CH552”，用户程序文件选择刚刚下载好的固件文件。将LCD2USB从电脑断开，按住液晶屏后方的按钮并将LCD2USB连上电脑，然后松开按钮。这时，USB设备列表会出现一个设备，点击“下载”即可。
+下载固件文件与\ `固件更新工具 <http://www.wch.cn/download/WCHISPTool_Setup_exe.html>`__\ ，打开固件更新工具，选择“8位CH55X系列”，芯片型号选择“CH552”，用户程序文件选择刚刚下载好的固件文件。将LCD2USB从电脑断开，按住液晶屏后方的按钮并将LCD2USB连上电脑，然后松开按钮。这时，USB设备列表会出现一个设备，点击“下载”即可。
 
 更新完成后若LCD2USB没有恢复正常工作，可以将LCD2USB从电脑上断开并重新连接。
 
