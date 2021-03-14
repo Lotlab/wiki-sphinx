@@ -98,6 +98,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LotKB固件编译移植指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">编译教程</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">环境搭建</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#docker">使用Docker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sdk">下载SDK</a></li>
 </ul>
@@ -159,6 +160,13 @@
 <div class="section" id="id2">
 <h3>环境搭建<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>此固件在Windows（Msys2）和Linux下编译通过。</p>
+<div class="section" id="docker">
+<h4>使用Docker<a class="headerlink" href="#docker" title="永久链接至标题">¶</a></h4>
+<p>我们提供了Docker镜像，已经设置好了环境，方便编译使用。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run lotlab/nrf52-keyboard
+</pre></div>
+</div>
+</div>
 <div class="section" id="linux">
 <h4>Linux下环境的搭建<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
 <p>使用终端运行以下命令</p>
@@ -214,9 +222,8 @@ make -j
 <div class="section" id="bootloader">
 <h3>Bootloader的编译<a class="headerlink" href="#bootloader" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git submodule init -- <span class="c1"># 初始化子模块，用于构建microecc库</span>
-<span class="nb">cd</span> SDK/external/micro-ecc/nrf52nf_armgcc/armgcc
-make <span class="c1"># 编译microecc库</span>
-<span class="nb">cd</span> ../../../../../
+<span class="nb">cd</span> SDK/external/micro-ecc/
+./build_all.sh <span class="c1"># 编译microecc库</span>
 
 <span class="nb">cd</span> keyboard/template
 make bootloader -j
@@ -664,6 +671,7 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <li><a class="reference internal" href="#">LotKB固件编译移植指南</a><ul>
 <li><a class="reference internal" href="#id1">编译教程</a><ul>
 <li><a class="reference internal" href="#id2">环境搭建</a><ul>
+<li><a class="reference internal" href="#docker">使用Docker</a></li>
 <li><a class="reference internal" href="#linux">Linux下环境的搭建</a></li>
 <li><a class="reference internal" href="#sdk">下载SDK</a></li>
 </ul>

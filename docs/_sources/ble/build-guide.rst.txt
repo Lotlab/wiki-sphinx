@@ -11,6 +11,16 @@ LotKB固件编译移植指南
 
 此固件在Windows（Msys2）和Linux下编译通过。
 
+使用Docker
+^^^^^^^^^^^^^^^^^
+
+我们提供了Docker镜像，已经设置好了环境，方便编译使用。
+
+.. code:: bash
+
+   docker run lotlab/nrf52-keyboard
+
+
 Linux下环境的搭建
 ^^^^^^^^^^^^^^^^^
 
@@ -74,9 +84,8 @@ Bootloader的编译
 .. code:: bash
 
    git submodule init -- # 初始化子模块，用于构建microecc库
-   cd SDK/external/micro-ecc/nrf52nf_armgcc/armgcc
-   make # 编译microecc库
-   cd ../../../../../
+   cd SDK/external/micro-ecc/
+   ./build_all.sh # 编译microecc库
 
    cd keyboard/template
    make bootloader -j
