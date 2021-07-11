@@ -15,6 +15,9 @@ Lot60-Lite 是一款低功耗蓝牙双模键盘。
 
 Lot60-Lite 作为 Lot60-BLE 的继任者，继承了原有 Lot60-BLE 所有的功能，更在此基础上添加了分裂空格的支持。
 
+.. figure:: res/lot60-lite_layout.png
+   :alt: 布局图
+
 产品亮点
 --------
 
