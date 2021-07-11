@@ -91,13 +91,19 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙相关</span></p>
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ble/ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ble/build-guide.html">LotKB固件编译移植指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ble/lkb-core.html">LKB-Core使用说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ble/lot60-ble.html">Lot60-BLE使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble/troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
 </ul>
 <p class="caption"><span class="caption-text">其他项目</span></p>
 <ul>
@@ -126,7 +132,7 @@
   <div class="section" id="lotlab-wiki">
 <h1>欢迎来到 Lotlab Wiki !<a class="headerlink" href="#lotlab-wiki" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">蓝牙相关</span></p>
+<p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ble/ble4100.html">BLE4100套件使用说明</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ble/ble4100.html#id1">使用手册</a></li>
@@ -148,8 +154,24 @@
 <li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id1">概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id9">使用手册</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#q-a">Q&amp;A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id32">故障排除</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id42">固件发布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id30">故障排除</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/lot60-ble.html#id31">固件发布</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ble/troubleshoot.html">故障排除指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id2">通用故障排除指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id3">我的键盘无法开机了</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id4">某个按键工作不正常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id5">按键混乱，或按键无响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id6">更新键盘设置后无法正常保存设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id7">更新按键配置后所有按键失效</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#windows">Windows 下出现“驱动程序错误”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id8">有时候出现卡键的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id9">指示灯忽然亮起变为白色，然后迅速变成蓝色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#capslock">按下CapsLock后，指示灯也会亮起</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id10">按键配置下载工具提示我“发送重试次数达到上限”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#signal-enhance">如何改善蓝牙连接稳定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble/troubleshoot.html#id12">如何判断我的设备是否支持蓝牙4.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ble/upgrade.html">蓝牙键盘固件更新教程</a><ul>
@@ -160,6 +182,26 @@
 <li class="toctree-l2"><a class="reference internal" href="ble/upgrade.html#usb">更新USB固件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble/upgrade.html#id11">使用板载调试器强制更新蓝牙固件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble/upgrade.html#id15">散件的固件烧录指南</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ble_wch/lot60-lite.html">Lot60-Lite使用指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/lot60-lite.html#id1">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/lot60-lite.html#id7">使用手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/lot60-lite.html#q-a">Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/lot60-lite.html#id23">故障排除</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/lot60-lite.html#id24">固件发布</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/upgrade.html#id1">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/upgrade.html#id2">名词解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/upgrade.html#burn-toolbox-wch">烧录工具箱</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_wch/upgrade.html#isp">使用官方ISP程序下载</a></li>
 </ul>
 </li>
 </ul>

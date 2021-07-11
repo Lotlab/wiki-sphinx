@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>蓝牙键盘固件更新教程（WCH系列芯片） &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="GH60相关" href="../other/gh60-related.html" />
+    <link rel="prev" title="Lot60-Lite使用指南" href="lot60-lite.html" /> 
+</head>
+
+<body>
+  <header class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">蓝牙键盘固件更新教程（WCH系列芯片）</span>
+
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1 sidedrawer">
+  <div class="mui--appbar-line-height sidedrawer-brand">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  
+<div role="search" class="search-box">
+  <form class="mui-form" action="../search.html" method="get">
+    <div class="mui-textfield">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer-toc">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble/ble4100.html">BLE4100套件使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/build-guide.html">LotKB固件编译移植指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/lot60-ble.html">Lot60-BLE使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lot60-lite.html">Lot60-Lite使用指南</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">蓝牙键盘固件更新教程（WCH系列芯片）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">名词解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#burn-toolbox-wch">烧录工具箱</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isp">使用官方ISP程序下载</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">更新方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+    <div class="mui-container-fluid">
+      <div class="mui-row">
+          
+          <div class="rst-content mui-col-sm-12 mui-col-md-7 mui-col-md-offset-1">
+          
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <div itemprop="articleBody">
+              
+  <div class="section" id="wch">
+<h1>蓝牙键盘固件更新教程（WCH系列芯片）<a class="headerlink" href="#wch" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>你可能需要升级固件来获得新功能或者修复已有的BUG，可供更新的固件可以在产品页面最下方的固件发布处找到。</p>
+<p>此系列键盘的固件的文件名形如 <code class="docutils literal notranslate"><span class="pre">[键盘名称]_[编译日期]_[Git版本].bin</span></code>，请确认下载了硬件对应的固件。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p><strong>刷入不正确的USB固件可能使你的键盘的USB功能工作不正常！</strong>
+请在更新前确认升级包是由可信的人员提供的，并仔细阅读固件发布页面的详细说明，了解可能出现的问题。</p>
+<p>若在固件更新完毕后发现键盘功能不可用，可以参考下面的刷新说明重新刷新正确的固件。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>名词解释<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="simple">
+<dt>ISP模式</dt><dd><p>USB芯片的一种工作模式，用于升级USB固件。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="burn-toolbox-wch">
+<span id="id3"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox-wch" title="永久链接至标题">¶</a></h2>
+<p>烧录工具箱提供了友好的固件更新界面，且可以自动使键盘进入ISP模式，无需拆卸电池。</p>
+<p>请访问我们的 <a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">百度网盘下载</a> 烧录工具箱，此工具箱仅能在 Windows 下使用。</p>
+<p>用法：</p>
+<ol class="arabic simple">
+<li><p>首先选择设备配置文件，这里选择“CH573”系列</p></li>
+<li><p>选择要烧录的USB固件</p></li>
+<li><p>在设备下拉框处选择你的键盘，点击烧录按钮即可更新键盘固件</p></li>
+<li><p>如果当前键盘工作正常，则此烧录工具会自动进入USB的ISP模式，不需要手动进入。</p></li>
+</ol>
+<p>选项：</p>
+<ul class="simple">
+<li><p>自动下载：发现USB设备后自动下载USB固件</p></li>
+<li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><strong>使用此工具箱自动进入ISP模式会擦除当前的固件！</strong>
+请确保你已经准备好对应硬件的固件，否则可能造成键盘功能不可用需要手动进入ISP模式更新。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>如果烧录工具箱提示无法进入ISP模式，或根本无法找到键盘设备，则你可能需要尝试手动进入ISP模式更新固件。
+进入ISP模式的方法请参考对应硬件的说明书。</p>
+</div>
+</div>
+<div class="section" id="isp">
+<h2>使用官方ISP程序下载<a class="headerlink" href="#isp" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>更新方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a></p></li>
+<li><p>打开固件更新工具，切换至“32位ch57x系列”，将芯片型号改为“CH573”，并在底下的“用户程序文件中”选择你要更新的USB固件</p></li>
+<li><p>参考产品说明， <strong>进入USB ISP模式</strong> ，此时，设备列表中会出现一个可选择的设备并会自动选中。</p></li>
+<li><p>点击下载按钮。下载完毕后，将键盘的USB断开并重新连接，即可升级完毕。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>建议使用 <a class="reference internal" href="#burn-toolbox-wch"><span class="std std-ref">烧录工具箱</span></a> 来更新 USB 固件。</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            </div>
+          </div>
+          
+            
+            <div class="mui-panel mui--hidden-sm mui--hidden-xs mui-col-md-3 toc">
+              <div class="toc-heading">
+                <h4>目录</h4>
+              </div>
+              <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">蓝牙键盘固件更新教程（WCH系列芯片）</a><ul>
+<li><a class="reference internal" href="#id1">概述</a></li>
+<li><a class="reference internal" href="#id2">名词解释</a></li>
+<li><a class="reference internal" href="#burn-toolbox-wch">烧录工具箱</a></li>
+<li><a class="reference internal" href="#isp">使用官方ISP程序下载</a><ul>
+<li><a class="reference internal" href="#id4">更新方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+            
+                    
+      </div>
+      <div class="mui-row">
+        
+          
+            <div class="mui-container-fluid mui-col-sm-12 mui-col-md-10 mui-col-md-offset-1">
+              <div class="row mui-panel">
+                <div id="vcomments"></div>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+    <div id="push"></div>
+  </div>
+  <footer>
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>

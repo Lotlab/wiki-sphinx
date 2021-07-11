@@ -8,10 +8,17 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 蓝牙相关
+   :caption: 蓝牙键盘（nRF系列）
    :glob:
 
    ble/*
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 蓝牙键盘（WCH系列）
+   :glob:
+
+   ble_wch/*
 
 .. toctree::
    :maxdepth: 2
