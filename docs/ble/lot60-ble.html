@@ -196,6 +196,11 @@
               
   <div class="section" id="lot60-ble">
 <h1>Lot60-BLE使用指南<a class="headerlink" href="#lot60-ble" title="永久链接至标题">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>此页面介绍的是 Lot60-BLE 键盘，其部分操作与 Lot60-Lite 键盘有区别，请确认你的硬件为 Lot60-BLE。</p>
+<p>若你正在使用 Lot60-Lite 键盘，请参阅 <a class="reference internal" href="../ble_wch/lot60-lite.html"><span class="doc">Lot60-Lite使用指南</span></a></p>
+</div>
 <div class="section" id="id1">
 <h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了TMK作为键盘功能核心，几乎完全实现了TMK功能 <a class="footnote-reference brackets" href="#id40" id="id2">1</a>。其采用了与GH60完全一致的按键阵列，使其按键配置文件与GH60几乎完全兼容 <a class="footnote-reference brackets" href="#id41" id="id3">2</a>。</p>
@@ -288,7 +293,7 @@
 <h3>LED 一览<a class="headerlink" href="#led" title="永久链接至标题">¶</a></h3>
 <p>Lot60-BLE 包含了1个CapsLock LED 和一个 RGB LED 指示灯，并预留了3个单色LED状态指示灯的位置。</p>
 <p>本产品默认使用 RGB 状态指示灯。此状态指示灯位于 Esc 按键处，使用贴片LED灯，故需要使用贴片RGB轴。</p>
-<p>如果不想使用RGB轴，可以放弃这个LED灯，转而使用位于按键1, 2, 3处的LED指示灯（参见：<a class="reference internal" href="../ble_wch/lot60-lite.html#led-instruction"><span class="std std-ref">故障排除</span></a>）。</p>
+<p>如果不想使用RGB轴，可以放弃这个LED灯，转而使用位于按键1, 2, 3处的LED指示灯（参见：<a class="reference internal" href="#led-instruction"><span class="std std-ref">如何改为3 LED指示灯</span></a>）。</p>
 </div>
 </div>
 <div class="section" id="id9">
@@ -332,7 +337,7 @@
 <li><p>键盘无输入15秒后转入慢速扫描模式，按任意按键恢复。</p></li>
 <li><p>键盘无输入600秒后自动休眠。自动休眠后，按下键盘的任意按键即可唤醒键盘。</p></li>
 </ul>
-<p>以上模式的进入时间均可使用键盘配置工具调整，详情请参见 <a class="reference internal" href="../ble_wch/lot60-lite.html#device-setting"><span class="std std-ref">配置键盘与更改按键配置</span></a> 。</p>
+<p>以上模式的进入时间均可使用键盘配置工具调整，详情请参见 <a class="reference internal" href="#device-setting"><span class="std std-ref">配置键盘与更改按键配置</span></a> 。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>设置调整操作仅适用于固件版本 1.1.0.0 及以后的固件。</p>
@@ -348,7 +353,7 @@
 <div class="section" id="sleep">
 <span id="id15"></span><h3>休眠键盘<a class="headerlink" href="#sleep" title="永久链接至标题">¶</a></h3>
 <p>在默认按键配置下，按下<code class="docutils literal notranslate"><span class="pre">Fn0+CapsLock</span></code>，即可让键盘进入休眠状态。</p>
-<p>如果键盘按键错乱导致无法休眠，请尝试 <a class="reference internal" href="../ble_wch/lot60-lite.html#force-sleep"><span class="std std-ref">强制休眠键盘</span></a></p>
+<p>如果键盘按键错乱导致无法休眠，请尝试 <a class="reference internal" href="#force-sleep"><span class="std std-ref">强制休眠键盘</span></a></p>
 <p>手动休眠后，需要手工按下<code class="docutils literal notranslate"><span class="pre">Space+U</span></code>才能再次唤醒。</p>
 </div>
 <div class="section" id="ble-connect">
@@ -397,7 +402,7 @@
 <span id="id19"></span><h3>删除蓝牙绑定<a class="headerlink" href="#unbond-device" title="永久链接至标题">¶</a></h3>
 <p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试以下删除所有绑定。</p>
 <ol class="arabic simple">
-<li><p>手动 <a class="reference internal" href="../ble_wch/lot60-lite.html#sleep"><span class="std std-ref">休眠键盘</span></a></p></li>
+<li><p>手动 <a class="reference internal" href="#sleep"><span class="std std-ref">休眠键盘</span></a></p></li>
 <li><p>在开机时按下<code class="docutils literal notranslate"><span class="pre">Space+E</span></code>即可删除绑定。（即在休眠后，同时按下Space+U+E开机）</p></li>
 </ol>
 </div>
@@ -510,7 +515,7 @@
 <div class="section" id="debugger-ob">
 <span id="id26"></span><h3>板载调试器<a class="headerlink" href="#debugger-ob" title="永久链接至标题">¶</a></h3>
 <p>板载调试器可以在蓝牙固件完全毁坏的情况下重新烧写蓝牙固件。</p>
-<p>您需要先将 <a class="reference internal" href="../ble_wch/lot60-lite.html#connector"><span class="std std-ref">板载调试器跳线</span></a> 连接，然后才能使用板载调试器功能。</p>
+<p>您需要先将 <a class="reference internal" href="#connector"><span class="std std-ref">板载调试器跳线</span></a> 连接，然后才能使用板载调试器功能。</p>
 <p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 以了解如何使用板载调试器更新固件。</p>
 </div>
 <div class="section" id="reset">
@@ -558,7 +563,7 @@
 <p>请参考 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 更新你的键盘固件。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>必须对应硬件版本更新软件。查看 <a class="reference internal" href="../ble_wch/lot60-lite.html#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a> 来确定此键盘的硬件版本。</p>
+<p>必须对应硬件版本更新软件。查看 <a class="reference internal" href="#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a> 来确定此键盘的硬件版本。</p>
 <p>若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。</p>
 </div>
 <div class="section" id="v1-1-3-2">
@@ -611,7 +616,7 @@
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>需要同时更新USB固件。</p>
-<p>在更新此版本固件后，请手动删除所有已经连接的设备并 <a class="reference internal" href="../ble_wch/lot60-lite.html#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a>，然后再重新连接此键盘。</p>
+<p>在更新此版本固件后，请手动删除所有已经连接的设备并 <a class="reference internal" href="#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a>，然后再重新连接此键盘。</p>
 <p>更新此版本固件后，老版本固件设置的自定义会被清除。
 旧版按键配置下载工具将不可使用，请更新按键配置下载工具至1.1.0.0版本，或直接使用新版配置工具配置。</p>
 </div>
