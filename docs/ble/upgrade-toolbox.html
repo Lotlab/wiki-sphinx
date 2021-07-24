@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>固件烧录工具箱 &mdash; Lotlab Wiki  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/mui.min.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Lot60-Lite使用指南" href="../ble_wch/lot60-lite.html" />
+    <link rel="prev" title="蓝牙键盘固件更新教程" href="upgrade.html" /> 
+</head>
+
+<body>
+  <header class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            
+
+
+  
+<span class="appbar-brand">固件烧录工具箱</span>
+
+        </div>
+    </div>
+</header>
+
+ 
+
+<div id="sidedrawer" class="mui--no-user-select mui--z1 sidedrawer">
+  <div class="mui--appbar-line-height sidedrawer-brand">
+    
+    
+      <a href="../index.html" class="mui--text-title" alt="Documentation Home"> Lotlab Wiki
+    
+
+    
+    </a>
+    
+  </div>
+  <div class="mui-divider"></div>
+  
+<div role="search" class="search-box">
+  <form class="mui-form" action="../search.html" method="get">
+    <div class="mui-textfield">
+      <input type="text" name="q" placeholder="搜索…">
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </div>
+  </form>
+</div>
+  <div class="mui-divider"></div>
+  <div class="sidedrawer-toc">
+    
+      
+        
+        
+          
+        
+        
+          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-guide.html">LotKB固件编译移植指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lkb-core.html">LKB-Core使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshoot.html">故障排除指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">固件烧录工具箱</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">使用说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">页面选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">更新日志</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#v1-2-1-1">v1.2.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-2-1-0">v1.2.1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-2-0-0">v1.2.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-1-3-0">v1.1.3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-1-0-2">v1.1.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-1-0-1">v1.1.0.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-0-0-0">v1.0.0.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
+</ul>
+</div>
+        
+    
+  </div>
+
+  
+</div>
+<div id="root-container">
+  <div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+    <div class="mui-container-fluid">
+      <div class="mui-row">
+          
+          <div class="rst-content mui-col-sm-12 mui-col-md-7 mui-col-md-offset-1">
+          
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <div itemprop="articleBody">
+              
+  <div class="section" id="id1">
+<h1>固件烧录工具箱<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>烧录工具箱提供了友好的固件更新界面，整合了USB固件更新工具（WCHIPSTool）和板载调试器线刷工具（PyOCD）。</p>
+<p>通过使用此工具箱，你可以一键进入ISP模式下载USB固件，也可以同时烧录蓝牙和USB固件，方便使用。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>烧录工具箱的蓝牙烧录功能支持带有板载调试器的设备。请查阅您的产品页面，确定您的设备是否支持板载调试器，以及对应的启用方法。</p>
+<p>烧录工具箱带有的自动进入ISP模式的功能仅适用于固件v1.1.3.2及之后的版本。若您当前的USB固件并不支持此项功能，您则需要手动进入ISP模式。</p>
+</div>
+<p>请访问我们的 <a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">百度网盘下载</a> 烧录工具箱，此工具箱仅能在 Windows 下使用。</p>
+</div>
+<div class="section" id="id3">
+<h2>使用说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>启动软件后，请根据您的键盘型号选择烧写的USB芯片的类型。请查阅产品更新手册或产品页面以获取当前产品的芯片类型。</p>
+<ul class="simple">
+<li><p>对于nRF52系列键盘（如: Lot60-BLE），请选择 nRF52(CH552)。</p></li>
+<li><p>对于CH573系列键盘（如: Lot60-Lite），请选择 CH573</p></li>
+</ul>
+<p>然后选择你要烧录的固件：</p>
+<ul class="simple">
+<li><p>对于nRF52系列键盘，你可以选择烧录USB固件，或烧录蓝牙固件。没有选择固件则不会烧录对应的固件。</p></li>
+<li><p>对于CH57x系列键盘，你需要在这里选择需要烧录的USB固件。</p></li>
+</ul>
+<p>接着，在设备选择列表中选择你的设备。设备列表中可能有三种类型的设备，其烧录能力各不相同：</p>
+<ul class="simple">
+<li><p>ISP 设备 X: 是ISP模式下的USB设备。此设备可以单独烧录USB固件，或同时烧录USB固件和蓝牙固件；</p></li>
+<li><p>Lotlab Configurator: 是普通模式下的键盘设备。此设备可以烧录USB固件、蓝牙固件，或两者同时烧录。在烧录USB固件前，烧录工具箱会尝试自动进入USB的ISP模式以便升级程序。</p></li>
+<li><p>CMSIS-DAP: 是板载调试器设备。此设备只能烧录蓝牙固件。</p></li>
+</ul>
+<p>最后，点击烧录按钮即可。</p>
+</div>
+<div class="section" id="id4">
+<h2>页面选项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>自动下载：发现USB设备后自动下载USB固件和蓝牙固件（若有）</p></li>
+<li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>常见问题<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>Q: 无法自动进入ISP模式</p></li>
+<li><p>A: 请参考产品页面相关说明，尝试手动进入ISP模式。</p></li>
+<li><p>Q: 键盘列表里面没有我的ISP设备</p></li>
+<li><p>A: 请检查你的芯片类型选择是否正确，若不正确可能无法识别ISP设备。</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>更新日志<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>请务必下载最新版本。老版本的烧录工具箱可能存在一些问题，可能会导致您的设备无法正常工作。</p>
+</div>
+<div class="section" id="v1-2-1-1">
+<h3>v1.2.1.1<a class="headerlink" href="#v1-2-1-1" title="永久链接至标题">¶</a></h3>
+<p>2021年7月24日发布。</p>
+<p>修正CH552/554设备无法找到的问题。</p>
+</div>
+<div class="section" id="v1-2-1-0">
+<h3>v1.2.1.0<a class="headerlink" href="#v1-2-1-0" title="永久链接至标题">¶</a></h3>
+<p>2021年7月12日发布。</p>
+<p>修正CH573的烧录按钮设置不正确的问题。</p>
+</div>
+<div class="section" id="v1-2-0-0">
+<h3>v1.2.0.0<a class="headerlink" href="#v1-2-0-0" title="永久链接至标题">¶</a></h3>
+<p>2021年7月8日发布。</p>
+<p>更新了ISP的DLL，添加了设备切换功能，添加了CH573的支持。</p>
+</div>
+<div class="section" id="v1-1-3-0">
+<h3>v1.1.3.0<a class="headerlink" href="#v1-1-3-0" title="永久链接至标题">¶</a></h3>
+<p>2021年1月19日发布。</p>
+<p>修正了ISP设备选择USB固件导致程序崩溃退出的问题。</p>
+</div>
+<div class="section" id="v1-1-0-2">
+<h3>v1.1.0.2<a class="headerlink" href="#v1-1-0-2" title="永久链接至标题">¶</a></h3>
+<p>2021年1月9日发布。</p>
+<p>添加了CMSIS-DAP设备的选择，解决了键盘无法工作时不能刷机的问题。</p>
+</div>
+<div class="section" id="v1-1-0-1">
+<h3>v1.1.0.1<a class="headerlink" href="#v1-1-0-1" title="永久链接至标题">¶</a></h3>
+<p>2020年11月1日发布。</p>
+<p>修正自动下载时，没有当前设备导致的Exception</p>
+</div>
+<div class="section" id="v1-0-0-0">
+<h3>v1.0.0.0<a class="headerlink" href="#v1-0-0-0" title="永久链接至标题">¶</a></h3>
+<p>2020年6月7日发布。</p>
+<p>初始版本。</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            </div>
+          </div>
+          
+            
+            <div class="mui-panel mui--hidden-sm mui--hidden-xs mui-col-md-3 toc">
+              <div class="toc-heading">
+                <h4>目录</h4>
+              </div>
+              <div id="toc-content"><ul>
+<li><a class="reference internal" href="#">固件烧录工具箱</a><ul>
+<li><a class="reference internal" href="#id2">简介</a></li>
+<li><a class="reference internal" href="#id3">使用说明</a></li>
+<li><a class="reference internal" href="#id4">页面选项</a></li>
+<li><a class="reference internal" href="#id5">常见问题</a></li>
+<li><a class="reference internal" href="#id6">更新日志</a><ul>
+<li><a class="reference internal" href="#v1-2-1-1">v1.2.1.1</a></li>
+<li><a class="reference internal" href="#v1-2-1-0">v1.2.1.0</a></li>
+<li><a class="reference internal" href="#v1-2-0-0">v1.2.0.0</a></li>
+<li><a class="reference internal" href="#v1-1-3-0">v1.1.3.0</a></li>
+<li><a class="reference internal" href="#v1-1-0-2">v1.1.0.2</a></li>
+<li><a class="reference internal" href="#v1-1-0-1">v1.1.0.1</a></li>
+<li><a class="reference internal" href="#v1-0-0-0">v1.0.0.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+            
+                    
+      </div>
+      <div class="mui-row">
+        
+          
+            <div class="mui-container-fluid mui-col-sm-12 mui-col-md-10 mui-col-md-offset-1">
+              <div class="row mui-panel">
+                <div id="vcomments"></div>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+    <div id="push"></div>
+  </div>
+  <footer>
+  <div class="mui-container-fluid">
+        
+        &copy; 版权所有 2020, Lotlab
+       自豪的使用<a href="http://sphinx-doc.org/"  target="_blank">斯芬克斯</a> 
+  </div>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="../_static/custom.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'zrPY9AxBQ1SqNWy4TOaPoB5v-MdYXbMMI',
+    appKey: 'SvTm4v2OsnlRTG49AhcNEL4h',
+    placeholder: '写下你的评论吧',
+    visitor: 'true'
+  })
+</script> 
+
+</body>
+</html>

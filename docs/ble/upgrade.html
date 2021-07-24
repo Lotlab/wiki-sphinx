@@ -39,7 +39,7 @@
     
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Lot60-Lite使用指南" href="../ble_wch/lot60-lite.html" />
+    <link rel="next" title="固件烧录工具箱" href="upgrade-toolbox.html" />
     <link rel="prev" title="故障排除指南" href="troubleshoot.html" /> 
 </head>
 
@@ -127,6 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id15">散件的固件烧录指南</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
 <p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul>
@@ -181,25 +182,11 @@
 </div>
 <div class="section" id="burn-toolbox">
 <span id="id4"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">烧录工具箱</a>
-整合了下面所述的USB固件更新工具（WCHIPSTool）和板载调试器线刷工具（PyOCD）。此工具箱仅能在 Windows 下使用。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>烧录工具箱的蓝牙烧录功能支持带有板载调试器的设备。请查阅您的产品页面，确定您的设备是否支持板载调试器，以及对应的启用方法。</p>
-<p>烧录工具箱带有的自动进入ISP模式的功能仅适用于固件v1.1.3.2及之后的版本。若您当前的USB固件并不支持此项功能，您则需要手动进入ISP模式。</p>
+<p>我们推荐使用烧录工具箱更新固件。</p>
 </div>
-<p>用法：</p>
-<ol class="arabic simple">
-<li><p>若仅需刷新USB固件，则只选择USB固件，并烧录即可；</p></li>
-<li><p>若仅需刷新蓝牙固件，则只选择蓝牙固件，并烧录即可；</p></li>
-<li><p>若需要同时刷新USB和蓝牙固件，则需要两个都选择，然后点击烧录；</p></li>
-<li><p>对于键盘固件版本v1.1.3.2以后的固件，如果当前键盘工作正常，则此烧录工具会自动进入USB的ISP模式，不需要手动进入。</p></li>
-</ol>
-<p>选项：</p>
-<ul class="simple">
-<li><p>自动下载：发现USB设备后自动下载USB固件和蓝牙固件（若有）</p></li>
-<li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
-</ul>
+<p>详细的使用说明请参见 <a class="reference internal" href="upgrade-toolbox.html"><span class="doc">固件烧录工具箱</span></a> 页面</p>
 </div>
 <div class="section" id="dfu">
 <h2>使用 DFU 模式更新蓝牙固件<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h2>

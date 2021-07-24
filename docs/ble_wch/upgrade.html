@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ble/lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
 <p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul class="current">
@@ -161,29 +162,15 @@
 </div>
 <div class="section" id="burn-toolbox-wch">
 <span id="id3"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox-wch" title="永久链接至标题">¶</a></h2>
-<p>烧录工具箱提供了友好的固件更新界面，且可以自动使键盘进入ISP模式，无需拆卸电池。</p>
-<p>请访问我们的 <a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">百度网盘下载</a> 烧录工具箱，此工具箱仅能在 Windows 下使用。</p>
-<p>用法：</p>
-<ol class="arabic simple">
-<li><p>首先选择设备配置文件，这里选择“CH573”系列</p></li>
-<li><p>选择要烧录的USB固件</p></li>
-<li><p>在设备下拉框处选择你的键盘，点击烧录按钮即可更新键盘固件</p></li>
-<li><p>如果当前键盘工作正常，则此烧录工具会自动进入USB的ISP模式，不需要手动进入。</p></li>
-</ol>
-<p>选项：</p>
-<ul class="simple">
-<li><p>自动下载：发现USB设备后自动下载USB固件</p></li>
-<li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>我们推荐使用烧录工具箱更新固件。</p>
+</div>
+<p>详细的使用说明请参见 <a class="reference internal" href="../ble/upgrade-toolbox.html"><span class="doc">固件烧录工具箱</span></a> 页面</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p><strong>使用此工具箱自动进入ISP模式会擦除当前的固件！</strong>
 请确保你已经准备好对应硬件的固件，否则可能造成键盘功能不可用需要手动进入ISP模式更新。</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>如果烧录工具箱提示无法进入ISP模式，或根本无法找到键盘设备，则你可能需要尝试手动进入ISP模式更新固件。
-进入ISP模式的方法请参考对应硬件的说明书。</p>
 </div>
 </div>
 <div class="section" id="isp">
