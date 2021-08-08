@@ -445,6 +445,38 @@ Q&A
 
    若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。
 
+v1.1.4.2
+--------
+
+此版本更新于2021年1月19日，是一个问题修复类型的固件。
+
+更新日志
+~~~~~~~~~~~~~~~~~~~
+
+- 提高了宏定时器的精度
+- 添加了输出当前键盘电量的按键功能
+- 添加新的宏指令：循环播放。再次按下后停止循环。
+- 修正BLE4100的板载调试器没有打开的问题
+
+Rev.E
+~~~~~~~~~~~~~~~~~~~~
+
+- `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_e-nrf52-2021_01_19-v1.1.4.2.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_e-ch554-2021_01_19-v1.1.4.2.bin>`__
+
+Rev.F
+~~~~~~~~~~~~~~~~~~~~
+
+- `蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_f-nrf52-2021_01_19-v1.1.4.2.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_f-ch554-2021_01_19-v1.1.4.2.bin>`__
+
+Rev.G、Rev.GX、Rev.GHS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `蓝牙固件（板载调试器用） <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_g-nrf52-2021_01_19-v1.1.4.2.hex>`__
+- `蓝牙升级包 (DFU用) <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_g-nrf52-2021_01_19-v1.1.4.2.zip>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_g-ch554-2021_01_19-v1.1.4.2.bin>`__
+
 
 v1.1.3.2
 --------
@@ -483,7 +515,7 @@ Rev.F
 Rev.G、Rev.GX
 ~~~~~~~~~~~~~~~~~~~~
 
-- `出厂蓝牙固件 <https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g-nrf52-2020_07_13-v1.1.3.2.zip>`__
+- `出厂蓝牙固件包 <https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g-nrf52-2020_07_13-v1.1.3.2.zip>`__
 - `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g-ch554-2020_07_13-v1.1.3.2.bin>`__
 - `3LED灯版本蓝牙升级包 <https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g_3led-nrf52-2020_07_13-v1.1.3.2.zip>`__
 
