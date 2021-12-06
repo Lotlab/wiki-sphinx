@@ -4,7 +4,8 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>BLE4100套件使用说明 &mdash; Lotlab Wiki  文档</title>
@@ -14,6 +15,8 @@
   <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
 
   
   
@@ -27,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/mui.min.js"></script>
 
@@ -92,7 +94,7 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+          <div class="global-toc"><p class="caption" role="heading"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">BLE4100套件使用说明</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">使用手册</a><ul>
@@ -122,13 +124,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
-<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<p class="caption" role="heading"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
 </ul>
-<p class="caption"><span class="caption-text">其他项目</span></p>
+<p class="caption" role="heading"><span class="caption-text">其他项目</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
@@ -152,16 +155,16 @@
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
               <div itemprop="articleBody">
               
-  <div class="section" id="ble4100">
+  <section id="ble4100">
 <h1>BLE4100套件使用说明<a class="headerlink" href="#ble4100" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>此页面所描述的硬件现已停产，建议使用LKB-Core代替此套件。
 以下信息仅用作存档查阅，请勿将下列信息与新版本产品混淆。</p>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h2>使用手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id2">
+<section id="id2">
 <h3>快速入门<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
 <li><p>取出线路板并安装到键盘上</p></li>
@@ -170,8 +173,8 @@
 <li><p>NumLock灯亮起，使用手机连接名称为“BLE4100”或者是“Nordic_Keyboard”的蓝牙设备</p></li>
 <li><p>尽情享用吧！</p></li>
 </ol>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>按键说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>默认情况下，按键与原键盘相同。</p>
 <ul class="simple">
@@ -180,13 +183,13 @@
 <li><p>唤醒键盘时按住Fn键可以进入DFU模式</p></li>
 <li><p>唤醒键盘时按住2键可以清除蓝牙配对信息</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>电量显示<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
 <p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id17" id="id5">1</a> 这个应用来查看电量。电量信息仅供参考。</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>升级固件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>你可能需要升级固件来获得新功能或者修复已有的BUG，升级包可以在页面最下方的固件发布处找到。</p>
 <blockquote>
@@ -206,11 +209,11 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 <li><p>静静的等待升级完毕即可</p></li>
 </ol>
 <p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
-</div>
-</div>
-<div class="section" id="id8">
+</section>
+</section>
+<section id="id8">
 <h2>安装手册<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id9">
+<section id="id9">
 <h3>焊接教程<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
@@ -316,8 +319,8 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </tbody>
 </table>
 <p>取出线路板和原件包，对照上面的BOM表进行焊接即可。</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>安装教程<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
 <li><p>卸下键盘后面的螺丝，取下上面板</p></li>
@@ -329,9 +332,9 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 <li><p>将新的主控板安装到原来的位置，将塑料片放回去（但不要放铜箔），盖上上面板，拧好螺丝。</p></li>
 <li><p>安装完成！</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="id11">
+</section>
+</section>
+<section id="id11">
 <h2>固件发布<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>发布日期：2017年5月28日</p></li>
@@ -392,10 +395,10 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h2>高级应用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id13">
+<section id="id13">
 <h3>源代码<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>访问<a class="reference external" href="https://github.com/Lotlab/nrf51822-keyboard">Github上的项目主页</a>以获取源代码。</p>
 <p>源代码以<a class="reference external" href="http://www.gnu.org/licenses/gpl-3.0.html">GPL
@@ -404,8 +407,8 @@ v3</a>许可证授权，请在GPLv3的限制下使用本源代码。</p>
 <div><p>根据GPL
 v3协议规定，你在发布修改过的固件的同时，<strong>必须同时以原有的许可条款发布修改后的源代码</strong>，并且<strong>不能添加任何附加条款</strong>。如果你不能以原有的许可条款发布修改后的源代码，那么你将不能发布修改后的固件。</p>
 </div></blockquote>
-</div>
-<div class="section" id="keymap">
+</section>
+<section id="keymap">
 <h3>KeyMap<a class="headerlink" href="#keymap" title="永久链接至标题">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
@@ -574,15 +577,17 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h3>丝印<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
-<div class="figure align-default" id="id20">
+<figure class="align-default" id="id20">
 <img alt="丝印层" src="../_images/ble4100_silk.png" />
-<p class="caption"><span class="caption-text">丝印层</span><a class="headerlink" href="#id20" title="永久链接至图片">¶</a></p>
-</div>
-</div>
-<div class="section" id="id15">
+<figcaption>
+<p><span class="caption-text">丝印层</span><a class="headerlink" href="#id20" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id15">
 <h3>修改/编译程序<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
 <ul class="simple">
@@ -615,9 +620,9 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 需要安装Python2.7</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

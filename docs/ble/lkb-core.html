@@ -4,7 +4,8 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>LKB-Core使用说明 &mdash; Lotlab Wiki  文档</title>
@@ -14,6 +15,8 @@
   <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
 
   
   
@@ -27,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/mui.min.js"></script>
 
@@ -92,7 +94,7 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+          <div class="global-toc"><p class="caption" role="heading"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build-guide.html">LotKB固件编译移植指南</a></li>
@@ -114,13 +116,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
-<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<p class="caption" role="heading"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
 </ul>
-<p class="caption"><span class="caption-text">其他项目</span></p>
+<p class="caption" role="heading"><span class="caption-text">其他项目</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
@@ -144,12 +147,12 @@
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
               <div itemprop="articleBody">
               
-  <div class="section" id="lkb-core">
+  <section id="lkb-core">
 <h1>LKB-Core使用说明<a class="headerlink" href="#lkb-core" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
+<section id="id1">
 <h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>LKB-Core是一块用于DIY的蓝牙键盘主控板。它提供了26个IO接口，任意一个IO接口都可以用来连接LED或者是按键阵列。如果你会编程的话，还可以实现更多需要的功能。</p>
-<div class="section" id="id2">
+<section id="id2">
 <h3>勘误<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -157,16 +160,16 @@
 <p>LKB-Core Rev.B 版本的丝印有误。线路板印刷的 P21 GND 3V3 实际上应为 P21 3V3 GND（即与下面接口图一致）。</p>
 <p>给您带来的不便，敬请谅解。</p>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>测试<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>LKB-Core发货前就已经刷好了测试固件，收到后，使用USB
 Type-C线将其连接到电脑。使用手机搜索蓝牙设备，如果出现了名为<code class="docutils literal notranslate"><span class="pre">LKB-Core</span></code>的设备的话，即说明蓝牙部分工作正常。</p>
 <p>使用镊子短接 { 9, 8, 7, 6, 5, 4 } 和 { 3, 11, 12, 13, 14, 15, 16, 17,
 18, 19, 20, 30, 29, 28, 25, 24 }
 中的两个（即左边一个，右边一个，比如3和4，或者9和12，等等），观察是否有按键输出，如有输出则说明按键正常。</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>硬件设计使用说明<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
 <li><p>USB接口部分可以用剪刀剪下来，飞线到你需要的地方；</p></li>
@@ -177,30 +180,34 @@ Type-C线将其连接到电脑。使用手机搜索蓝牙设备，如果出现�
 <li><p>USB通讯用的接口：UART_RXD：27、UART_TXD：26。</p></li>
 <li><p>Rev.B 及以后的版本支持了板载调试器，请参考 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 了解使用方法。</p></li>
 </ol>
-</div>
-<div class="section" id="io">
+</section>
+<section id="io">
 <h3>IO接口图<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h3>
-<div class="figure align-default" id="id10">
+<figure class="align-default" id="id10">
 <img alt="IO接口" src="../_images/lkb_core_silk.png" />
-<p class="caption"><span class="caption-text">IO接口</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
-</div>
-</div>
-<div class="section" id="id5">
+<figcaption>
+<p><span class="caption-text">IO接口</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
 <h3>机械外形图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<div class="figure align-default" id="id11">
+<figure class="align-default" id="id11">
 <img alt="机械外形" src="../_images/lkb_core_mach.png" />
-<p class="caption"><span class="caption-text">机械外形</span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
-</div>
-</div>
-<div class="section" id="id6">
+<figcaption>
+<p><span class="caption-text">机械外形</span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id6">
 <h3>固件编译和移植指南<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>见 <a class="reference internal" href="build-guide.html"><span class="doc">LotKB固件编译移植指南</span></a></p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>固件更新<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a></p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>测试固件的配置<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>P22：NumLock LED 上拉驱动</p></li>
@@ -359,15 +366,15 @@ Type-C线将其连接到电脑。使用手机搜索蓝牙设备，如果出现�
 </tbody>
 </table>
 <p>测试固件睡眠后按任意键自动唤醒，仅供测试。</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>其他资源<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>Kicad的<a class="reference external" href="https://tools.lotlab.org/dl/res/LKB_Core.kicad_mod">封装</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

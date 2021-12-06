@@ -4,7 +4,8 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>GH60相关 &mdash; Lotlab Wiki  文档</title>
@@ -14,6 +15,8 @@
   <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
 
   
   
@@ -27,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/mui.min.js"></script>
 
@@ -92,7 +94,7 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+          <div class="global-toc"><p class="caption" role="heading"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble/ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/build-guide.html">LotKB固件编译移植指南</a></li>
@@ -100,13 +102,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../ble/lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
-<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<p class="caption" role="heading"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
 </ul>
-<p class="caption"><span class="caption-text">其他项目</span></p>
+<p class="caption" role="heading"><span class="caption-text">其他项目</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GH60相关</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">组装</a></li>
@@ -135,9 +138,9 @@
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
               <div itemprop="articleBody">
               
-  <div class="section" id="gh60">
+  <section id="gh60">
 <h1>GH60相关<a class="headerlink" href="#gh60" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
+<section id="id1">
 <h2>组装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>焊接时应该遵循先低后高原则！</strong></p>
 <ol class="arabic">
@@ -179,8 +182,8 @@
 <p>插上电脑，按Fn+V打开灯，将发光二极管装上，观察是否能亮，如果可以亮就可以焊接了。</p>
 </li>
 </ol>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>刷固件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li><p>下载<a class="reference external" href="https://github.com/kairyu/tkg-toolkit/archive/master.zip">tkg-toolkit</a>，解压到你喜欢的地方。</p></li>
@@ -196,8 +199,8 @@
 <li><p>打开<code class="docutils literal notranslate"><span class="pre">tkg-toolkit\windows\reflash.bat</span></code>，输入<code class="docutils literal notranslate"><span class="pre">y</span></code>后，按下键盘背面的RESET键。这时候就开始刷新固件了。</p></li>
 </ol>
 <p>如果固件刷新不成功，参见[[GH60相关#常见问题]]。</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>常见问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="line-block">
 <div class="line">请跟随下列指示进行选择。</div>
@@ -300,8 +303,8 @@
 <li><p>这不科学！不可能！你一定是搞错了！</p></li>
 <li><p>检查主控引脚是否粘连</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -4,7 +4,8 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>蓝牙键盘固件更新教程（WCH系列芯片） &mdash; Lotlab Wiki  文档</title>
@@ -14,6 +15,8 @@
   <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
 
   
   
@@ -27,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/mui.min.js"></script>
 
@@ -92,7 +94,7 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+          <div class="global-toc"><p class="caption" role="heading"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble/ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/build-guide.html">LotKB固件编译移植指南</a></li>
@@ -102,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ble/upgrade.html">蓝牙键盘固件更新教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble/upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
-<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<p class="caption" role="heading"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="lot60-lite.html">Lot60-Lite使用指南</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">蓝牙键盘固件更新教程（WCH系列芯片）</a><ul>
@@ -116,7 +118,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">其他项目</span></p>
+<p class="caption" role="heading"><span class="caption-text">其他项目</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
@@ -140,14 +142,14 @@
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
               <div itemprop="articleBody">
               
-  <div class="section" id="wch">
+  <section id="wch">
 <h1>蓝牙键盘固件更新教程（WCH系列芯片）<a class="headerlink" href="#wch" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>本教程适用于使用WCH系列芯片的蓝牙键盘，如Lot60-Lite等。
 对于nRF52系列的蓝牙键盘，包括Lot60-BLE, LKB-Core等，请查阅 <a class="reference internal" href="../ble/upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a></p>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>你可能需要升级固件来获得新功能或者修复已有的BUG，可供更新的固件可以在产品页面最下方的固件发布处找到。</p>
 <p>此系列键盘的固件的文件名形如 <code class="docutils literal notranslate"><span class="pre">[键盘名称]_[编译日期]_[Git版本].bin</span></code>，请确认下载了硬件对应的固件。</p>
@@ -157,15 +159,15 @@
 请在更新前确认升级包是由可信的人员提供的，并仔细阅读固件发布页面的详细说明，了解可能出现的问题。</p>
 <p>若在固件更新完毕后发现键盘功能不可用，可以参考下面的刷新说明重新刷新正确的固件。</p>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>名词解释<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="simple">
 <dt>ISP模式</dt><dd><p>USB芯片的一种工作模式，用于升级USB固件。</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="burn-toolbox-wch">
+</section>
+<section id="burn-toolbox-wch">
 <span id="id3"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox-wch" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -177,10 +179,10 @@
 <p><strong>使用此工具箱自动进入ISP模式会擦除当前的固件！</strong>
 请确保你已经准备好对应硬件的固件，否则可能造成键盘功能不可用需要手动进入ISP模式更新。</p>
 </div>
-</div>
-<div class="section" id="isp">
+</section>
+<section id="isp">
 <h2>使用官方ISP程序下载<a class="headerlink" href="#isp" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id4">
+<section id="id4">
 <h3>更新方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ol class="arabic simple">
 <li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a></p></li>
@@ -192,9 +194,9 @@
 <p class="admonition-title">注解</p>
 <p>建议使用 <a class="reference internal" href="#burn-toolbox-wch"><span class="std std-ref">烧录工具箱</span></a> 来更新 USB 固件。</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

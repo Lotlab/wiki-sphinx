@@ -4,7 +4,8 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>LotKB固件编译移植指南 &mdash; Lotlab Wiki  文档</title>
@@ -14,6 +15,8 @@
   <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mui.min.css" type="text/css" />
 
   
   
@@ -27,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/mui.min.js"></script>
 
@@ -92,7 +94,7 @@
           
         
         
-          <div class="global-toc"><p class="caption"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
+          <div class="global-toc"><p class="caption" role="heading"><span class="caption-text">蓝牙键盘（nRF系列）</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ble4100.html">BLE4100套件使用说明</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LotKB固件编译移植指南</a><ul>
@@ -129,13 +131,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lot60-ble.html">Lot60-BLE使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshoot.html">故障排除指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgrade.html">蓝牙键盘固件更新教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-toolbox.html">固件烧录工具箱</a></li>
 </ul>
-<p class="caption"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
+<p class="caption" role="heading"><span class="caption-text">蓝牙键盘（WCH系列）</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/lot60-lite.html">Lot60-Lite使用指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ble_wch/upgrade.html">蓝牙键盘固件更新教程（WCH系列芯片）</a></li>
 </ul>
-<p class="caption"><span class="caption-text">其他项目</span></p>
+<p class="caption" role="heading"><span class="caption-text">其他项目</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../other/gh60-related.html">GH60相关</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other/lcd2usb.html">LCD2USB使用说明</a></li>
@@ -159,21 +162,21 @@
             <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
               <div itemprop="articleBody">
               
-  <div class="section" id="lotkb">
+  <section id="lotkb">
 <h1>LotKB固件编译移植指南<a class="headerlink" href="#lotkb" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
+<section id="id1">
 <h2>编译教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id2">
+<section id="id2">
 <h3>环境搭建<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>此固件在Windows（Msys2）和Linux下编译通过。</p>
-<div class="section" id="docker">
+<section id="docker">
 <h4>使用Docker<a class="headerlink" href="#docker" title="永久链接至标题">¶</a></h4>
 <p>我们提供了Docker镜像，已经设置好了环境，方便编译使用。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run lotlab/nrf52-keyboard
 </pre></div>
 </div>
-</div>
-<div class="section" id="linux">
+</section>
+<section id="linux">
 <h4>Linux下环境的搭建<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
 <p>使用终端运行以下命令</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install git make sdcc <span class="c1"># 安装git make和sdcc编译工具。注意Ubuntu 18.04及之前的SDCC版本较旧，无法成功编译</span>
@@ -190,17 +193,17 @@ pip3 install nrfutil <span class="c1"># 安装 nrfutil</span>
 <p class="admonition-title">注解</p>
 <p>若在 msys2 下无法正常使用 pip 安装nrfutil，请直接到项目主页 <a class="reference external" href="https://github.com/NordicSemiconductor/pc-nrfutil/releases">下载 nrfutil.exe</a> 并放置于 <code class="docutils literal notranslate"><span class="pre">[你的msys2安装目录]/usr/bin</span></code> 目录下。</p>
 </div>
-</div>
-<div class="section" id="sdk">
+</section>
+<section id="sdk">
 <h4>下载SDK<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h4>
 <p>下载Nordic nRF SDK 15.3</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
 unzip -q nRF5_SDK_15.3.0_59ac345.zip
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id3">
+</section>
+</section>
+<section id="id3">
 <h3>克隆源码并准备源码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Lotlab/nrf52-keyboard <span class="c1"># 克隆源码</span>
 <span class="nb">cd</span> nrf52-keyboard
@@ -216,16 +219,16 @@ nano template/Makefile.windows <span class="c1"># 将里面的 GNU_INSTALL_ROOT 
 <span class="c1"># 将解压的nrf sdk复制到源码的SDK目录下，形成类似于SDK/components, SDK/config 的目录结构</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>测试编译<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/template
 make -j
 </pre></div>
 </div>
 <p>如果一切正常，则会编译出一个能用的固件。编译好的固件放置在对应键盘目录下的_build文件夹内。</p>
-</div>
-<div class="section" id="bootloader">
+</section>
+<section id="bootloader">
 <h3>Bootloader的编译<a class="headerlink" href="#bootloader" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git submodule init -- <span class="c1"># 初始化子模块，用于构建microecc库</span>
 <span class="nb">cd</span> SDK/external/micro-ecc/
@@ -236,8 +239,8 @@ make bootloader -j
 </pre></div>
 </div>
 <p>如果一切正常，则Bootloader就编译完毕了。你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到编译好的Bootloader的hex文件。</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>主程序编译<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> keyboard/lkb-core
 make package -j <span class="c1"># 生成用于DFU升级的升级包</span>
@@ -246,11 +249,11 @@ make ch554 -j <span class="c1"># 生成USB固件</span>
 </div>
 <p>如果一切正常，就能够编译出一个固件升级包了。
 你可以在<code class="docutils literal notranslate"><span class="pre">_build</span></code>目录下找到对应的<code class="docutils literal notranslate"><span class="pre">nrf52_kbd_XXXXXXXX.zip</span></code>升级包文件和<code class="docutils literal notranslate"><span class="pre">ch554.hex</span></code>USB固件文件。参照刷固件相关教程将其刷入键盘即可。</p>
-</div>
-</div>
-<div class="section" id="id6">
+</section>
+</section>
+<section id="id6">
 <h2>硬件移植教程<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id7">
+<section id="id7">
 <h3>准备工作<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>首先，你需要准备一份按键阵列表格，用于确定各个按键的位置。然后需要规划好各个IO口的用途。</p>
 <div class="admonition note">
@@ -259,8 +262,8 @@ make ch554 -j <span class="c1"># 生成USB固件</span>
 <p>P10是默认Bootloader进入DFU模式的引脚，上电时下拉即可强制进入DFU。如需要修改，可以修改Bootloader的配置并重新编译。</p>
 </div>
 <p>然后将keyboard内的任意一个文件夹（建议使用template或lkb-core）作为移植模板复制一份，接下来的所有操作都在此文件夹内进行。</p>
-</div>
-<div class="section" id="io">
+</section>
+<section id="io">
 <h3>移植按键阵列IO和配置<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h3>
 <p>使用你喜欢的文本编辑器编辑<code class="docutils literal notranslate"><span class="pre">config.h</span></code>，编辑以下关键配置</p>
 <ul class="simple">
@@ -273,15 +276,15 @@ ROW_IN：如果按键防反冲二极管是由列流向行的，启用这个FLAG�
 <li><p>#define
 MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；否则将其禁用</p></li>
 </ul>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>移植按键阵列对应表<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>使用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_common.h</span></code>，你可以看到有一个名为KEYMAP的宏。</p>
 <p>这个宏可以使用QMK的builder工具生成。如果你想要手写的话可以继续往下面看。</p>
 <p>我们以GH60的宏为例，讲解如何编写这个宏。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GH60 keymap definition macro</span>
 <span class="cm"> * K2C, K31 and  K3C are extra keys for ISO</span>
-<span class="cm"> */</span>
+<span class="cm"> */</span><span class="w"></span>
 <span class="cp">#define KEYMAP( \</span>
 <span class="cp">    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, \</span>
 <span class="cp">    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D, \</span>
@@ -304,16 +307,16 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <p class="admonition-title">注解</p>
 <p>上面这一部分中，反斜杠表示换行。上面的这一部分本质上是一维数组，只不过为了好看而将其转换为了键盘实际的样式。</p>
 </div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>编辑默认配列<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>用文本编辑器打开<code class="docutils literal notranslate"><span class="pre">keymap_plain.c</span></code>，你会发现有两个部分：一部分是keymaps，定义了默认的键盘配列；一部分是fn_actions，定义了默认的键盘fn功能。</p>
 <p>这部分的代码也可以使用QMK的工具生成。</p>
 <p>对于keymaps部分，使用了前面提到的KEYMAP的宏，将键盘上的各个按键键值转换为对应按键阵列的键值。我们仅需按照键盘的样式对其编辑即可。</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>其他配置项目<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
-<div class="section" id="config">
+<section id="config">
 <h4>常用config配置<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">config.h</span></code>内有一些可以配置的项目，这里写出一些比较常用的：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MANUFACTURER &quot;Lotlab&quot; </span><span class="cm">/* 蓝牙显示的硬件制造商名称 */</span><span class="cp"></span>
@@ -331,8 +334,8 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <span class="cp">#define PASSKEY_REQUIRED </span><span class="cm">/* 启用蓝牙加密连接，在连接时需要输入配对码 */</span><span class="cp"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="usb">
+</section>
+<section id="usb">
 <h4>蓝牙、USB、充电状态显示<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h4>
 <p>如果想要启用USB、蓝牙、充电指示灯，则需要编辑Makefile，加入一行</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">THREE_LED_STATUS_EVT</span> <span class="o">=</span> yes
@@ -344,13 +347,13 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 <span class="cp">#define LED_STATUS_USB 24 </span><span class="c1">// USB连接状态指示灯</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h4>禁用软件开机功能<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
 <p>将Makefile内的BootMagic关闭，并关闭config.h里面的BOOTCHECK，即可关闭开机检测功能。</p>
-</div>
-</div>
-<div class="section" id="g84-4100">
+</section>
+</section>
+<section id="g84-4100">
 <h3>示例：G84-4100<a class="headerlink" href="#g84-4100" title="永久链接至标题">¶</a></h3>
 <p>详细的代码请参见g84-4100文件夹下的相关文件。</p>
 <p>按键阵列表：</p>
@@ -658,9 +661,9 @@ MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个FLAG；
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>
