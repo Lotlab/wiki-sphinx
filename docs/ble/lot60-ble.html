@@ -140,7 +140,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id29">故障排除</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id30">固件发布</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#v1-1-5-3-3">v1.1.5.3-3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#v1-1-6-0">v1.1.6.0</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id31">更新日志</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rev-grev-gxrev-ghs">Rev.G、Rev.GX、Rev.GHS</a></li>
 </ul>
@@ -591,16 +591,16 @@
 <p>必须对应硬件版本更新软件。查看 <a class="reference internal" href="#hardware-ver"><span class="std std-ref">如何查看键盘的硬件版本</span></a> 来确定此键盘的硬件版本。</p>
 <p>若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。</p>
 </div>
-<section id="v1-1-5-3-3">
-<h3>v1.1.5.3-3<a class="headerlink" href="#v1-1-5-3-3" title="永久链接至标题">¶</a></h3>
-<p>此版本更新于2021年12月26日，是一个问题修复类型的固件。</p>
+<section id="v1-1-6-0">
+<h3>v1.1.6.0<a class="headerlink" href="#v1-1-6-0" title="永久链接至标题">¶</a></h3>
+<p>此版本更新于2022年1月9日，是一个问题修复类型的固件。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>此版本固件移除了键盘的Bootloader，故无法使用DFU方式刷入键盘，且刷入后无法使用DFU方式更新固件。</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>从低于 v1.1.5.3 版本的固件更新到此固件时，需要勾上烧录工具箱中的擦除选项。
+<p>从低于(&lt;) v1.1.5.3 版本的固件更新到此固件时，需要勾上烧录工具箱中的擦除选项。
 使用擦除选项更新后键盘内的所有配置将会丢失，请预先使用配置工具做好备份。</p>
 </div>
 <section id="id31">
@@ -608,6 +608,7 @@
 <ul class="simple">
 <li><p>启用了鼠标键功能</p></li>
 <li><p>修正DCDC没有正常启用的问题</p></li>
+<li><p>修正按键宏无法正常使用鼠标键的问题</p></li>
 </ul>
 </section>
 <section id="rev-grev-gxrev-ghs">
@@ -617,9 +618,9 @@
 <p>绝大部分硬件使用的是ND04C模块，下载第一个蓝牙固件即可。</p>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g-nrf52-2021_12_26-v1.1.5.3-3-gb7110da.hex">蓝牙固件</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g_832-nrf52-2021_12_26-v1.1.5.3-3-gb7110da.hex">蓝牙固件（ND04模块用）</a></p></li>
-<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g-ch554-2021_12_26-v1.1.5.3-3-gb7110da.bin">USB固件</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g-nrf52-2022_01_09-a404f2c.hex">蓝牙固件</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g_832-nrf52-2022_01_09-a404f2c.hex">蓝牙固件（ND04模块用）</a></p></li>
+<li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g-ch554-2022_01_09-a404f2c.bin">USB固件</a></p></li>
 </ul>
 </section>
 </section>
@@ -888,7 +889,7 @@
 </li>
 <li><a class="reference internal" href="#id29">故障排除</a></li>
 <li><a class="reference internal" href="#id30">固件发布</a><ul>
-<li><a class="reference internal" href="#v1-1-5-3-3">v1.1.5.3-3</a><ul>
+<li><a class="reference internal" href="#v1-1-6-0">v1.1.6.0</a><ul>
 <li><a class="reference internal" href="#id31">更新日志</a></li>
 <li><a class="reference internal" href="#rev-grev-gxrev-ghs">Rev.G、Rev.GX、Rev.GHS</a></li>
 </ul>

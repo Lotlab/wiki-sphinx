@@ -445,10 +445,10 @@ Q&A
 
    若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。
 
-v1.1.5.3-3
+v1.1.6.0
 --------------
 
-此版本更新于2021年12月26日，是一个问题修复类型的固件。
+此版本更新于2022年1月9日，是一个问题修复类型的固件。
 
 .. warning::
 
@@ -456,7 +456,7 @@ v1.1.5.3-3
 
 .. warning::
 
-   从低于 v1.1.5.3 版本的固件更新到此固件时，需要勾上烧录工具箱中的擦除选项。
+   从低于(<) v1.1.5.3 版本的固件更新到此固件时，需要勾上烧录工具箱中的擦除选项。
    使用擦除选项更新后键盘内的所有配置将会丢失，请预先使用配置工具做好备份。
 
 更新日志
@@ -464,6 +464,7 @@ v1.1.5.3-3
 
 - 启用了鼠标键功能
 - 修正DCDC没有正常启用的问题
+- 修正按键宏无法正常使用鼠标键的问题
 
 Rev.G、Rev.GX、Rev.GHS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -473,9 +474,9 @@ Rev.G、Rev.GX、Rev.GHS
    绝大部分硬件使用的是ND04C模块，下载第一个蓝牙固件即可。
 
 
-- `蓝牙固件 <https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g-nrf52-2021_12_26-v1.1.5.3-3-gb7110da.hex>`__
-- `蓝牙固件（ND04模块用） <https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g_832-nrf52-2021_12_26-v1.1.5.3-3-gb7110da.hex>`__
-- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.5.3-3/lot60-ble-rev_g-ch554-2021_12_26-v1.1.5.3-3-gb7110da.bin>`__
+- `蓝牙固件 <https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g-nrf52-2022_01_09-a404f2c.hex>`__
+- `蓝牙固件（ND04模块用） <https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g_832-nrf52-2022_01_09-a404f2c.hex>`__
+- `USB固件 <https://tools.lotlab.org/dl/firmware/v1.1.6.0/lot60-ble-rev_g-ch554-2022_01_09-a404f2c.bin>`__
 
 v1.1.5.3
 --------
