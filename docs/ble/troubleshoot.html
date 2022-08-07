@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
     
@@ -148,9 +149,9 @@
               <div itemprop="articleBody">
               
   <section id="id1">
-<h1>故障排除指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>故障排除指南<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
 <section id="id2">
-<h2>通用故障排除指南<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>通用故障排除指南<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
 <p>如果你的键盘遇到了无法正常工作的问题，请按下列步骤进行：</p>
 <ol class="arabic simple">
 <li><p>将键盘休眠并重新开机。如果遇到了蓝牙方面的问题，可以尝试 <a class="reference internal" href="lot60-ble.html#unbond-device"><span class="std std-ref">清空键盘绑定信息</span></a></p></li>
@@ -158,7 +159,7 @@
 </ol>
 </section>
 <section id="id3">
-<h2>我的键盘无法开机了<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>我的键盘无法开机了<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h2>
 <ol class="arabic simple">
 <li><p>尝试使用USB接入电脑，看看是否能够正常工作？如果可以的话，可能是电池没电了，需要充电。</p></li>
 <li><p>如果此时无法正常开机，尝试按住开机按钮，看看是否能够正常工作。</p></li>
@@ -167,7 +168,7 @@
 </ol>
 </section>
 <section id="id4">
-<h2>某个按键工作不正常<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>某个按键工作不正常<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h2>
 <ol class="arabic simple">
 <li><p>尝试大力按下，或使用镊子短接焊点，判断是否是轴的问题</p></li>
 <li><p>观察按键旁边的二极管，是否在外力条件下脱落</p></li>
@@ -175,10 +176,10 @@
 </ol>
 </section>
 <section id="id5">
-<h2>按键混乱，或按键无响应<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>按键混乱，或按键无响应<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h2>
 <p>尝试将按键配置还原为默认按键配置。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>对于nRF52系列固件版本1.0.3.1及之前的固件，有可能是默认层的设置出现了问题，可以尝试以下步骤恢复默认层的设置：</p>
 <ol class="arabic simple">
 <li><p>先休眠键盘</p></li>
@@ -187,15 +188,15 @@
 </div>
 </section>
 <section id="id6">
-<h2>更新键盘设置后无法正常保存设置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>更新键盘设置后无法正常保存设置<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
 <p>重启键盘后再次更新即可。</p>
 </section>
 <section id="id7">
-<h2>更新按键配置后所有按键失效<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>更新按键配置后所有按键失效<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
 <p>尝试将按键配置还原为默认按键配置。</p>
 </section>
 <section id="windows">
-<h2>Windows 下出现“驱动程序错误”<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<h2>Windows 下出现“驱动程序错误”<a class="headerlink" href="#windows" title="此标题的永久链接">¶</a></h2>
 <ol class="arabic simple">
 <li><p>在Windows的设备管理器中删除这个设备，或取消这个设备的绑定</p></li>
 <li><p>重启你的电脑</p></li>
@@ -204,7 +205,7 @@
 </ol>
 </section>
 <section id="id8">
-<h2>有时候出现卡键的问题<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>有时候出现卡键的问题<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>若卡键出现在蓝牙模式下，且卡键时候指示灯忽然亮起变为白色，然后迅速变成蓝色，则是蓝牙信号不好导致了连接断开。请参考 <a class="reference internal" href="#signal-enhance"><span class="std std-ref">如何改善蓝牙连接稳定性</span></a>。</p></li>
 <li><p>若卡键出现不仅出现在蓝牙模式，而且出现在USB模式下：</p>
@@ -216,15 +217,15 @@
 </ul>
 </section>
 <section id="id9">
-<h2>指示灯忽然亮起变为白色，然后迅速变成蓝色<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<h2>指示灯忽然亮起变为白色，然后迅速变成蓝色<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h2>
 <p>这是蓝牙信号不好的原因。请参考 <a class="reference internal" href="#signal-enhance"><span class="std std-ref">如何改善蓝牙连接稳定性</span></a></p>
 </section>
 <section id="capslock">
-<h2>按下CapsLock后，指示灯也会亮起<a class="headerlink" href="#capslock" title="永久链接至标题">¶</a></h2>
+<h2>按下CapsLock后，指示灯也会亮起<a class="headerlink" href="#capslock" title="此标题的永久链接">¶</a></h2>
 <p>这是正常现象。按下CapsLock后，灯的状态改变了，所有的灯都会亮起5秒，这也就包括了指示灯。</p>
 </section>
 <section id="id10">
-<h2>按键配置下载工具提示我“发送重试次数达到上限”<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2>按键配置下载工具提示我“发送重试次数达到上限”<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h2>
 <p>这可能是以下两种原因导致的：</p>
 <ol class="arabic simple">
 <li><p>键盘没有开机</p></li>
@@ -232,7 +233,7 @@
 </ol>
 </section>
 <section id="signal-enhance">
-<span id="id11"></span><h2>如何改善蓝牙连接稳定性<a class="headerlink" href="#signal-enhance" title="永久链接至标题">¶</a></h2>
+<span id="id11"></span><h2>如何改善蓝牙连接稳定性<a class="headerlink" href="#signal-enhance" title="此标题的永久链接">¶</a></h2>
 <p>蓝牙的信号可能受到多方面因素的影响。你可以尝试以下方法来改善蓝牙信号：</p>
 <ul class="simple">
 <li><p>使用非金属外壳、非金属定位板与非金属桌面</p></li>
@@ -245,7 +246,7 @@
 </ul>
 </section>
 <section id="id12">
-<h2>如何判断我的设备是否支持蓝牙4.0<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<h2>如何判断我的设备是否支持蓝牙4.0<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h2>
 <p>若您在使用手机。如果您的手机使用的是Android5.0及以上系统，或 iOS 7
 及以上系统，或 Windows Mobile 10系统，则应当支持蓝牙4.0。</p>
 <p>若您在您的计算机上使用Windows。请查看您的设备管理器，寻找“蓝牙

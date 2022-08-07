@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
     
@@ -160,14 +161,14 @@
               <div itemprop="articleBody">
               
   <section id="id1">
-<h1>蓝牙键盘固件更新教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>蓝牙键盘固件更新教程<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>本教程适用于nRF52系列的蓝牙键盘，包括Lot60-BLE, LKB-Core等。
 对于使用WCH系列芯片的蓝牙键盘，如Lot60-Lite，请查阅 <a class="reference internal" href="../ble_wch/upgrade.html"><span class="doc">蓝牙键盘固件更新教程（WCH系列芯片）</span></a></p>
 </div>
 <section id="id2">
-<h2>概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>概述<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
 <p>你可能需要升级固件来获得新功能或者修复已有的BUG，可供更新的固件可以在产品页面最下方的固件发布处找到。</p>
 <p>此系列键盘的固件一般分为蓝牙固件和USB固件。蓝牙固件的文件名形如 <code class="docutils literal notranslate"><span class="pre">[键盘名称]_nrf52_[编译日期]_[Git版本].zip</span></code> ，USB固件的文件名形如 <code class="docutils literal notranslate"><span class="pre">[键盘名称]_ch554_[编译日期]_[Git版本].bin</span></code> (部分版本的文件后缀名是hex)。</p>
 <div class="admonition warning">
@@ -179,7 +180,7 @@
 <p>USB固件和蓝牙固件更新的先后顺序没有硬性要求，个人建议可以先更新蓝牙固件。</p>
 </section>
 <section id="id3">
-<h2>名词解释<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>名词解释<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>DFU模式：蓝牙芯片的一种工作模式，用于使用蓝牙升级蓝牙固件。</p></li>
 <li><p>ISP模式：USB芯片的一种工作模式，用于升级USB固件。</p></li>
@@ -187,15 +188,15 @@
 </ul>
 </section>
 <section id="burn-toolbox">
-<span id="id4"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox" title="永久链接至标题">¶</a></h2>
+<span id="id4"></span><h2>烧录工具箱<a class="headerlink" href="#burn-toolbox" title="此标题的永久链接">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>我们推荐使用烧录工具箱更新固件。</p>
 </div>
 <p>详细的使用说明请参见 <a class="reference internal" href="upgrade-toolbox.html"><span class="doc">固件烧录工具箱</span></a> 页面</p>
 </section>
 <section id="dfu">
-<h2>使用 DFU 模式更新蓝牙固件<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h2>
+<h2>使用 DFU 模式更新蓝牙固件<a class="headerlink" href="#dfu" title="此标题的永久链接">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong>
@@ -204,9 +205,9 @@
 <p>如果您刷入了错误的程序(Application)而无法进入DFU模式，请参考产品页面的相关说明， <strong>强行进入DFU模式</strong> 然后更新。</p>
 </div>
 <section id="id5">
-<h3>通常更新方法<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>通常更新方法<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
-<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id16" id="id6">1</a> 程序</p></li>
+<li><p>使用手机安装并打开 nRF Connect <a class="footnote-reference brackets" href="#id16" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 程序</p></li>
 <li><p>点击nRF
 Connect右上角的Scan扫描蓝牙设备，这时候应该能够见到你的蓝牙键盘</p></li>
 <li><p>点击CONNCET按钮，等待连接成功</p></li>
@@ -216,7 +217,7 @@ Connect右上角的Scan扫描蓝牙设备，这时候应该能够见到你的蓝
 <p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
 </section>
 <section id="id7">
-<h3>特殊更新方法<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h3>特殊更新方法<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h3>
 <p>如果在点击DFU后出现问题，无法继续刷新。可以在请参考产品页面的相关说明，<strong>进入DFU模式</strong>后尝试以下步骤。</p>
 <ol class="arabic simple">
 <li><p>点击nRF
@@ -225,7 +226,7 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </ol>
 </section>
 <section id="id8">
-<h3>常见问题<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3>常见问题<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Q: 我在点击DFU后，没有出现固件刷新进度的界面.
 A: 尝试使用特殊更新方法更新</p></li>
@@ -235,7 +236,7 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </section>
 </section>
 <section id="usb">
-<h2>更新USB固件<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h2>
+<h2>更新USB固件<a class="headerlink" href="#usb" title="此标题的永久链接">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p><strong>刷入不正确的USB固件可能使你的键盘的USB功能工作不正常！</strong>
@@ -243,33 +244,33 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 <p>若在更新完毕后发现USB功能不可用，可以参考下面的刷新说明重新刷新。</p>
 </div>
 <section id="id9">
-<h3>更新方法<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>更新方法<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
-<li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a>  <a class="footnote-reference brackets" href="#id17" id="id10">2</a></p></li>
+<li><p>至WCH官网下载 <a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a>  <a class="footnote-reference brackets" href="#id17" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
 <li><p>打开固件更新工具，切换至“8位ch55x系列”，将芯片型号改为“CH552”，并在底下的“用户程序文件中”选择你要更新的USB固件</p></li>
 <li><p>参考产品说明， <strong>进入USB ISP模式</strong> ，此时，设备列表中会出现一个可选择的设备并会自动选中。</p></li>
 <li><p>点击下载按钮。下载完毕后，将键盘的USB断开并重新连接，即可升级完毕。</p></li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>你也可以使用 <a class="reference internal" href="#burn-toolbox"><span class="std std-ref">烧录工具箱</span></a> 来更新 USB 固件。</p>
 </div>
 </section>
 </section>
 <section id="id11">
-<h2>使用板载调试器强制更新蓝牙固件<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<h2>使用板载调试器强制更新蓝牙固件<a class="headerlink" href="#id11" title="此标题的永久链接">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>仅部分硬件配备了板载调试器，并且在部分产品上可能需要手动启用板载调试器。请参考产品页面以获取更多信息。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>以下教程是手工安装 PyOCD 并强制更新固件的教程，你也可以使用 <a class="reference internal" href="#burn-toolbox"><span class="std std-ref">烧录工具箱</span></a> 来强制更新固件。</p>
 </div>
 <section id="id12">
-<h3>环境配置<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<h3>环境配置<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h3>
 <section id="windows">
-<h4>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h4>
+<h4>Windows<a class="headerlink" href="#windows" title="此标题的永久链接">¶</a></h4>
 <ol class="arabic simple">
 <li><p>在应用商店搜索并安装Python3（Python3.7或Python3.8均可）</p></li>
 <li><p>右键点击Windows徽标，选择“Windows PowerShell”</p></li>
@@ -278,9 +279,9 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </ol>
 </section>
 <section id="linux">
-<h4>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h4>
+<h4>Linux<a class="headerlink" href="#linux" title="此标题的永久链接">¶</a></h4>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>当前版本（0.25.0）的PyOCD在Linux下对于设备描述符的 <a class="reference external" href="https://github.com/mbedmicro/pyOCD/issues/815">限制过多</a>，导致无法正确识别到此调试器。</p>
 <p>你可以尝试修改PyOCD的相关文件，或等待官方修复此问题。</p>
 </div>
@@ -291,12 +292,12 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </ol>
 </section>
 <section id="macos">
-<h4>MacOS<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h4>
+<h4>MacOS<a class="headerlink" href="#macos" title="此标题的永久链接">¶</a></h4>
 <p>没用过，不知道怎么装。请参考Linux的安装方法进行配置。</p>
 </section>
 </section>
 <section id="id13">
-<h3>更新固件<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<h3>更新固件<a class="headerlink" href="#id13" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>确保你下载的是调试器用的HEX格式的固件。</p></li>
 <li><p>将键盘接入电脑，输入 <code class="docutils literal notranslate"><span class="pre">pyocd</span> <span class="pre">list</span></code> 并回车，这时应该会见到你的键盘</p></li>
@@ -305,7 +306,7 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </ol>
 </section>
 <section id="id14">
-<h3>常见问题<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<h3>常见问题<a class="headerlink" href="#id14" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>提示 “No ACK Received”：板载调试器没有正确连接到蓝牙芯片。请参考产品页面，检查你的板载调试器是否正常配置。</p></li>
 <li><p>提示 “Waiting for a debug probe to be connected”: 无法找到板载调试器。请确认你的键盘有板载调试器功能并刷新了正确的 USB 固件。</p></li>
@@ -313,23 +314,25 @@ A: 等待90秒后，DFU模式会自动退出</p></li>
 </section>
 </section>
 <section id="id15">
-<h2>散件的固件烧录指南<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<h2>散件的固件烧录指南<a class="headerlink" href="#id15" title="此标题的永久链接">¶</a></h2>
 <p>散件没有内置任何固件，所以需要你手动烧录固件。烧录固件需要使用以下顺序：</p>
 <ol class="arabic simple">
 <li><p>先烧录USB固件，确保USB正常工作</p></li>
 <li><p>使用板载调试器烧录蓝牙固件</p></li>
 </ol>
 <p>可以使用上面的烧录工具箱一键烧写。</p>
-<dl class="footnote brackets">
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
-<dd><p>可以到
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id16" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<p>可以到
 <a class="reference external" href="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile">官方下载页面</a>
 或者应用商店搜索下载。支持IOS和安卓端。</p>
-</dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id10">2</a></span></dt>
-<dd><p>可以使用<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">官方的固件更新工具</a>。若你在使用Linux，则可以使用三方的<a class="reference external" href="https://github.com/rgwan/librech551">WCHISP</a>来更新。</p>
-</dd>
-</dl>
+</aside>
+<aside class="footnote brackets" id="id17" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">2</a><span class="fn-bracket">]</span></span>
+<p>可以使用<a class="reference external" href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">官方的固件更新工具</a>。若你在使用Linux，则可以使用三方的<a class="reference external" href="https://github.com/rgwan/librech551">WCHISP</a>来更新。</p>
+</aside>
+</aside>
 </section>
 </section>
 

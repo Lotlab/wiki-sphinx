@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
     
@@ -155,16 +156,16 @@
               <div itemprop="articleBody">
               
   <section id="ble4100">
-<h1>BLE4100套件使用说明<a class="headerlink" href="#ble4100" title="永久链接至标题">¶</a></h1>
+<h1>BLE4100套件使用说明<a class="headerlink" href="#ble4100" title="此标题的永久链接">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>此页面所描述的硬件现已停产，建议使用LKB-Core代替此套件。
 以下信息仅用作存档查阅，请勿将下列信息与新版本产品混淆。</p>
 </div>
 <section id="id1">
-<h2>使用手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>使用手册<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h2>
 <section id="id2">
-<h3>快速入门<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3>快速入门<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>取出线路板并安装到键盘上</p></li>
 <li><p>将键盘上的3个LED灯拆下并旋转180度后安上</p></li>
@@ -174,7 +175,7 @@
 </ol>
 </section>
 <section id="id3">
-<h3>按键说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>按键说明<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h3>
 <p>默认情况下，按键与原键盘相同。</p>
 <ul class="simple">
 <li><p>使用Fn + Pause Break 键可以使键盘休眠</p></li>
@@ -184,12 +185,12 @@
 </ul>
 </section>
 <section id="id4">
-<h3>电量显示<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h3>电量显示<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h3>
 <p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
-<p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id17" id="id5">1</a> 这个应用来查看电量。电量信息仅供参考。</p>
+<p>如果没有指示，你可以下载 BatON <a class="footnote-reference brackets" href="#id17" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 这个应用来查看电量。电量信息仅供参考。</p>
 </section>
 <section id="id6">
-<h3>升级固件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>升级固件<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h3>
 <p>你可能需要升级固件来获得新功能或者修复已有的BUG，升级包可以在页面最下方的固件发布处找到。</p>
 <blockquote>
 <div><p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong></p>
@@ -199,7 +200,7 @@ Loader)，刷入错误的蓝牙栈和引导程序将会使DFU功能完全不可�
 <p>如果您刷入了错误的程序(Application)无法进入DFU模式，您可以将电池卸下，按住Fn键再接上电池强制进入DFU模式。</p>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p>使用手机下载并打开 nRF Connect <a class="footnote-reference brackets" href="#id18" id="id7">2</a> 程序</p></li>
+<li><p>使用手机下载并打开 nRF Connect <a class="footnote-reference brackets" href="#id18" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> 程序</p></li>
 <li><p>按下Fn+PauseBreak休眠键盘，然后按下Fn+Esc唤醒键盘进入DFU模式</p></li>
 <li><p>点击nRF
 Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做DfuTarg的蓝牙设备</p></li>
@@ -211,17 +212,10 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </section>
 </section>
 <section id="id8">
-<h2>安装手册<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>安装手册<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
 <section id="id9">
-<h3>焊接教程<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>焊接教程<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h3>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 15%" />
-<col style="width: 47%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>类型</p></th>
 <th class="head"><p>丝印</p></th>
@@ -320,7 +314,7 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 <p>取出线路板和原件包，对照上面的BOM表进行焊接即可。</p>
 </section>
 <section id="id10">
-<h3>安装教程<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<h3>安装教程<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>卸下键盘后面的螺丝，取下上面板</p></li>
 <li><p>将键盘线路板从下面翻转180度，取出塑料片和铜箔（如果有），拆下主控板的螺丝</p></li>
@@ -334,7 +328,7 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </section>
 </section>
 <section id="id11">
-<h2>固件发布<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<h2>固件发布<a class="headerlink" href="#id11" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>发布日期：2017年5月28日</p></li>
 <li><p>下载连接：<a class="reference external" href="https://eyun.baidu.com/s/3hsMH7Ha">https://eyun.baidu.com/s/3hsMH7Ha</a></p></li>
@@ -396,9 +390,9 @@ Connect右上角的Scan扫描蓝牙设备，这时应该会找到一个叫做Dfu
 </ul>
 </section>
 <section id="id12">
-<h2>高级应用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<h2>高级应用<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h2>
 <section id="id13">
-<h3>源代码<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<h3>源代码<a class="headerlink" href="#id13" title="此标题的永久链接">¶</a></h3>
 <p>访问<a class="reference external" href="https://github.com/Lotlab/nrf51822-keyboard">Github上的项目主页</a>以获取源代码。</p>
 <p>源代码以<a class="reference external" href="http://www.gnu.org/licenses/gpl-3.0.html">GPL
 v3</a>许可证授权，请在GPLv3的限制下使用本源代码。</p>
@@ -408,19 +402,8 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </div></blockquote>
 </section>
 <section id="keymap">
-<h3>KeyMap<a class="headerlink" href="#keymap" title="永久链接至标题">¶</a></h3>
+<h3>KeyMap<a class="headerlink" href="#keymap" title="此标题的永久链接">¶</a></h3>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 15%" />
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p>LINE1</p></th>
@@ -578,16 +561,16 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </table>
 </section>
 <section id="id14">
-<h3>丝印<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<h3>丝印<a class="headerlink" href="#id14" title="此标题的永久链接">¶</a></h3>
 <figure class="align-default" id="id20">
 <img alt="丝印层" src="../_images/ble4100_silk.png" />
 <figcaption>
-<p><span class="caption-text">丝印层</span><a class="headerlink" href="#id20" title="永久链接至图片">¶</a></p>
+<p><span class="caption-text">丝印层</span><a class="headerlink" href="#id20" title="此图像的永久链接">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id15">
-<h3>修改/编译程序<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<h3>修改/编译程序<a class="headerlink" href="#id15" title="此标题的永久链接">¶</a></h3>
 <p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
 <ul class="simple">
 <li><p>main.c 70行修改蓝牙名称</p></li>
@@ -599,26 +582,29 @@ v3协议规定，你在发布修改过的固件的同时，<strong>必须同时�
 </li>
 <li><p>使用Keil uVision 5 来编译程序</p></li>
 </ul>
-<p>使用 nrfutil <a class="footnote-reference brackets" href="#id19" id="id16">3</a> 生成升级包（0.5.2版本）</p>
+<p>使用 nrfutil <a class="footnote-reference brackets" href="#id19" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> 生成升级包（0.5.2版本）</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
 </pre></div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
-<dd><p><a class="reference external" href="http://www.coolapk.com/apk/com.limi.baton">蓝牙设备电量 1.2.50</a>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id17" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://www.coolapk.com/apk/com.limi.baton">蓝牙设备电量 1.2.50</a>
 仅限安卓端。</p>
-</dd>
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
-<dd><p>可以到
+</aside>
+<aside class="footnote brackets" id="id18" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">2</a><span class="fn-bracket">]</span></span>
+<p>可以到
 <a class="reference external" href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a>
 或者应用商店下载。支持IOS和安卓端。</p>
-</dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id16">3</a></span></dt>
-<dd><p>在Github下载
+</aside>
+<aside class="footnote brackets" id="id19" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">3</a><span class="fn-bracket">]</span></span>
+<p>在Github下载
 <a class="reference external" href="https://github.com/NordicSemiconductor/pc-nrfutil/releases/tag/v0.5.2">nrfutil</a>,
 需要安装Python2.7</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 </section>

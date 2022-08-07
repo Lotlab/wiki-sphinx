@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
     
@@ -148,9 +149,9 @@
               <div itemprop="articleBody">
               
   <section id="lcd2usb">
-<h1>LCD2USB使用说明<a class="headerlink" href="#lcd2usb" title="永久链接至标题">¶</a></h1>
+<h1>LCD2USB使用说明<a class="headerlink" href="#lcd2usb" title="此标题的永久链接">¶</a></h1>
 <section id="id1">
-<h2>硬件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>硬件<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>显示屏左右两个USB口可用于供电及传输数据的，两个USB口功能完全相同，可以随意使用。</p></li>
 <li><p>背面的右上角有一个电位器，可用于调节液晶屏的对比度。</p></li>
@@ -159,10 +160,10 @@
 </ul>
 </section>
 <section id="id2">
-<h2>LCD2USB模式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>LCD2USB模式<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
 <p>LCD2USB可以连接电脑作为状态显示器使用。</p>
 <section id="id3">
-<h3>安装驱动<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>安装驱动<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h3>
 <p>连上电脑后，电脑会提示发现了一个新设备“LCD2USB
 Interface”。下载<a class="reference external" href="https://zadig.akeo.ie/">zadig</a>并打开，点击“Options”，勾上“List All Devices”选项，
 然后在下面的下拉框中选择设备“LCD2USB Interface”。将Driver右边的框由“WinUSB”改为“libusb-win32”，
@@ -170,13 +171,13 @@ Interface”。下载<a class="reference external" href="https://zadig.akeo.ie/"
 <p><img alt="image0" src="../_images/lcd2usb_zadig.png" /></p>
 </section>
 <section id="aida64">
-<h3>使用 AIDA64 作为显示控制器<a class="headerlink" href="#aida64" title="永久链接至标题">¶</a></h3>
+<h3>使用 AIDA64 作为显示控制器<a class="headerlink" href="#aida64" title="此标题的永久链接">¶</a></h3>
 <p>AIDA64是一款系统信息查看工具，它支持将系统信息输出至LCD2USB设备。如果你不想使用AIDA64，可以看下面的章节。</p>
 <p>打开AIDA64，选择“文件-设置”，在左边展开“硬件监视工具”，选择“LCD”。在右边的面板中点击“LCD2USB”，勾上“启用
 LCD2USB LCD 支持”，将LCD类型改为16x2。接着，你可以在左边的“LCD选项”中更改你要显示的内容。</p>
 </section>
 <section id="lcd-smartie">
-<h3>使用 LCD Smartie 作为显示控制器<a class="headerlink" href="#lcd-smartie" title="永久链接至标题">¶</a></h3>
+<h3>使用 LCD Smartie 作为显示控制器<a class="headerlink" href="#lcd-smartie" title="此标题的永久链接">¶</a></h3>
 <p>LCD
 Smartie是一个专门用于LCD显示的工具。你可以下载<a class="reference external" href="https://sourceforge.net/projects/lcdsmartie/files/lcdsmartie/5.4.2.92%2B%2B/LCD_Smartie_v5.4.2.92%2B%2B.zip/download">官方版本</a>亦或者是去下载汉化版本。下载完成后解压，检查“displays”文件夹里面是否含有“lcd2usb.dll”。如果没有，请下载<a class="reference external" href="https://github.com/harbaum/LCD2USB/raw/master/contrib/LCD2USB.dll">LCD2USB.dll</a>并放入displays文件夹。</p>
 <p>运行LCDSmartie，点击左下角的Setup，在“Display
@@ -187,10 +188,10 @@ Size”改为“16x2”。点击OK后关闭软件再重新打开，即可看到�
 </section>
 </section>
 <section id="id4">
-<h2>时钟模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>时钟模式<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h2>
 <p>若不使用LCD2USB的软件控制，则默认时钟模式。</p>
 <section id="id5">
-<h3>时间显示页面<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>时间显示页面<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h3>
 <ul class="simple">
 <li><p>按下任意按键可以在屏幕背光熄灭时点亮屏幕背光。</p></li>
 <li><p>短按P键则可以强制刷新温度测量值。</p></li>
@@ -198,7 +199,7 @@ Size”改为“16x2”。点击OK后关闭软件再重新打开，即可看到�
 </ul>
 </section>
 <section id="id6">
-<h3>菜单页面<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>菜单页面<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h3>
 <p>进入菜单后可以使用+-键选择子菜单，短按P键进入子菜单，长按P键退出菜单。</p>
 <p>进入子菜单后使用+-键调整当前光标指示的数值，短按P键确认并移动光标，长按P键不保存并退出子菜单。</p>
 <ul class="simple">
@@ -212,12 +213,12 @@ Off：调整背光自动关闭的时段。背光在这个时间段内会在5秒�
 </section>
 </section>
 <section id="id7">
-<h2>更新固件<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>更新固件<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
 <p>下载固件文件与<a class="reference external" href="http://www.wch.cn/download/WCHISPTool_Setup_exe.html">固件更新工具</a>，打开固件更新工具，选择“8位CH55X系列”，芯片型号选择“CH552”，用户程序文件选择刚刚下载好的固件文件。将LCD2USB从电脑断开，按住液晶屏后方的按钮并将LCD2USB连上电脑，然后松开按钮。这时，USB设备列表会出现一个设备，点击“下载”即可。</p>
 <p>更新完成后若LCD2USB没有恢复正常工作，可以将LCD2USB从电脑上断开并重新连接。</p>
 </section>
 <section id="id8">
-<h2>故障排除<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>故障排除<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
 <ul>
 <li><p>字体暗淡或者字体背景太深，对比度不正确：</p>
 <blockquote>

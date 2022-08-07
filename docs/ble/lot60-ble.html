@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -215,33 +216,34 @@
               <div itemprop="articleBody">
               
   <section id="lot60-ble">
-<h1>Lot60-BLE使用指南<a class="headerlink" href="#lot60-ble" title="永久链接至标题">¶</a></h1>
+<h1>Lot60-BLE使用指南<a class="headerlink" href="#lot60-ble" title="此标题的永久链接">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>此页面介绍的是 Lot60-BLE 键盘，其部分操作与 Lot60-Lite 键盘有区别，请确认你的硬件为 Lot60-BLE。</p>
 <p>若你正在使用 Lot60-Lite 键盘，请参阅 <a class="reference internal" href="../ble_wch/lot60-lite.html"><span class="doc">Lot60-Lite使用指南</span></a></p>
 </div>
 <section id="id1">
-<h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了TMK作为键盘功能核心，几乎完全实现了TMK功能。其采用了与GH60完全一致的按键阵列，使其按键配置文件与GH60几乎完全兼容 <a class="footnote-reference brackets" href="#id46" id="id2">2</a>。</p>
+<h2>概述<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h2>
+<p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了TMK作为键盘功能核心，几乎完全实现了TMK功能。其采用了与GH60完全一致的按键阵列，使其按键配置文件与GH60几乎完全兼容 <a class="footnote-reference brackets" href="#id46" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>。</p>
 <figure class="align-default">
 <img alt="布局图" src="../_images/lot60_revg_layout.png" />
 </figure>
 <section id="id3">
-<h3>产品亮点<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>产品亮点<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h3>
 <ul class="simple">
 <li><p>功耗极低，使用时间极长</p></li>
 <li><p>蓝牙/USB双模随时切换</p></li>
 <li><p>支持多种布局</p></li>
 <li><p>全键可编程</p></li>
-<li><p>全平台配置工具 <a class="footnote-reference brackets" href="#id47" id="id4">3</a></p></li>
+<li><p>全平台配置工具 <a class="footnote-reference brackets" href="#id47" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
 <li><p>支持全键无冲</p></li>
 <li><p>支持按键宏</p></li>
 <li><p>支持多媒体键和系统键</p></li>
+<li><p>固件与硬件完全开源（请参见 <a class="reference external" href="https://github.com/Lotlab">Github</a> ）</p></li>
 </ul>
 </section>
 <section id="id5">
-<h3>产品附件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>产品附件<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h3>
 <p>部分产品可能会包含以下附件：</p>
 <ul class="simple">
 <li><p>备件二极管：若键盘阵列二极管在外力作用下脱落，可以使用此备件替换。</p></li>
@@ -249,7 +251,7 @@
 </ul>
 </section>
 <section id="connector">
-<span id="id6"></span><h3>接口图<a class="headerlink" href="#connector" title="永久链接至标题">¶</a></h3>
+<span id="id6"></span><h3>接口图<a class="headerlink" href="#connector" title="此标题的永久链接">¶</a></h3>
 <figure class="align-default">
 <img alt="接口图" src="../_images/lot60_revg_draw.png" />
 </figure>
@@ -265,17 +267,10 @@
 </ol>
 </section>
 <section id="hardware-ver">
-<span id="id7"></span><h3>硬件版本<a class="headerlink" href="#hardware-ver" title="永久链接至标题">¶</a></h3>
+<span id="id7"></span><h3>硬件版本<a class="headerlink" href="#hardware-ver" title="此标题的永久链接">¶</a></h3>
 <p>键盘PCB背面空格下方，写着“Lot60-BLE REV.X”，X即为你的硬件版本。</p>
 <p>不同的硬件版本通常会有不同的功能，各版本主要区别如下：</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 12%" />
-<col style="width: 31%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>版本</p></th>
 <th class="head"><p>双电源供电</p></th>
@@ -313,16 +308,16 @@
 </table>
 </section>
 <section id="led">
-<h3>LED 一览<a class="headerlink" href="#led" title="永久链接至标题">¶</a></h3>
+<h3>LED 一览<a class="headerlink" href="#led" title="此标题的永久链接">¶</a></h3>
 <p>Lot60-BLE 包含了1个CapsLock LED 和一个 RGB LED 指示灯，并预留了3个单色LED状态指示灯的位置。</p>
 <p>本产品默认使用 RGB 状态指示灯。此状态指示灯位于 Esc 按键处，使用贴片LED灯，故需要使用贴片RGB轴。</p>
 <p>如果不想使用RGB轴，可以放弃这个LED灯，转而使用位于按键1, 2, 3处的LED指示灯（参见：<a class="reference internal" href="#led-instruction"><span class="std std-ref">如何改为3 LED指示灯</span></a>）。</p>
 </section>
 </section>
 <section id="id8">
-<h2>使用手册<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>使用手册<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
 <section id="id9">
-<h3>快速入门<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>快速入门<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h3>
 <ol class="arabic simple">
 <li><p>（如果购买的是散件）按照线路板上的标识，根据 <a class="reference external" href="https://tools.lotlab.org/dl/res/lot60ble_g_bom.html">BOM表</a> 焊接相应的元件，然后参照 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> ，使用 <a class="reference internal" href="#debugger-ob"><span class="std std-ref">板载调试器</span></a> 刷固件。</p></li>
 <li><p>将电池插入电池插口。注意电池的线序，红色线对应“+”标记，黑色线对应“-”标记。</p></li>
@@ -340,22 +335,22 @@
 </ol>
 </section>
 <section id="id10">
-<h3>默认按键配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<h3>默认按键配置<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h3>
 <figure class="align-default" id="id49">
 <img alt="默认按键配置图" src="../_images/keymap.png" />
 <figcaption>
-<p><span class="caption-text">默认按键配置图</span><a class="headerlink" href="#id49" title="永久链接至图片">¶</a></p>
+<p><span class="caption-text">默认按键配置图</span><a class="headerlink" href="#id49" title="此图像的永久链接">¶</a></p>
 </figcaption>
 </figure>
 <p>图中Fn1是休眠，Fn2是切换设备。按住Fn0键会临时启用第2层，即 <code class="docutils literal notranslate"><span class="pre">Fn0+Tab</span></code> 切换USB和蓝牙设备，<code class="docutils literal notranslate"><span class="pre">Fn0+CapsLock</span></code>休眠键盘。</p>
 </section>
 <section id="power-on">
-<span id="id11"></span><h3>开机<a class="headerlink" href="#power-on" title="永久链接至标题">¶</a></h3>
+<span id="id11"></span><h3>开机<a class="headerlink" href="#power-on" title="此标题的永久链接">¶</a></h3>
 <p>同时按下<code class="docutils literal notranslate"><span class="pre">Space(空格)+U</span></code>，直到LED指示灯亮起即可开机。</p>
 <p>插入USB的同时键盘会自动开机。</p>
 </section>
 <section id="power-save">
-<span id="id12"></span><h3>省电模式<a class="headerlink" href="#power-save" title="永久链接至标题">¶</a></h3>
+<span id="id12"></span><h3>省电模式<a class="headerlink" href="#power-save" title="此标题的永久链接">¶</a></h3>
 <p>在没有接入USB电源的情况下，键盘处于省电模式。在省电模式下</p>
 <ul class="simple">
 <li><p>所有的指示灯将在变化后亮起5秒，然后熄灭。</p></li>
@@ -364,42 +359,42 @@
 </ul>
 <p>以上模式的进入时间均可使用键盘配置工具调整，详情请参见 <a class="reference internal" href="#device-setting"><span class="std std-ref">配置键盘与更改按键配置</span></a> 。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>设置调整操作仅适用于固件版本 1.1.0.0 及以后的固件。</p>
 </div>
 </section>
 <section id="slow-scan">
-<span id="id13"></span><h3>慢速扫描模式<a class="headerlink" href="#slow-scan" title="永久链接至标题">¶</a></h3>
+<span id="id13"></span><h3>慢速扫描模式<a class="headerlink" href="#slow-scan" title="此标题的永久链接">¶</a></h3>
 <p>慢速扫描模式的慢速是针对快速扫描模式而言的。在键盘无按键一定时间后，会进入慢速扫描模式。进入慢速扫描模式时不会有任何的灯光提示。</p>
 <p>慢速扫描模式下，按键扫描间隔会设置为100ms，以降低键盘的电量消耗。若检测到有按键按下，则会直接退出慢速扫描模式。</p>
 <p>若您发现在进入慢速扫描模式后，第一个按键按下后没有反应，则可能是您的按键速度太快了（按下时间小于100ms）。
 您可以尝试调整慢速扫描模式的进入时间，以缓解此症状。</p>
 </section>
 <section id="sleep">
-<span id="id14"></span><h3>休眠键盘<a class="headerlink" href="#sleep" title="永久链接至标题">¶</a></h3>
+<span id="id14"></span><h3>休眠键盘<a class="headerlink" href="#sleep" title="此标题的永久链接">¶</a></h3>
 <p>在默认按键配置下，按下<code class="docutils literal notranslate"><span class="pre">Fn0+CapsLock</span></code>，即可让键盘进入休眠状态。</p>
 <p>如果键盘按键错乱导致无法休眠，请尝试 <a class="reference internal" href="#force-sleep"><span class="std std-ref">强制休眠键盘</span></a></p>
 <p>手动休眠后，需要手工按下<code class="docutils literal notranslate"><span class="pre">Space+U</span></code>才能再次唤醒。</p>
 </section>
 <section id="ble-connect">
-<span id="id15"></span><h3>蓝牙连接设备<a class="headerlink" href="#ble-connect" title="永久链接至标题">¶</a></h3>
+<span id="id15"></span><h3>蓝牙连接设备<a class="headerlink" href="#ble-connect" title="此标题的永久链接">¶</a></h3>
 <p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。
 你会见到一个叫做<code class="docutils literal notranslate"><span class="pre">Lot60.X_XXXXXX</span></code>的设备，使用你的主机设备连接此蓝牙设备，
 若提示输入配对码，请在键盘上输入配对码即可。</p>
 </section>
 <section id="usb">
-<span id="usb-connect"></span><h3>USB 连接设备<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h3>
+<span id="usb-connect"></span><h3>USB 连接设备<a class="headerlink" href="#usb" title="此标题的永久链接">¶</a></h3>
 <p>直接将USB线缆插入到键盘的USB接口，键盘会自动切换至USB模式。这时候就可以使用USB模式输入了。</p>
 </section>
 <section id="usb-ble-switch">
-<span id="id16"></span><h3>USB/蓝牙状态切换<a class="headerlink" href="#usb-ble-switch" title="永久链接至标题">¶</a></h3>
+<span id="id16"></span><h3>USB/蓝牙状态切换<a class="headerlink" href="#usb-ble-switch" title="此标题的永久链接">¶</a></h3>
 <p>在默认按键配置下，按下<code class="docutils literal notranslate"><span class="pre">Fn0+Tab</span></code>，即可在USB和蓝牙两种模式下切换。</p>
 </section>
 <section id="battery-percentage">
-<span id="id17"></span><h3>电量显示<a class="headerlink" href="#battery-percentage" title="永久链接至标题">¶</a></h3>
+<span id="id17"></span><h3>电量显示<a class="headerlink" href="#battery-percentage" title="此标题的永久链接">¶</a></h3>
 <p>键盘会自动上报当前的电量信息给蓝牙连接的主机，可以直接在主机上查看电量百分比。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>蓝牙电量上报仅支持 iOS 10+、安卓 6+、Windows 10 1903+，以及部分新版Linux发行版。</p>
 <p>MacOS暂时不支持此功能。</p>
 </div>
@@ -407,9 +402,9 @@
 <p>对于安卓手机，如果没有正确的显示电量，可以尝试下载BatON软件来获取蓝牙设备电量。</p>
 </section>
 <section id="rgb">
-<span id="led-color"></span><h3>RGB 指示灯颜色说明<a class="headerlink" href="#rgb" title="永久链接至标题">¶</a></h3>
+<span id="led-color"></span><h3>RGB 指示灯颜色说明<a class="headerlink" href="#rgb" title="此标题的永久链接">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>此颜色可能和实际颜色有略微色差</p>
 </div>
 <ul class="simple">
@@ -424,7 +419,7 @@
 </ul>
 </section>
 <section id="unbond-device">
-<span id="id18"></span><h3>删除蓝牙绑定<a class="headerlink" href="#unbond-device" title="永久链接至标题">¶</a></h3>
+<span id="id18"></span><h3>删除蓝牙绑定<a class="headerlink" href="#unbond-device" title="此标题的永久链接">¶</a></h3>
 <p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试以下删除所有绑定。</p>
 <ol class="arabic simple">
 <li><p>手动 <a class="reference internal" href="#sleep"><span class="std std-ref">休眠键盘</span></a></p></li>
@@ -432,17 +427,17 @@
 </ol>
 </section>
 <section id="nkro">
-<span id="id19"></span><h3>全键无冲（NKRO）<a class="headerlink" href="#nkro" title="永久链接至标题">¶</a></h3>
+<span id="id19"></span><h3>全键无冲（NKRO）<a class="headerlink" href="#nkro" title="此标题的永久链接">¶</a></h3>
 <p>此键盘支持NKRO（全键无冲）模式，但默认不启用全键无冲。全键无冲仅在USB模式下才可使用。</p>
 <p>按下NKRO切换键即可切换全键无冲的状态。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>此操作仅适用于固件版本 1.1.0.0 及以后的固件。</p>
 <p>对于1.0.3.1及以前的固件，请在键盘开机时按下<code class="docutils literal notranslate"><span class="pre">Space+N</span></code>（即在休眠后，按下Space+U+N开机）切换全键无冲的状态。</p>
 </div>
 </section>
 <section id="bootmagic">
-<span id="id20"></span><h3>其他功能键（BootMagic）<a class="headerlink" href="#bootmagic" title="永久链接至标题">¶</a></h3>
+<span id="id20"></span><h3>其他功能键（BootMagic）<a class="headerlink" href="#bootmagic" title="此标题的永久链接">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>除解除绑定功能和进入DFU模式外，此章节的其他所有功能均已在固件版本 1.1.0.0 及以后的固件中废弃。</p>
@@ -466,10 +461,10 @@
 </ul>
 </section>
 <section id="device-setting">
-<span id="id21"></span><h3>配置键盘与更改按键配置<a class="headerlink" href="#device-setting" title="永久链接至标题">¶</a></h3>
+<span id="id21"></span><h3>配置键盘与更改按键配置<a class="headerlink" href="#device-setting" title="此标题的永久链接">¶</a></h3>
 <p>访问 <a class="reference external" href="https://keyboard.lotlab.org/">Lotlab 键盘配置工具</a> ，即可修改键盘的按键配置和设置，具体操作方法请查阅此网站的 <a class="reference external" href="https://keyboard.lotlab.org/help">帮助页面</a>。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>若此网站无法访问，也可以访问以下的镜像站点：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://keyboard.lotlab.icu">https://keyboard.lotlab.icu</a></p></li>
@@ -483,17 +478,17 @@
 </ol>
 <p>无论是哪种方式，都需要将键盘使用USB连接到电脑。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>方法一仅适用于固件版本 1.1.0.0 及以后的固件。对于1.0.3.1及以前的固件，仅能使用方法二修改按键配置。</p>
 <p>方法二仅能修改按键配置，不能修改键盘配置。</p>
 </div>
 </section>
 <section id="firmware-upgrade">
-<span id="id22"></span><h3>固件更新<a class="headerlink" href="#firmware-upgrade" title="永久链接至标题">¶</a></h3>
+<span id="id22"></span><h3>固件更新<a class="headerlink" href="#firmware-upgrade" title="此标题的永久链接">¶</a></h3>
 <p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a></p>
 </section>
 <section id="force-sleep">
-<span id="id23"></span><h3>强制休眠键盘<a class="headerlink" href="#force-sleep" title="永久链接至标题">¶</a></h3>
+<span id="id23"></span><h3>强制休眠键盘<a class="headerlink" href="#force-sleep" title="此标题的永久链接">¶</a></h3>
 <p>若休眠按键无法正常休眠键盘，则可以尝试下面的方法强制休眠键盘。</p>
 <ul class="simple">
 <li><p>方法1：将键盘放置15分钟，其会自动转入休眠状态。</p></li>
@@ -502,7 +497,7 @@
 </ul>
 </section>
 <section id="dfu">
-<span id="enter-dfu"></span><h3>进入DFU模式<a class="headerlink" href="#dfu" title="永久链接至标题">¶</a></h3>
+<span id="enter-dfu"></span><h3>进入DFU模式<a class="headerlink" href="#dfu" title="此标题的永久链接">¶</a></h3>
 <p>DFU 模式是一个特殊的键盘模式，用于更新键盘蓝牙固件。</p>
 <ul class="simple">
 <li><p>方法1：</p>
@@ -523,12 +518,12 @@
 </ul>
 </section>
 <section id="exit-dfu">
-<span id="id24"></span><h3>退出DFU模式<a class="headerlink" href="#exit-dfu" title="永久链接至标题">¶</a></h3>
+<span id="id24"></span><h3>退出DFU模式<a class="headerlink" href="#exit-dfu" title="此标题的永久链接">¶</a></h3>
 <p>在DFU模式下无操作1分半钟后即可自动退出DFU模式。</p>
 <p>断开电池和USB供电也可以退出DFU模式。</p>
 </section>
 <section id="usb-isp">
-<span id="enter-isp"></span><h3>进入USB ISP模式<a class="headerlink" href="#usb-isp" title="永久链接至标题">¶</a></h3>
+<span id="enter-isp"></span><h3>进入USB ISP模式<a class="headerlink" href="#usb-isp" title="此标题的永久链接">¶</a></h3>
 <p>USB ISP模式是一个特殊的USB模式，用于更新USB固件。</p>
 <ol class="arabic simple">
 <li><p>将键盘与电脑连接的USB线断开。</p></li>
@@ -538,13 +533,13 @@
 <p>重新断开并连接 USB 线即可退出 USB ISP 模式。</p>
 </section>
 <section id="debugger-ob">
-<span id="id25"></span><h3>板载调试器<a class="headerlink" href="#debugger-ob" title="永久链接至标题">¶</a></h3>
+<span id="id25"></span><h3>板载调试器<a class="headerlink" href="#debugger-ob" title="此标题的永久链接">¶</a></h3>
 <p>板载调试器可以在蓝牙固件完全毁坏的情况下重新烧写蓝牙固件。</p>
 <p>您需要先将 <a class="reference internal" href="#connector"><span class="std std-ref">板载调试器跳线</span></a> 连接，然后才能使用板载调试器功能。</p>
 <p>参见 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 以了解如何使用板载调试器更新固件。</p>
 </section>
 <section id="reset">
-<span id="reset-btn"></span><h3>RESET 按钮<a class="headerlink" href="#reset" title="永久链接至标题">¶</a></h3>
+<span id="reset-btn"></span><h3>RESET 按钮<a class="headerlink" href="#reset" title="此标题的永久链接">¶</a></h3>
 <p>Reset 按钮在不同版本的硬件上的行为略有差异。</p>
 <ul class="simple">
 <li><p>对于Rev.E和Rev.F版本的硬件，按下Reset按钮后，键盘会强制重启并进入睡眠模式。</p></li>
@@ -554,10 +549,10 @@
 </section>
 </section>
 <section id="q-a">
-<h2>Q&amp;A<a class="headerlink" href="#q-a" title="永久链接至标题">¶</a></h2>
+<h2>Q&amp;A<a class="headerlink" href="#q-a" title="此标题的永久链接">¶</a></h2>
 <section id="id26">
-<h3>键盘的功耗与电池容量的选择<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
-<p>此键盘的典型工作功耗为0.25ma, 休眠功耗为 0.05ma <a class="footnote-reference brackets" href="#id48" id="id27">4</a>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
+<h3>键盘的功耗与电池容量的选择<a class="headerlink" href="#id26" title="此标题的永久链接">¶</a></h3>
+<p>此键盘的典型工作功耗为0.25ma, 休眠功耗为 0.05ma <a class="footnote-reference brackets" href="#id48" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{C}{0.2*t + 1.2}\]</div>
 <ul>
@@ -571,7 +566,7 @@
 </ul>
 </section>
 <section id="led-instruction">
-<span id="id28"></span><h3>如何改为3 LED指示灯<a class="headerlink" href="#led-instruction" title="永久链接至标题">¶</a></h3>
+<span id="id28"></span><h3>如何改为3 LED指示灯<a class="headerlink" href="#led-instruction" title="此标题的永久链接">¶</a></h3>
 <p>将Esc位置的RGB灯焊下，然后在1-3按键位置上焊上轴灯。接着刷新底部提供的3LED灯版本的蓝牙升级包，即可将键盘的指示灯改为3LED指示灯。</p>
 <p>在此模式下，灯光说明如下：
 - 1号位置：蓝牙指示灯，当蓝牙成功连接后亮起。
@@ -580,11 +575,11 @@
 </section>
 </section>
 <section id="id29">
-<h2>故障排除<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h2>
+<h2>故障排除<a class="headerlink" href="#id29" title="此标题的永久链接">¶</a></h2>
 <p>参见 <a class="reference internal" href="troubleshoot.html"><span class="doc">故障排除指南</span></a> 页面</p>
 </section>
 <section id="id30">
-<h2>固件发布<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h2>
+<h2>固件发布<a class="headerlink" href="#id30" title="此标题的永久链接">¶</a></h2>
 <p>请参考 <a class="reference internal" href="upgrade.html"><span class="doc">蓝牙键盘固件更新教程</span></a> 更新你的键盘固件。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -592,7 +587,7 @@
 <p>若不小心更新了错误的软件，可能导致键盘完全不可用。此时仅需更新正常版本的软件即可。</p>
 </div>
 <section id="v1-1-6-0">
-<h3>v1.1.6.0<a class="headerlink" href="#v1-1-6-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.6.0<a class="headerlink" href="#v1-1-6-0" title="此标题的永久链接">¶</a></h3>
 <p>此版本更新于2022年1月9日，是一个问题修复类型的固件。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -604,7 +599,7 @@
 使用擦除选项更新后键盘内的所有配置将会丢失，请预先使用配置工具做好备份。</p>
 </div>
 <section id="id31">
-<h4>更新日志<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h4>
+<h4>更新日志<a class="headerlink" href="#id31" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p>启用了鼠标键功能</p></li>
 <li><p>修正DCDC没有正常启用的问题</p></li>
@@ -612,9 +607,9 @@
 </ul>
 </section>
 <section id="rev-grev-gxrev-ghs">
-<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#rev-grev-gxrev-ghs" title="永久链接至标题">¶</a></h4>
+<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#rev-grev-gxrev-ghs" title="此标题的永久链接">¶</a></h4>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>绝大部分硬件使用的是ND04C模块，下载第一个蓝牙固件即可。</p>
 </div>
 <ul class="simple">
@@ -625,7 +620,7 @@
 </section>
 </section>
 <section id="v1-1-5-3">
-<h3>v1.1.5.3<a class="headerlink" href="#v1-1-5-3" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.5.3<a class="headerlink" href="#v1-1-5-3" title="此标题的永久链接">¶</a></h3>
 <p>此版本更新于2021年12月6日，是一个问题修复类型的固件。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -636,7 +631,7 @@
 <p>更新此固件需要勾上烧录工具箱中的擦除选项，更新后键盘内的所有配置将会丢失，请预先使用配置工具做好备份。</p>
 </div>
 <section id="id32">
-<h4>更新日志<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h4>
+<h4>更新日志<a class="headerlink" href="#id32" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p>移除了Bootloader，增大了数据存储空间以尝试解决掉配置的问题。</p></li>
 <li><p>同步上游更改，支持了多媒体键+层操作功能键。</p></li>
@@ -644,9 +639,9 @@
 </ul>
 </section>
 <section id="id33">
-<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h4>
+<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#id33" title="此标题的永久链接">¶</a></h4>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>绝大部分硬件使用的是ND04C模块，下载第一个蓝牙固件即可。</p>
 </div>
 <ul class="simple">
@@ -656,10 +651,10 @@
 </section>
 </section>
 <section id="v1-1-4-2">
-<h3>v1.1.4.2<a class="headerlink" href="#v1-1-4-2" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.4.2<a class="headerlink" href="#v1-1-4-2" title="此标题的永久链接">¶</a></h3>
 <p>此版本更新于2021年1月19日，是一个问题修复类型的固件。</p>
 <section id="id34">
-<h4>更新日志<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h4>
+<h4>更新日志<a class="headerlink" href="#id34" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p>提高了宏定时器的精度</p></li>
 <li><p>添加了输出当前键盘电量的按键功能</p></li>
@@ -668,21 +663,21 @@
 </ul>
 </section>
 <section id="rev-e">
-<h4>Rev.E<a class="headerlink" href="#rev-e" title="永久链接至标题">¶</a></h4>
+<h4>Rev.E<a class="headerlink" href="#rev-e" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_e-nrf52-2021_01_19-v1.1.4.2.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_e-ch554-2021_01_19-v1.1.4.2.bin">USB固件</a></p></li>
 </ul>
 </section>
 <section id="rev-f">
-<h4>Rev.F<a class="headerlink" href="#rev-f" title="永久链接至标题">¶</a></h4>
+<h4>Rev.F<a class="headerlink" href="#rev-f" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_f-nrf52-2021_01_19-v1.1.4.2.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_f-ch554-2021_01_19-v1.1.4.2.bin">USB固件</a></p></li>
 </ul>
 </section>
 <section id="id35">
-<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h4>
+<h4>Rev.G、Rev.GX、Rev.GHS<a class="headerlink" href="#id35" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_g-nrf52-2021_01_19-v1.1.4.2.hex">蓝牙固件（板载调试器用）</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.4.2/lot60-ble-rev_g-nrf52-2021_01_19-v1.1.4.2.zip">蓝牙升级包 (DFU用)</a></p></li>
@@ -691,14 +686,14 @@
 </section>
 </section>
 <section id="v1-1-3-2">
-<h3>v1.1.3.2<a class="headerlink" href="#v1-1-3-2" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.3.2<a class="headerlink" href="#v1-1-3-2" title="此标题的永久链接">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>需要同时更新USB固件。</p>
 </div>
 <p>此版本更新于2020年7月13日，是一个问题修复类型的固件。Rev.GX 出厂预装此固件。</p>
 <section id="id36">
-<h4>更新日志<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h4>
+<h4>更新日志<a class="headerlink" href="#id36" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p>小幅降低了耗电量</p></li>
 <li><p>修正宏延时计算不正确导致的播放速度下降的问题</p></li>
@@ -707,7 +702,7 @@
 </ul>
 </section>
 <section id="id37">
-<h4>Rev.E<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h4>
+<h4>Rev.E<a class="headerlink" href="#id37" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_e-nrf52-2020_07_13-v1.1.3.2.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_e-ch554-2020_07_13-v1.1.3.2.bin">USB固件</a></p></li>
@@ -715,7 +710,7 @@
 </ul>
 </section>
 <section id="id38">
-<h4>Rev.F<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h4>
+<h4>Rev.F<a class="headerlink" href="#id38" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_f-nrf52-2020_07_13-v1.1.3.2.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_f-ch554-2020_07_13-v1.1.3.2.bin">USB固件</a></p></li>
@@ -723,7 +718,7 @@
 </ul>
 </section>
 <section id="rev-grev-gx">
-<h4>Rev.G、Rev.GX<a class="headerlink" href="#rev-grev-gx" title="永久链接至标题">¶</a></h4>
+<h4>Rev.G、Rev.GX<a class="headerlink" href="#rev-grev-gx" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g-nrf52-2020_07_13-v1.1.3.2.zip">出厂蓝牙固件包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.3.2/lot60-ble-rev_g-ch554-2020_07_13-v1.1.3.2.bin">USB固件</a></p></li>
@@ -732,9 +727,9 @@
 </section>
 </section>
 <section id="v1-1-0-0">
-<h3>v1.1.0.0<a class="headerlink" href="#v1-1-0-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.0.0<a class="headerlink" href="#v1-1-0-0" title="此标题的永久链接">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>强烈建议所有旧版固件的用户升级到此版本固件</p>
 </div>
 <div class="admonition warning">
@@ -746,7 +741,7 @@
 </div>
 <p>此版本更新于2020年4月14日，是 Rev.G 出厂版本的固件。</p>
 <section id="id39">
-<h4>更新日志<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h4>
+<h4>更新日志<a class="headerlink" href="#id39" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p>移除了Bootmagic，杜绝切换到错误的默认层</p></li>
 <li><p>加快了开机速度</p></li>
@@ -763,7 +758,7 @@
 </ul>
 </section>
 <section id="id40">
-<h4>Rev.E<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h4>
+<h4>Rev.E<a class="headerlink" href="#id40" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_e-nrf52-2020_04_14-v1.1.0.0.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_e-ch554-2020_04_14-v1.1.0.0.bin">USB固件</a></p></li>
@@ -771,7 +766,7 @@
 </ul>
 </section>
 <section id="id41">
-<h4>Rev.F<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h4>
+<h4>Rev.F<a class="headerlink" href="#id41" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_f-nrf52-2020_04_14-v1.1.0.0.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_f-ch554-2020_04_14-v1.1.0.0.bin">USB固件</a></p></li>
@@ -779,7 +774,7 @@
 </ul>
 </section>
 <section id="rev-g">
-<h4>Rev.G<a class="headerlink" href="#rev-g" title="永久链接至标题">¶</a></h4>
+<h4>Rev.G<a class="headerlink" href="#rev-g" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-nrf52-2020_04_14-v1.1.0.0.zip">出厂蓝牙固件</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.1.0.0/lot60-ble-rev_g-ch554-2020_04_14-v1.1.0.0.bin">USB固件</a></p></li>
@@ -789,11 +784,11 @@
 </section>
 </section>
 <section id="v1-0-3-1">
-<span id="id42"></span><h3>v1.0.3.1<a class="headerlink" href="#v1-0-3-1" title="永久链接至标题">¶</a></h3>
+<span id="id42"></span><h3>v1.0.3.1<a class="headerlink" href="#v1-0-3-1" title="此标题的永久链接">¶</a></h3>
 <p>此版本更新于2019年12月2日，是 Rev.F 出厂版本的固件。</p>
 <p>此版本改善了误触按键导致键盘开机的问题。</p>
 <section id="id43">
-<h4>Rev.E<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h4>
+<h4>Rev.E<a class="headerlink" href="#id43" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip">3LED灯版本蓝牙升级包</a></p></li>
@@ -801,7 +796,7 @@
 <p>无需更新USB固件。</p>
 </section>
 <section id="id44">
-<h4>Rev.F<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h4>
+<h4>Rev.F<a class="headerlink" href="#id44" title="此标题的永久链接">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-nrf52-2019_12_02-db6e8ae.zip">蓝牙升级包</a></p></li>
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.1/rev_f-ch554-2019_12_02-db6e8ae.hex">出厂USB固件</a></p></li>
@@ -810,7 +805,7 @@
 </section>
 </section>
 <section id="v1-0-3-0">
-<span id="id45"></span><h3>v1.0.3.0<a class="headerlink" href="#v1-0-3-0" title="永久链接至标题">¶</a></h3>
+<span id="id45"></span><h3>v1.0.3.0<a class="headerlink" href="#v1-0-3-0" title="此标题的永久链接">¶</a></h3>
 <p>此版本是 Rev.E 出厂版本的固件。</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e-nrf52-2019_09_30-68552e4.zip">Rev.E
@@ -820,18 +815,21 @@
 <li><p><a class="reference external" href="https://tools.lotlab.org/dl/firmware/v1.0.3.0/rev_e_3led-nrf52-2019_09_30-68552e4.zip">Rev.E
 3LED灯版本蓝牙升级包</a></p></li>
 </ul>
-<dl class="footnote brackets">
-<dt class="label" id="id46"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>几乎完全兼容：两者格式是一致的，但存在部分Fn功能的差异。若直接使用tmk的eep文件，则会造成休眠和设备切换等自定义功能键不可用。</p>
-</dd>
-<dt class="label" id="id47"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
-<dd><p>全平台：指支持 Windows、MacOS、Linux 三大平台</p>
-</dd>
-<dt class="label" id="id48"><span class="brackets"><a class="fn-backref" href="#id27">4</a></span></dt>
-<dd><p>典型功耗、休眠功耗:
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id46" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>几乎完全兼容：两者格式是一致的，但存在部分Fn功能的差异。若直接使用tmk的eep文件，则会造成休眠和设备切换等自定义功能键不可用。</p>
+</aside>
+<aside class="footnote brackets" id="id47" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>全平台：指支持 Windows、MacOS、Linux 三大平台</p>
+</aside>
+<aside class="footnote brackets" id="id48" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">4</a><span class="fn-bracket">]</span></span>
+<p>典型功耗、休眠功耗:
 使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 </section>

@@ -4,7 +4,7 @@
 <html lang="zh-CN" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -32,6 +32,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/translations.js"></script>
     
@@ -149,20 +150,20 @@
               <div itemprop="articleBody">
               
   <section id="id1">
-<h1>固件烧录工具箱<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>固件烧录工具箱<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
 <section id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>简介<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
 <p>烧录工具箱提供了友好的固件更新界面，整合了USB固件更新工具（WCHIPSTool）和板载调试器线刷工具（PyOCD）。</p>
 <p>通过使用此工具箱，你可以一键进入ISP模式下载USB固件，也可以同时烧录蓝牙和USB固件，方便使用。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>烧录工具箱的蓝牙烧录功能支持带有板载调试器的设备。请查阅您的产品页面，确定您的设备是否支持板载调试器，以及对应的启用方法。</p>
 <p>烧录工具箱带有的自动进入ISP模式的功能仅适用于固件v1.1.3.2及之后的版本。若您当前的USB固件并不支持此项功能，您则需要手动进入ISP模式。</p>
 </div>
 <p>请访问我们的 <a class="reference external" href="https://eyun.baidu.com/s/3c2Tjcsg">百度网盘下载</a> 烧录工具箱，此工具箱仅能在 Windows 下使用。</p>
 </section>
 <section id="id3">
-<h2>使用说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>使用说明<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h2>
 <p>启动软件后，请根据您的键盘型号选择烧写的USB芯片的类型。请查阅产品更新手册或产品页面以获取当前产品的芯片类型。</p>
 <ul class="simple">
 <li><p>对于nRF52系列键盘（如: Lot60-BLE），请选择 nRF52(CH552)。</p></li>
@@ -182,14 +183,14 @@
 <p>最后，点击烧录按钮即可。</p>
 </section>
 <section id="id4">
-<h2>页面选项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>页面选项<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>自动下载：发现USB设备后自动下载USB固件和蓝牙固件（若有）</p></li>
 <li><p>下载时擦除：清空整个芯片并下载程序，会删除所有内部的数据。</p></li>
 </ul>
 </section>
 <section id="id5">
-<h2>常见问题<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>常见问题<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>Q: 无法自动进入ISP模式</p></li>
 <li><p>A: 请参考产品页面相关说明，尝试手动进入ISP模式。</p></li>
@@ -198,43 +199,43 @@
 </ul>
 </section>
 <section id="id6">
-<h2>更新日志<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>更新日志<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>请务必下载最新版本。老版本的烧录工具箱可能存在一些问题，可能会导致您的设备无法正常工作。</p>
 </div>
 <section id="v1-2-1-1">
-<h3>v1.2.1.1<a class="headerlink" href="#v1-2-1-1" title="永久链接至标题">¶</a></h3>
+<h3>v1.2.1.1<a class="headerlink" href="#v1-2-1-1" title="此标题的永久链接">¶</a></h3>
 <p>2021年7月24日发布。</p>
 <p>修正CH552/554设备无法找到的问题。</p>
 </section>
 <section id="v1-2-1-0">
-<h3>v1.2.1.0<a class="headerlink" href="#v1-2-1-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.2.1.0<a class="headerlink" href="#v1-2-1-0" title="此标题的永久链接">¶</a></h3>
 <p>2021年7月12日发布。</p>
 <p>修正CH573的烧录按钮设置不正确的问题。</p>
 </section>
 <section id="v1-2-0-0">
-<h3>v1.2.0.0<a class="headerlink" href="#v1-2-0-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.2.0.0<a class="headerlink" href="#v1-2-0-0" title="此标题的永久链接">¶</a></h3>
 <p>2021年7月8日发布。</p>
 <p>更新了ISP的DLL，添加了设备切换功能，添加了CH573的支持。</p>
 </section>
 <section id="v1-1-3-0">
-<h3>v1.1.3.0<a class="headerlink" href="#v1-1-3-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.3.0<a class="headerlink" href="#v1-1-3-0" title="此标题的永久链接">¶</a></h3>
 <p>2021年1月19日发布。</p>
 <p>修正了ISP设备选择USB固件导致程序崩溃退出的问题。</p>
 </section>
 <section id="v1-1-0-2">
-<h3>v1.1.0.2<a class="headerlink" href="#v1-1-0-2" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.0.2<a class="headerlink" href="#v1-1-0-2" title="此标题的永久链接">¶</a></h3>
 <p>2021年1月9日发布。</p>
 <p>添加了CMSIS-DAP设备的选择，解决了键盘无法工作时不能刷机的问题。</p>
 </section>
 <section id="v1-1-0-1">
-<h3>v1.1.0.1<a class="headerlink" href="#v1-1-0-1" title="永久链接至标题">¶</a></h3>
+<h3>v1.1.0.1<a class="headerlink" href="#v1-1-0-1" title="此标题的永久链接">¶</a></h3>
 <p>2020年11月1日发布。</p>
 <p>修正自动下载时，没有当前设备导致的Exception</p>
 </section>
 <section id="v1-0-0-0">
-<h3>v1.0.0.0<a class="headerlink" href="#v1-0-0-0" title="永久链接至标题">¶</a></h3>
+<h3>v1.0.0.0<a class="headerlink" href="#v1-0-0-0" title="此标题的永久链接">¶</a></h3>
 <p>2020年6月7日发布。</p>
 <p>初始版本。</p>
 </section>
