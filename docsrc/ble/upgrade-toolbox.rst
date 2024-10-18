@@ -14,7 +14,7 @@
 
    烧录工具箱带有的自动进入ISP模式的功能仅适用于固件v1.1.3.2及之后的版本。若您当前的USB固件并不支持此项功能，您则需要手动进入ISP模式。
 
-请访问我们的 `百度网盘下载 <https://eyun.baidu.com/s/3c2Tjcsg>`__ 烧录工具箱，此工具箱仅能在 Windows 下使用。
+请访问我们的 `网站下载 <https://dl.lotlab.org/keyboard/flash-toolbox/>`__ 烧录工具箱，此工具箱仅能在 Windows 下使用。
 
 使用说明
 =================
